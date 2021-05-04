@@ -10,9 +10,13 @@ function App() {
 
   return (
 
+
     <div className="App">
       <h1>{t("welcome")}</h1>
       <LanguageChangeText />
+
+    <div >
+  
     </div>
   );
 }
