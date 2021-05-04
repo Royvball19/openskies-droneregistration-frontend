@@ -1,8 +1,9 @@
 import "./App.css";
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
+import Button from "./components/TestExample/TextExample"
 import Data from "./Data";
-import { LanguageChangeText } from "./LanguageChange";
+import { LanguageChangeText } from "./components/LanguageChanger/LanguageChange";
 
 function App() {
   // acces translations by declaring t
