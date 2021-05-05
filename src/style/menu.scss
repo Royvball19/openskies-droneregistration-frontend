@@ -1,0 +1,100 @@
+@import "colors_theme";
+@import "typography";
+@import "style";
+
+.menu {
+  height: 100vh;
+  width: 440px;
+  background-color: $bg-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .closeButton { 
+      a {
+          text-decoration: none;
+          color: $font-primary;
+          font-size: 42px;
+          margin: 10px;
+          margin-left: 390px;
+      }  
+  }
+
+  .profileInfo {
+    text-align: center;
+
+      img {
+          width: 200px;
+          height: 200px;
+          margin-top: 30px;
+          margin-bottom: 30px;
+      }
+
+      .dashboard {
+        display: flex;
+        text-align: left;
+        margin: 20px;
+        margin-bottom: 50px;
+        .iconHome {
+            font-size: 36px;
+            margin-right: 10px;
+        }
+    }
+  
+    .searchOperators {
+      display: flex;
+      text-align: left;
+      margin: 20px;
+      .iconOperators {
+          font-size: 36px;
+          margin-right: 10px;
+      }
+    }
+  
+    .searchDrones {
+      display: flex;
+      text-align: left;
+      margin: 20px;
+      .iconDrones {
+          font-size: 36px;
+          margin-right: 10px;
+      }
+    }
+  
+    .searchPilots {
+      display: flex;
+      text-align: left;
+      margin: 20px;
+      .iconPilots {
+          font-size: 36px;
+          margin-right: 10px;
+      }
+    }
+  
+    .settings {
+      display: flex;
+      text-align: left;
+      margin-top: 150px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-right: 20px;
+      .iconSettings {
+          font-size: 36px;
+          margin-right: 10px;
+      }
+    }
+  
+    .signOut {
+      display: flex;
+      text-align: left;
+      margin: 20px;
+      .iconSignOut {
+          font-size: 36px;
+          margin-right: 10px;
+      }
+    }
+
+  }
+
+}
+

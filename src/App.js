@@ -1,8 +1,8 @@
-import "./App.css";
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
 import Button from "./components/TestExample/TextExample"
 import Data from "./Data";
+import Menu from "./components/Menu";
 import { LanguageChangeText } from "./components/LanguageChanger/LanguageChange";
 
 function App() {
@@ -23,10 +23,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{t("welcome")}</h1>
-      <LanguageChangeText />
-
-      <button onClick={fetchData}>CLICK FOR DATA</button>
+    
+      <Menu />
     </div>
   );
 }
