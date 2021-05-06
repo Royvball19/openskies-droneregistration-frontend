@@ -67,10 +67,41 @@ p {
           box-sizing: border-box;
 }
 
+/*
+ * Arrow Button
+ */
+.buttonDiv .arrowButton {
+  background-color: #0D1055;
+  border: none;
+  width: 40px;
+  height: 44px;
+  margin-top: 30px;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+
+.buttonDiv .arrowButton a {
+  text-decoration: none;
+  color: white;
+  font-size: 42px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.buttonDiv .arrowButton a:hover {
+  color: #FED737;
+}
+
+/*
+ * End Arrow Button
+ */
 .menu {
+  position: absolute;
+  z-index: 1;
   height: 100vh;
   width: 440px;
   background-color: #0D1055;
+  opacity: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,14 +112,24 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  visibility: hidden;
 }
 
-.menu .closeButton a {
+.menu .closeButtonDiv a {
   text-decoration: none;
   color: #FFFFFF;
   font-size: 42px;
   margin: 10px;
   margin-left: 390px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.menu .closeButtonDiv a:hover {
+  color: #FED737;
 }
 
 .menu .profileInfo {
@@ -102,85 +143,138 @@ p {
   margin-bottom: 30px;
 }
 
-.menu .profileInfo .dashboard {
+.menu .profileInfo .dashboard a {
+  text-decoration: none;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: left;
   margin: 20px;
   margin-bottom: 50px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.menu .profileInfo .dashboard .iconHome {
+.menu .profileInfo .dashboard a .iconHome {
   font-size: 36px;
   margin-right: 10px;
 }
 
-.menu .profileInfo .searchOperators {
+.menu .profileInfo .dashboard a:hover {
+  color: #FED737;
+}
+
+.menu .profileInfo .searchOperators a {
+  text-decoration: none;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: left;
   margin: 20px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.menu .profileInfo .searchOperators .iconOperators {
+.menu .profileInfo .searchOperators a .iconOperators {
   font-size: 36px;
   margin-right: 10px;
 }
 
-.menu .profileInfo .searchDrones {
+.menu .profileInfo .searchOperators a:hover {
+  color: #FED737;
+}
+
+.menu .profileInfo .searchDrones a {
+  text-decoration: none;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: left;
   margin: 20px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.menu .profileInfo .searchDrones .iconDrones {
+.menu .profileInfo .searchDrones a .iconDrones {
   font-size: 36px;
   margin-right: 10px;
 }
 
-.menu .profileInfo .searchPilots {
+.menu .profileInfo .searchDrones a:hover {
+  color: #FED737;
+}
+
+.menu .profileInfo .searchPilots a {
+  text-decoration: none;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: left;
   margin: 20px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.menu .profileInfo .searchPilots .iconPilots {
+.menu .profileInfo .searchPilots a .iconPilots {
   font-size: 36px;
   margin-right: 10px;
 }
 
-.menu .profileInfo .settings {
+.menu .profileInfo .searchPilots a:hover {
+  color: #FED737;
+}
+
+.menu .profileInfo .settings a {
+  text-decoration: none;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: left;
+  margin: 20px;
   margin-top: 150px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.menu .profileInfo .settings .iconSettings {
+.menu .profileInfo .settings a .iconSettings {
   font-size: 36px;
   margin-right: 10px;
 }
 
-.menu .profileInfo .signOut {
+.menu .profileInfo .settings a:hover {
+  color: #FED737;
+}
+
+.menu .profileInfo .signOut a {
+  text-decoration: none;
+  color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: left;
   margin: 20px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.menu .profileInfo .signOut .iconSignOut {
+.menu .profileInfo .signOut a .iconSignOut {
   font-size: 36px;
   margin-right: 10px;
+}
+
+.menu .profileInfo .signOut a:hover {
+  color: #FED737;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 /*# sourceMappingURL=menu.css.map */

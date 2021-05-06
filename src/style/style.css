@@ -36,7 +36,32 @@ p {
           box-sizing: border-box;
 }
 
-body {
-  background: #0D1055;
+/*
+ * Arrow Button
+ */
+.buttonDiv .arrowButton {
+  background-color: #0D1055;
+  border: none;
+  width: 40px;
+  height: 44px;
+  margin-top: 30px;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
 }
+
+.buttonDiv .arrowButton a {
+  text-decoration: none;
+  color: white;
+  font-size: 42px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.buttonDiv .arrowButton a:hover {
+  color: #FED737;
+}
+
+/*
+ * End Arrow Button
+ */
 /*# sourceMappingURL=style.css.map */
