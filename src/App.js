@@ -1,22 +1,15 @@
 import { useTranslation } from "react-i18next";
-import Data from "./service/Data";
-import Test from  "./components/Test"
-import { LanguageChangeText } from "./LanguageChange";
 import React, { useState } from "react";
-import Button from "./components/TestExample/TextExample"
+import SearchOverlay from "./components/SearchOverlay";
 import Menu from "./components/Menu";
 import { LanguageChangeText } from "./components/LanguageChanger/LanguageChange";
 
 function App() {
-
-
   return (
-    <div className="App">   
-      <Menu />
-      <LanguageChangeText />
-      <Test />
+    <div className="App">
+      <SearchOverlay />
     </div>
   );
 }
 
-export default App
+export default App;

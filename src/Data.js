@@ -71,4 +71,9 @@ export default {
       endpoint + "aircrafts/" + aircraftid + "/privileged"
     );
   },
+
+  // API call for all reports
+  async getAllReports() {
+    return await axios.get(endpoint + "reports");
+  },
 };
