@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
-import SearchOverlay from "./components/SearchOverlay";
 import Menu from "./components/Menu";
+import TableView from "./components/Tables/TableView"
 import { LanguageChangeText } from "./components/LanguageChanger/LanguageChange";
 
 function App() {
   return (
     <div className="App">
-      <SearchOverlay />
+      <TableView tabletype="reports" />
     </div>
   );
 }
