@@ -85,6 +85,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   overflow-x: hidden;
+  /*overflow-y: hidden;*/
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   left: -440px;
@@ -261,6 +262,8 @@ p {
   margin-top: 30px;
   border-top-right-radius: 20%;
   border-bottom-right-radius: 20%;
+  -webkit-transition: 0.05s;
+  transition: 0.05s;
 }
 
 .buttonDiv .arrowButton a {

@@ -16,6 +16,7 @@ $margin: 20px;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
+  /*overflow-y: hidden;*/
   transition: all 0.5s ease;
   left: -440px;
   
@@ -175,6 +176,7 @@ $margin: 20px;
       margin-top: 30px;
       border-top-right-radius: 20%;
       border-bottom-right-radius: 20%;
+      transition: 0.05s;
 
       a {
           text-decoration: none;
