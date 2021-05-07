@@ -7,31 +7,3 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-/*
- * Arrow Button
- */
-.buttonDiv {
-    .arrowButton {
-        background-color: $bg-primary;
-        border: none;
-        width: 40px;
-        height: 44px;
-        margin-top: 30px;
-        border-top-right-radius: 20%;
-        border-bottom-right-radius: 20%;
-
-        a {
-            text-decoration: none;
-            color: white;
-            font-size: 42px;
-            transition: 0.3s;
-        }
-        a:hover {
-            color: $button-font-color;
-        }
-    }
-}
-/*
- * End Arrow Button
- */

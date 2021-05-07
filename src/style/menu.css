@@ -67,36 +67,8 @@ p {
           box-sizing: border-box;
 }
 
-/*
- * Arrow Button
- */
-.buttonDiv .arrowButton {
-  background-color: #0D1055;
-  border: none;
-  width: 40px;
-  height: 44px;
-  margin-top: 30px;
-  border-top-right-radius: 20%;
-  border-bottom-right-radius: 20%;
-}
-
-.buttonDiv .arrowButton a {
-  text-decoration: none;
-  color: white;
-  font-size: 42px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.buttonDiv .arrowButton a:hover {
-  color: #FED737;
-}
-
-/*
- * End Arrow Button
- */
 .menu {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   height: 100vh;
   width: 440px;
@@ -113,9 +85,9 @@ p {
       -ms-flex-align: center;
           align-items: center;
   overflow-x: hidden;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  visibility: hidden;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  left: -440px;
 }
 
 .menu .closeButtonDiv a {
@@ -273,8 +245,37 @@ p {
 
 .active {
   opacity: 1;
-  visibility: visible;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+  left: 0px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
+
+/*
+ * Arrow Button
+ */
+.buttonDiv .arrowButton {
+  background-color: #0D1055;
+  border: none;
+  width: 40px;
+  height: 44px;
+  margin-top: 30px;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+
+.buttonDiv .arrowButton a {
+  text-decoration: none;
+  color: white;
+  font-size: 42px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.buttonDiv .arrowButton a:hover {
+  color: #FED737;
+}
+
+/*
+* End Arrow Button
+*/
 /*# sourceMappingURL=menu.css.map */

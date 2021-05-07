@@ -9,13 +9,16 @@ import { VscSignOut } from "react-icons/vsc";
 import CompanyLogo from "../style/img/dummy-logo.png";
 
 export const Menu = () => {
-
-    const closeMenu = (e) => {
-        
+    
+    //function to close the menu from the left side
+    function closeMenu() {
+        document.getElementById("menuDiv").style.left = "-440px";
+        document.getElementById("buttonId").style.visibility = "visible";
     }
     
+    //Still need to add the links to the pages once we make them
     return(
-        <div className="menu">
+        <div id="menuDiv" className="menu">
             <div className="closeButtonDiv">
                 <a href="javascript:void(0)" className="closeButton" onClick={closeMenu}>
                     <IoIosCloseCircle />
