@@ -1,18 +1,17 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: url("./img/background.png") no-repeat center center/cover;
-  width: 100vw;
-  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .tableview {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 15px;
 }
 
@@ -34,3 +33,4 @@ body {
   border-left: transparent;
   border-right: transparent;
 }
+/*# sourceMappingURL=tableview.css.map */
