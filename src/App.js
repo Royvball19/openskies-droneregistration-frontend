@@ -4,6 +4,7 @@ import Test from "./components/Test"
 import React, { useState } from "react";
 import ArrowButton from "./components/ArrowButton";
 import Menu from "./components/Menu";
+import Filter from "./components/Filter";
 import "./style/style.css";
 import TableView from "./components/Tables/TableView";
 import { LanguageChangeText } from "./components/LanguageChanger/LanguageChange";
@@ -13,6 +14,7 @@ function App() {
     <div>
       <Menu />
       <ArrowButton />
+      <Filter />
       <div>
         <TableView tabletype="operators" />
       </div>

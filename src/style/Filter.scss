@@ -1,0 +1,41 @@
+@import "colors_theme";
+@import "typography";
+@import "style";
+
+$margin: 14px;
+
+.filterDiv {
+    position: fixed;
+    width: 400px;
+    height: 920px;
+    background-color: $font-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    border-radius: 10px;
+    overflow-x: hidden;
+    right: 0px;
+    
+    h2, h3, p {
+        color: $bg-primary;
+        margin: $margin;
+    }
+
+    .iconSearch {
+        font-size: 36px;
+        color: black;
+        margin: $margin;
+    }
+
+    .iconCalander {
+        margin-bottom: 2px;
+    }
+
+    .allFiltersDiv{
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        align-items: left;
+        margin: $margin;
+    }
+}
