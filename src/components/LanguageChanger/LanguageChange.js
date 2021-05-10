@@ -2,7 +2,7 @@ import { i18n } from "../../translations/i18n";
 import React, { useState } from "react";
 
 export const LanguageChangeText = () => {
-  const [setLanguage] = useState("en");
+  const [Language, setLanguage] = useState("en");
 
   const handleOnclick = (e) => {
     e.preventDefault();
