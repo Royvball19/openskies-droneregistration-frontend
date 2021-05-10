@@ -63,7 +63,8 @@ p {
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .menu {
@@ -144,6 +145,13 @@ p {
   border: none;
   width: 40px;
   height: 44px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 30px;
   border-top-right-radius: 20%;
   border-bottom-right-radius: 20%;
@@ -160,7 +168,10 @@ p {
   color: #FED737;
 }
 
-/*
-* End Arrow Button
-*/
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 100vw;
+    height: 100vh;
+  }
+}
 /*# sourceMappingURL=menu.css.map */
