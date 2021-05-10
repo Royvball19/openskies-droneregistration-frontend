@@ -14,13 +14,14 @@ export const Menu = () => {
     function closeMenu() {
         document.getElementById("menuDiv").style.left = "-440px";
         document.getElementById("buttonId").style.visibility = "visible";
+        document.getElementById("buttonId").style.transitionDelay = "0.55s";
     }
     
     //Still need to add the links to the pages once we make them
     return(
         <div id="menuDiv" className="menu">
             <div className="closeButtonDiv">
-                <a href="javascript:void(0)" className="closeButton" onClick={closeMenu}>
+                <a href="#javascript:void(0)" className="closeButton" onClick={closeMenu}>
                     <IoIosCloseCircle />
                 </a>
             </div>
@@ -29,37 +30,39 @@ export const Menu = () => {
                 <img src={CompanyLogo} alt=""/>
                 <div className="dashboard">
                     <a href="#">
-                    <IoMdHome className="iconHome" />
+                    <IoMdHome className="iconHome icon" />
                     <h3>Dashboard</h3>
                     </a>
                 </div>
+            <div className="searches">
                 <div className="searchOperators">
                     <a href="#">
-                    <HiOfficeBuilding className="iconOperators"/>
+                    <HiOfficeBuilding className="iconOperators icon"/>
                     <h3>Search all operators</h3>
                     </a>
                 </div>
                 <div className="searchDrones">
                     <a href="#">
-                    <GiDeliveryDrone className="iconDrones"/>
+                    <GiDeliveryDrone className="iconDrones icon"/>
                     <h3>Search all drones</h3>
                     </a>
                 </div>
                 <div className="searchPilots">
                     <a href="#">
-                    <BsFillPersonFill className="iconPilots" />
+                    <BsFillPersonFill className="iconPilots icon" />
                     <h3>Search all pilots</h3>
                     </a>
                 </div>
+            </div>
                 <div className="settings">
                     <a href="#">
-                    <FiSettings className="iconSettings" />
+                    <FiSettings className="iconSettings icon" />
                     <h3>Settings</h3>
                     </a>
                 </div>
                 <div className="signOut">
                     <a href="#">
-                    <VscSignOut className="iconSignOut" />
+                    <VscSignOut className="iconSignOut icon" />
                     <h3>Sign out</h3>
                     </a>
                 </div>
