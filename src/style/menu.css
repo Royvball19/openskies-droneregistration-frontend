@@ -71,7 +71,7 @@ p {
   position: fixed;
   z-index: 1;
   height: 100vh;
-  width: 440px;
+  width: 400px;
   background-color: #0D1055;
   opacity: 80%;
   display: -webkit-box;
@@ -88,21 +88,34 @@ p {
   /*overflow-y: hidden;*/
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  left: -440px;
+  left: -400px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  margin: 20px;
+}
+
+.menu a:hover {
+  color: #FED737;
+}
+
+.menu .icon {
+  font-size: 36px;
+  margin-right: 10px;
 }
 
 .menu .closeButtonDiv a {
-  text-decoration: none;
-  color: #FFFFFF;
   font-size: 42px;
   margin: 10px;
-  margin-left: 390px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.menu .closeButtonDiv a:hover {
-  color: #FED737;
+  margin-left: 340px;
 }
 
 .menu .profileInfo {
@@ -117,138 +130,11 @@ p {
 }
 
 .menu .profileInfo .dashboard a {
-  text-decoration: none;
-  color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-  margin: 20px;
   margin-bottom: 50px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
 }
 
-.menu .profileInfo .dashboard a .iconHome {
-  font-size: 36px;
-  margin-right: 10px;
-}
-
-.menu .profileInfo .dashboard a:hover {
-  color: #FED737;
-}
-
-.menu .profileInfo .searchOperators a {
-  text-decoration: none;
-  color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-  margin: 20px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.menu .profileInfo .searchOperators a .iconOperators {
-  font-size: 36px;
-  margin-right: 10px;
-}
-
-.menu .profileInfo .searchOperators a:hover {
-  color: #FED737;
-}
-
-.menu .profileInfo .searchDrones a {
-  text-decoration: none;
-  color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-  margin: 20px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.menu .profileInfo .searchDrones a .iconDrones {
-  font-size: 36px;
-  margin-right: 10px;
-}
-
-.menu .profileInfo .searchDrones a:hover {
-  color: #FED737;
-}
-
-.menu .profileInfo .searchPilots a {
-  text-decoration: none;
-  color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-  margin: 20px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.menu .profileInfo .searchPilots a .iconPilots {
-  font-size: 36px;
-  margin-right: 10px;
-}
-
-.menu .profileInfo .searchPilots a:hover {
-  color: #FED737;
-}
-
-.menu .profileInfo .settings a {
-  text-decoration: none;
-  color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-  margin: 20px;
+.menu .settings a {
   margin-top: 150px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.menu .profileInfo .settings a .iconSettings {
-  font-size: 36px;
-  margin-right: 10px;
-}
-
-.menu .profileInfo .settings a:hover {
-  color: #FED737;
-}
-
-.menu .profileInfo .signOut a {
-  text-decoration: none;
-  color: #FFFFFF;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: left;
-  margin: 20px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.menu .profileInfo .signOut a .iconSignOut {
-  font-size: 36px;
-  margin-right: 10px;
-}
-
-.menu .profileInfo .signOut a:hover {
-  color: #FED737;
-}
-
-.active {
-  opacity: 1;
-  left: 0px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
 }
 
 /*
@@ -262,12 +148,9 @@ p {
   margin-top: 30px;
   border-top-right-radius: 20%;
   border-bottom-right-radius: 20%;
-  -webkit-transition: 0.05s;
-  transition: 0.05s;
 }
 
 .buttonDiv .arrowButton a {
-  text-decoration: none;
   color: white;
   font-size: 42px;
   -webkit-transition: 0.3s;
@@ -278,7 +161,10 @@ p {
   color: #FED737;
 }
 
-/*
-* End Arrow Button
-*/
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 100vw;
+    height: 100vh;
+  }
+}
 /*# sourceMappingURL=menu.css.map */
