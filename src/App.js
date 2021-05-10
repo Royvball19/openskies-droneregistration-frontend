@@ -2,21 +2,23 @@ import { useTranslation } from "react-i18next";
 import Data from "./service/Data";
 import Test from "./components/Test"
 import React, { useState } from "react";
-import ArrowButton from "./components/ArrowButton";
-import Menu from "./components/Menu";
+import Dashboard from "./components/Dashboard"
 import "./style/style.css";
 import TableView from "./components/Tables/TableView";
-import { LanguageChangeText } from "./components/LanguageChanger/LanguageChange";
+import ArrowButton from "./components/ArrowButton";
+import Menu from "./components/Menu";
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      <Menu />
-      <ArrowButton />
-      <div>
-        <TableView tabletype="operators" />
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/tableview/:tabletype" component={TableView} />
+        <ArrowButton />
+        <Menu />
       </div>
-    </div>
+    </Router>
   );
 }
 

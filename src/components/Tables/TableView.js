@@ -24,13 +24,14 @@ function declareType(input) {
   }
 }
 
-export default function TableView(props) {
+export default function TableView(props, { match }) {
   // set state
   let [data, setData] = useState([]);
 
+
   // fetch data from backend
   useEffect(() => {
-    declareType(props.tabletype)
+    declareType(props.match.params.tabletype)
       .then((response) => {
         setData(response.data);
         console.log(response.data);
