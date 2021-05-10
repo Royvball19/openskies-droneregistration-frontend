@@ -2,99 +2,97 @@
 @import "typography";
 @import "style";
 
+$transition: 0.6s;
+$margin: 20px;
+
 .menu {
+  position: fixed;
+  z-index: 1;
   height: 100vh;
-  width: 440px;
+  width: 400px;
   background-color: $bg-primary;
+  opacity: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+  /*overflow-y: hidden;*/
+  transition: all 0.5s ease;
+  left: -400px;
+  transition: $transition;
+
+    a {
+      text-decoration: none;
+      color: $font-primary;
+      display: flex;
+      text-align: left;
+      margin: $margin;
+    }
+
+    a:hover {
+      color: $button-font-color;
+    }
+
+    .icon {
+      font-size: 36px;
+      margin-right: 10px;
+    }
   
-  .closeButton { 
-      a {
-          text-decoration: none;
-          color: $font-primary;
-          font-size: 42px;
-          margin: 10px;
-          margin-left: 390px;
-      }  
-  }
-
-  .profileInfo {
-    text-align: center;
-
-      img {
-          width: 200px;
-          height: 200px;
-          margin-top: 30px;
-          margin-bottom: 30px;
+    .closeButtonDiv { 
+        a {
+            font-size: 42px;
+            margin: 10px;
+            margin-left: 340px;
+        }  
       }
+
+    .profileInfo {
+      text-align: center;
+
+        img {
+            width: 200px;
+            height: 200px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
 
       .dashboard {
-        display: flex;
-        text-align: left;
-        margin: 20px;
-        margin-bottom: 50px;
-        .iconHome {
-            font-size: 36px;
-            margin-right: 10px;
+        a {
+          margin-bottom: 50px;
         }
-    }
-  
-    .searchOperators {
-      display: flex;
-      text-align: left;
-      margin: 20px;
-      .iconOperators {
-          font-size: 36px;
-          margin-right: 10px;
-      }
-    }
-  
-    .searchDrones {
-      display: flex;
-      text-align: left;
-      margin: 20px;
-      .iconDrones {
-          font-size: 36px;
-          margin-right: 10px;
-      }
-    }
-  
-    .searchPilots {
-      display: flex;
-      text-align: left;
-      margin: 20px;
-      .iconPilots {
-          font-size: 36px;
-          margin-right: 10px;
-      }
-    }
-  
-    .settings {
-      display: flex;
-      text-align: left;
-      margin-top: 150px;
-      margin-bottom: 20px;
-      margin-left: 20px;
-      margin-right: 20px;
-      .iconSettings {
-          font-size: 36px;
-          margin-right: 10px;
-      }
-    }
-  
-    .signOut {
-      display: flex;
-      text-align: left;
-      margin: 20px;
-      .iconSignOut {
-          font-size: 36px;
-          margin-right: 10px;
       }
     }
 
+    .settings {
+      a{
+        margin-top: 150px;
+      }
+    }
   }
 
+/*
+ * Arrow Button
+ */
+ .buttonDiv {
+  .arrowButton {
+      background-color: $bg-primary;
+      border: none;
+      width: 40px;
+      height: 44px;
+      margin-top: 30px;
+      border-top-right-radius: 20%;
+      border-bottom-right-radius: 20%;
+
+      a {
+          color: white;
+          font-size: 42px;
+          transition: 0.3s;
+      }
+
+      a:hover {
+        color: $button-font-color;
+      }
+  }
 }
 
+@media only screen and (max-width: 600px) {.menu {width: 100vw; height: 100vh}}
