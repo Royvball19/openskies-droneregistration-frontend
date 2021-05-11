@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../style/Filter.css';
+import '../style/filter.css';
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineCalendar } from "react-icons/ai";
 
