@@ -44,15 +44,15 @@ export const Menu = () => {
                 </div>
                 <div className="searches">
                     <div className="searchOperators">
-                        <Link to={{ pathname: '/tableview/' + 'operators', state: { tabletype: "operators" } }}> <HiOfficeBuilding className="iconOperators icon" />
+                        <Link to={{ pathname: '/tableview/' + 'operators' }}> <HiOfficeBuilding className="iconOperators icon" />
                             <h3>Search all operators</h3></Link>
                     </div>
                     <div className="searchDrones">
-                        <Link to={{ pathname: '/tableview/' + 'aircrafts', state: { tabletype: 'drones' } }}><GiDeliveryDrone className="iconDrones icon" />
+                        <Link to={{ pathname: '/tableview/' + 'aircrafts' }}><GiDeliveryDrone className="iconDrones icon" />
                             <h3>Search all drones</h3></Link>
                     </div>
                     <div className="searchPilots">
-                        <Link to={{ pathname: '/tableview/' + 'pilots', state: { tabletype: 'pilots' } }} ><BsFillPersonFill className="iconPilots icon" />
+                        <Link to={{ pathname: '/tableview/' + 'pilots' }} ><BsFillPersonFill className="iconPilots icon" />
                             <h3>Search all pilots</h3> </Link>
                     </div>
                 </div>
