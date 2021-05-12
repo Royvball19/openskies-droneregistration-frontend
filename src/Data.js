@@ -1,32 +1,6 @@
 import axios from "axios";
-import { useState, useEffect} from "react";
 
 const endpoint = "http://127.0.0.1:8000/api/v1/";
-
-export const useApiRequest = url => {
-  const [data, setData] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = () => {
-      axios
-        .get(url)
-        .then(response => {
-          setIsLoaded(true);
-          setData(response.data);
-        })
-        .catch(error => {
-          setError(error);
-        });
-    };
-    fetchData();
-  }, [url]);
-
-  return { error, isLoaded, data };
-};
-
-export const operators = endpoint + 'operators';
 
 export default {
   // API call for all operators
