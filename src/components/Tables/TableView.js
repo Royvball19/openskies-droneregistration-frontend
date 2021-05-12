@@ -1,7 +1,7 @@
 import Data from "../../Data";
 import React, { useEffect, useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
-import TableTypes from "./TableTypes";
+import TableTypes from "../../DataTypes";
 import "../../style/tableview.css";
 
 let columns = null;
@@ -24,13 +24,13 @@ function declareType(input) {
   }
 }
 
-export default function TableView(props, { match }) {
+export default function TableView({ match }) {
   // set state
   let [data, setData] = useState([]);
-  
+
   // fetch data from backend
   useEffect(() => {
-    declareType(props.match.params.tabletype)
+    declareType(match.params.tabletype)
       .then((response) => {
         setData(response.data);
         console.log(response.data);

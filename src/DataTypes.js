@@ -7,14 +7,20 @@ export default {
       {
         dataField: "id",
         text: "ID",
+        hidden: false,
+        variable: "String",
       },
       {
         dataField: "company_name",
         text: "Company name",
+        hidden: false,
+        variable: "String",
       },
       {
         dataField: "email",
         text: "Email",
+        hidden: false,
+        variable: "String",
       },
     ];
   },
@@ -23,14 +29,20 @@ export default {
       {
         dataField: "id",
         text: "ID",
+        hidden: false,
+        variable: "String",
       },
       {
         dataField: "created_at",
         text: "Created at",
+        hidden: false,
+        variable: "Date",
       },
       {
         dataField: "updated_at",
         text: "Updated at",
+        hidden: false,
+        variable: "Date",
       },
     ];
   },
@@ -39,18 +51,26 @@ export default {
       {
         dataField: "id",
         text: "ID",
+        hidden: false,
+        variable: "String",
       },
       {
         dataField: "model",
         text: "Model",
+        hidden: false,
+        variable: "String",
       },
       {
         dataField: "status",
         text: "Status",
+        hidden: false,
+        variable: "Integer",
       },
       {
         dataField: "operator.company_name",
         text: "Operator name",
+        hidden: false,
+        variable: "String",
       },
     ];
   },
@@ -59,18 +79,26 @@ export default {
       {
         dataField: "id",
         text: "ID",
+        hidden: true,
+        variable: "String",
       },
       {
         dataField: "report_type",
         text: "Report type",
+        hidden: true,
+        variable: "Integer",
       },
       {
         dataField: "created_at",
         text: "Created at",
+        hidden: true,
+        variable: "Date",
       },
       {
         dataField: "updated_at",
         text: "Updated at",
+        hidden: true,
+        variable: "Date",
       },
     ];
   },
