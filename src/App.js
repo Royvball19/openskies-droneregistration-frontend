@@ -11,6 +11,8 @@ function App() {
   const { data, error, isLoaded } = useApiRequest(operators);
   console.log(data)
   console.log(error)
+  
+  // merge
 
   return (
     <div className="App">
