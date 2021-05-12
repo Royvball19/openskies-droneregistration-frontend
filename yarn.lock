@@ -8975,6 +8975,15 @@
   "integrity" "sha512-XxTbgJnYZmxuPtY3y/UV0D8/65NKkmaia4rXzViknVnZeVlklSh8u6TnaEYPfAi/Gh1TP4mEOXHI6jQOPbeakQ=="
   "resolved" "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-10.2.1.tgz"
   "version" "10.2.1"
+"react-detect-click-outside@^1.1.1":
+  "integrity" "sha512-1MqRw9+RaA3dF4zJePSngxBqXut/RgHajFLR91cTV7PRmQyCIrQAUtv979IhQoaoWhVM8rdSx9Eg4/vc/hcReQ=="
+  "resolved" "https://registry.npmjs.org/react-detect-click-outside/-/react-detect-click-outside-1.1.1.tgz"
+  "version" "1.1.1"
+
+"react-dev-utils@^11.0.3":
+  "integrity" "sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A=="
+  "resolved" "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-11.0.4.tgz"
+  "version" "11.0.4"
   dependencies:
     "@babel/code-frame" "7.8.3"
     "address" "1.1.2"
@@ -9001,7 +9010,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@^17.0.2":
+"react-dom@^16.8.0 || ^17", "react-dom@^17.0.2":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -9194,7 +9203,25 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^17.0.2":
+"react-shallow-renderer@^16.13.1":
+  "integrity" "sha512-rkIMcQi01/+kxiTE9D3fdS959U1g7gs+/rborw++42m1O9FAQiNI/UNRZExVUoAOprn4umcXf+pFRou8i4zuBg=="
+  "resolved" "https://registry.npmjs.org/react-shallow-renderer/-/react-shallow-renderer-16.14.1.tgz"
+  "version" "16.14.1"
+  dependencies:
+    "object-assign" "^4.1.1"
+    "react-is" "^16.12.0 || ^17.0.0"
+
+"react-test-renderer@^17.0.2":
+  "integrity" "sha512-yaQ9cB89c17PUb0x6UfWRs7kQCorVdHlutU1boVPEsB8IDZH6n9tHxMacc3y0JoXOJUsZb/t/Mb8FUWMKaM7iQ=="
+  "resolved" "https://registry.npmjs.org/react-test-renderer/-/react-test-renderer-17.0.2.tgz"
+  "version" "17.0.2"
+  dependencies:
+    "object-assign" "^4.1.1"
+    "react-is" "^17.0.2"
+    "react-shallow-renderer" "^16.13.1"
+    "scheduler" "^0.20.2"
+
+"react@*", "react@^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17", "react@^17.0.2", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
