@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  display: block;
+  padding: 10px;
+  background: none;
+  outline: none;
+  font: inherit;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #0D1055;
+  opacity: 1;
+  border-radius: 10px;
+  padding-right: 20px;
+}
+
+.menu-container button {
+  background: none;
+  outline: none;
+  font: inherit;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu-container button:hover {
+  opacity: 0.8;
+}
+
+.menu-container button .flag {
+  max-width: 20px;
+  margin-right: 10px;
+}
+
+.world-icon {
+  min-width: 40px;
+  min-height: 40px;
+  color: #0D1055;
+}
+/*# sourceMappingURL=langauge.css.map */
