@@ -1,13 +1,14 @@
 import { useTranslation } from "react-i18next";
 import Data from "./service/Data";
-import Test from "./components/Test"
+import Test from "./components/Test";
 import React, { useState } from "react";
-import Dashboard from "./components/Dashboard"
+import Dashboard from "./components/Dashboard";
 import "./style/style.css";
 import TableView from "./components/Tables/TableView";
+import DataFields from "./DataFields";
 import ArrowButton from "./components/ArrowButton";
 import Menu from "./components/Menu";
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <div className="App">
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/tableview/:tabletype" component={TableView} />
+        <Route exact path="/test" component={DataFields} />
         <ArrowButton />
         <Menu />
       </div>
