@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Data from "./service/Data";
-import Test from "./components/Test";
+import Test from "./Test";
 import React, { useState } from "react";
 import Dashboard from "./components/Dashboard";
 import "./style/style.css";
@@ -17,6 +16,7 @@ function App() {
         <Route exact path="/" component={Dashboard} />
         <Route exact path="/tableview/:tabletype" component={TableView} />
         <Route exact path="/test" component={DataFields} />
+        <Route exact path="/poep" component={Test} />
         <ArrowButton />
         <Menu />
       </div>

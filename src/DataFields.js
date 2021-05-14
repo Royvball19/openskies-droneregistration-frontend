@@ -39,8 +39,6 @@ export default function DataFields() {
     setData(bigArray);
   }, []);
 
-  console.log(data);
-
   return (
     <div>
       <h1></h1>

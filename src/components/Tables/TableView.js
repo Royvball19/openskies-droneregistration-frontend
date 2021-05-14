@@ -10,27 +10,23 @@ function declareType(input) {
   // declare tabletype and get route
   switch (input) {
     case "operators":
-      columns = TableTypes.operators();
       return Data.getAllOperators();
     case "pilots":
-      columns = TableTypes.pilots();
       return Data.getAllPilots();
     case "aircrafts":
-      columns = TableTypes.aircrafts();
       return Data.getAllAircrafts();
     case "reports":
-      columns = TableTypes.reports();
       return Data.getAllReports();
   }
 }
 
-export default function TableView({ match }) {
+export default function TableView({ columns }) {
   // set state
   let [data, setData] = useState([]);
 
   // fetch data from backend
   useEffect(() => {
-    declareType(match.params.tabletype)
+    declareType("aircrafts")
       .then((response) => {
         setData(response.data);
         console.log(response.data);
@@ -40,7 +36,7 @@ export default function TableView({ match }) {
       });
   }, []);
 
-  if (columns === null) {
+  if (!columns.length) {
     return null;
   } else {
     return (
