@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import '../../style/filter.css'
+import '../../style/Filter.css'
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineCalendar } from "react-icons/ai";
 
 export const Filter = () => {
+
+    function closeFilter() {
+        document.getElementById("filter").style.right = "-400px";
+    }
 
     return(
         <div id="filter" className="filterDiv">
             <div className="allFiltersDiv">
                 <div className="Header">
                     <h2>Filter by</h2>
-                    <BsSearch className="iconSearch"/>
+                    <a className="closeFilterA" onClick={closeFilter}> <BsSearch className="iconSearch"/></a>
                 </div>
                 <div className="pilotDiv">
                     <h3>Pilot</h3>

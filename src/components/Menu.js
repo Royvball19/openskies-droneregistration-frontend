@@ -37,33 +37,33 @@ export const Menu = () => {
                 <h2>Richard Branson</h2>
                 <img src={CompanyLogo} alt="" />
                 <div className="dashboard">
-                    <Link to={{ pathname: '/' }} >
+                    <Link to={{ pathname: '/' }} onClick={closeMenu}>
                         <IoMdHome className="iconHome icon" />
                         <h3>Dashboard</h3>
                     </Link>
                 </div>
                 <div className="searches">
                     <div className="searchOperators">
-                        <Link to={{ pathname: '/tableview/' + 'operators' }}> <HiOfficeBuilding className="iconOperators icon" />
+                        <Link to={{ pathname: '/tableview/' + 'operators' }} onClick={closeMenu}> <HiOfficeBuilding className="iconOperators icon" />
                             <h3>Search all operators</h3></Link>
                     </div>
                     <div className="searchDrones">
-                        <Link to={{ pathname: '/tableview/' + 'aircrafts' }}><GiDeliveryDrone className="iconDrones icon" />
+                        <Link to={{ pathname: '/tableview/' + 'aircrafts' }} onClick={closeMenu}><GiDeliveryDrone className="iconDrones icon" />
                             <h3>Search all drones</h3></Link>
                     </div>
                     <div className="searchPilots">
-                        <Link to={{ pathname: '/tableview/' + 'pilots' }} ><BsFillPersonFill className="iconPilots icon" />
+                        <Link to={{ pathname: '/tableview/' + 'pilots' }} onClick={closeMenu}><BsFillPersonFill className="iconPilots icon" />
                             <h3>Search all pilots</h3> </Link>
                     </div>
                 </div>
                 <div className="settings">
-                    <a href="#">
+                    <a href="#" onClick={closeMenu}>
                         <FiSettings className="iconSettings icon" />
                         <h3>Settings</h3>
                     </a>
                 </div>
                 <div className="signOut">
-                    <a href="#">
+                    <a href="#" onClick={closeMenu}>
                         <VscSignOut className="iconSignOut icon" />
                         <h3>Sign out</h3>
                     </a>

@@ -9,6 +9,10 @@ import { useTranslation } from 'react-i18next';
 function Search({ type }) {
     const { t } = useTranslation();
 
+    function openFilter() {
+        document.getElementById("filter").style.right = "0px";
+    }
+
     return (
         <div className="container">
             <div className="box-header">
@@ -17,7 +21,7 @@ function Search({ type }) {
 
             <div className="box-buttons">
                 <div className="btn-content"></div>
-                <button className="button filter"><div className="btn-content"><p>{t("searchFilter")} </p><FiFilter className="icon filter-icon" /></div></button>
+                <button className="button filter" onClick={openFilter}><div className="btn-content"><p>{t("searchFilter")} </p><FiFilter className="icon filter-icon" /></div></button>
                 <button className="button"><div className="btn-content"><p>{t("searchSaveResult")}</p><GiSaveArrow className="icon save-icon" /></div></button>
                 <button className="button"><div className="btn-content"><p>{t("searchShowAsChart")}</p><RiLineChartFill className="icon chart-icon" /></div></button>
             </div>
