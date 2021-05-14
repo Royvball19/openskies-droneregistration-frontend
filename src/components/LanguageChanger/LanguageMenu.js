@@ -6,7 +6,7 @@ import { GrLanguage } from "react-icons/gr";
 import { useDetectClickOutside } from 'react-detect-click-outside';
 
 
-export const LanguageMenu = () => {
+export default function LanguageMenu() {
 
   // set state and default language
   const [Language, setLanguage] = useState("en");

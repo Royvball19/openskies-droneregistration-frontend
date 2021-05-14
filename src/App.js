@@ -10,6 +10,7 @@ import Menu from "./components/Menu";
 import Search from "./components/Search"
 import Filter from "./components/Filter/Filter"
 import { HashRouter as Router, Route } from 'react-router-dom';
+import SearchInterfaceView from "./views/SearchInterfaceView"
 
 
 function App() {
@@ -20,8 +21,7 @@ function App() {
         <ArrowButton />
         <Menu />
         <Filter />
-        <Route path="/tableview" component={Search} />
-        <Route exact path="/tableview/:tabletype" component={TableView} />
+        <Route exact path="/tableview/:tabletype" component={SearchInterfaceView} />
       </div>
     </Router>
   );
