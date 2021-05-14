@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 const endpoint = "http://127.0.0.1:8000/api/v1/";
 
-export const useApiRequest = url => {
+export const useApiRequest = (url) => {
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
@@ -12,11 +12,11 @@ export const useApiRequest = url => {
     const fetchData = () => {
       axios
         .get(url)
-        .then(response => {
+        .then((response) => {
           setIsLoaded(true);
           setData(response.data);
         })
-        .catch(error => {
+        .catch((error) => {
           setError(error);
         });
     };
@@ -26,7 +26,7 @@ export const useApiRequest = url => {
   return { error, isLoaded, data };
 };
 
-export const operators = endpoint + 'operators';
+export const operators = endpoint + "operators";
 
 export default {
   // API call for all operators
@@ -101,5 +101,21 @@ export default {
   // API call for all reports
   async getAllReports() {
     return await axios.get(endpoint + "reports");
+  },
+
+  async getAircraftOptions() {
+    return await axios.options(endpoint + "aircrafts");
+  },
+
+  async getOperatorOptions() {
+    return await axios.options(endpoint + "operators");
+  },
+
+  async getPilotOptions() {
+    return await axios.options(endpoint + "pilots");
+  },
+
+  async getReportOptions() {
+    return await axios.options(endpoint + "reports");
   },
 };

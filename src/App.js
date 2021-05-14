@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
-import Data from "./service/Data";
-import Test from "./components/Test"
+import Test from "./Test";
 import React, { useState } from "react";
-import Dashboard from "./components/Dashboard"
+import Dashboard from "./components/Dashboard";
 import "./style/style.css";
 import TableView from "./components/Tables/TableView";
+import DataFields from "./DataFields";
 import ArrowButton from "./components/ArrowButton";
 import Menu from "./components/Menu";
 import Search from "./components/Search"
