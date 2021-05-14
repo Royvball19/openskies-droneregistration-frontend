@@ -8,7 +8,7 @@ import TableView from "./components/Tables/TableView";
 import ArrowButton from "./components/ArrowButton";
 import Menu from "./components/Menu";
 import { HashRouter as Router, Route } from 'react-router-dom';
-import JSData from "./components/Filter/JSData";
+
 
 function App() {
   return (
@@ -18,7 +18,6 @@ function App() {
         <Route exact path="/tableview/:tabletype" component={TableView} />
         <ArrowButton />
         <Menu />
-        <JSData type="aircrafts"/>
       </div>
     </Router>
   );
