@@ -89,8 +89,7 @@ body {
       -ms-flex-align: left;
           align-items: left;
   border-radius: 10px;
-  overflow-x: hidden;
-  right: 0px;
+  right: -400px;
 }
 
 .filterDiv h2, .filterDiv h3, .filterDiv p {
@@ -99,7 +98,7 @@ body {
 }
 
 .filterDiv .iconSearch {
-  font-size: 36px;
+  font-size: 42px;
   color: black;
   margin: 14px;
 }
@@ -121,5 +120,16 @@ body {
       -ms-flex-align: left;
           align-items: left;
   margin: 14px;
+}
+
+.filterDiv .allFiltersDiv .closeFilterA:hover {
+  color: #FED737;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 /*# sourceMappingURL=Filter.css.map */

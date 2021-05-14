@@ -67,6 +67,12 @@ p {
           box-sizing: border-box;
 }
 
+body {
+  background: url("./img/background.png") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
