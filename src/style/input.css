@@ -73,56 +73,12 @@ body {
   height: 100vh;
 }
 
-button {
-  display: block;
-  padding: 10px;
-  background: none;
-  outline: none;
-  font: inherit;
-  color: #FFFFFF;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.menu-container {
-  position: absolute;
-  bottom: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: #0D1055;
-  opacity: 1;
-  border-radius: 10px;
-  padding-right: 20px;
-}
-
-.menu-container button {
-  background: none;
-  outline: none;
-  font: inherit;
-  color: #FFFFFF;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.menu-container button:hover {
-  opacity: 0.8;
-}
-
-.menu-container button .flag {
-  max-width: 20px;
-  margin-right: 10px;
-}
-
-.world-icon {
-  min-width: 40px;
-  min-height: 40px;
+.back-icon {
   color: #0D1055;
+  cursor: pointer;
 }
-/*# sourceMappingURL=langauge.css.map */
+
+.add-btn {
+  background-color: #0D1055;
+}
+/*# sourceMappingURL=input.css.map */

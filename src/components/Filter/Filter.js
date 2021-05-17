@@ -1,50 +1,48 @@
 import React, { useState } from "react";
 import "../../style/Filter.css";
-import { BsSearch } from "react-icons/bs";
+import { BsArrowReturnLeft, BsSearch } from "react-icons/bs";
 import { AiOutlineCalendar } from "react-icons/ai";
+import DataTypes from "../../DataTypes";
+import Variables from "./Variables";
+import Input from "./Input";
+import { createFilter } from "../../custom hooks/searchfilter";
 
+export const Filter = ({ addToQuery }) => {
 
-export const Filter = () => {
+  const [show, setShow] = useState(true);
+  const [filterKey, setFilterKey] = useState('');
+  const [filterValue, setFilterValue] = useState('');
+
   function closeFilter() {
     document.getElementById("filter").style.right = "-400px";
   }
-  
+
+  const createFilterKey = (event) => {
+    setFilterKey(event.target.dataset.param);
+    console.log(event.target.dataset.param);
+    goBack();
+  };
+
+  // sets value for filter key and adds it to query list
+  const createFilterValue = (value) => {
+    let filter = createFilter(filterKey, value);
+    addToQuery(filter);
+    goBack();
+    closeFilter();
+    
+  }
+
+  const goBack = () => {
+    setShow((prevShow) => !prevShow);
+  };
+
   return (
-    <div id="filter" className="filterDiv" >
-      <div className="allFiltersDiv">
-        <div className="Header">
-          <h2>Filter by</h2>
-          <a className="closeFilterA" onClick={closeFilter}>
-            {" "}
-            <BsSearch className="iconSearch" />
-          </a>
-        </div>
-        <div className="pilotDiv">
-          <h3>Pilot</h3>
-          <p># ID</p>
-          <p>Aa First name</p>
-          <p>Aa Last name</p>
-          <p># Active</p>
-        </div>
-        <div className="operatorDiv">
-          <h3>Operator</h3>
-          <p># ID</p>
-          <p>Aa Company name</p>
-          <p>Aa Operator type</p>
-          <p># Country</p>
-          <p>
-            <AiOutlineCalendar className="iconCalander" /> Created at
-          </p>
-        </div>
-        <div className="aircraftDiv">
-          <h3>Aircraft</h3>
-          <p># ID</p>
-          <p># Mass</p>
-          <p># Manufacturer</p>
-          <p># Category</p>
-          <p># Status</p>
-        </div>
-      </div>
+    <div id="filter" className="filterDiv">
+      {show ? (
+        <Variables createFilterKey={createFilterKey} />
+      ) : (
+        <Input goBack={goBack} createFilterValue={createFilterValue}/>
+      )}
     </div>
   );
 };

@@ -5,43 +5,53 @@
 $margin: 14px;
 
 .filterDiv {
-    position: fixed;
-    width: 400px;
-    height: 920px;
-    background-color: $font-primary;
+  position: absolute;
+  top: 0px;
+  width: 400px;
+  height: 920px;
+  background-color: $font-primary;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  border-radius: 10px;
+  right: -400px;
+
+  h2,
+  h3,
+  p,
+  ul,
+  li {
+    color: $bg-primary;
+    margin: $margin;
+   list-style: none;
+  }
+
+  .iconSearch {
+    font-size: 42px;
+    color: black;
+    margin: $margin;
+  }
+
+  .iconCalander {
+    margin-bottom: 2px;
+  }
+
+  .allFiltersDiv {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     align-items: left;
-    border-radius: 10px;
-    right: -400px;
-    
-    h2, h3, p {
-        color: $bg-primary;
-        margin: $margin;
+    margin: $margin;
+
+    .closeFilterA:hover {
+      color: $button-font-color;
     }
-
-    .iconSearch {
-        font-size: 42px;
-        color: black;
-        margin: $margin;
-    }
-
-    .iconCalander {
-        margin-bottom: 2px;
-    }
-
-    .allFiltersDiv{
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-        align-items: left;
-        margin: $margin;
-
-        .closeFilterA:hover  {
-            color: $button-font-color;
-        }
-
-    }
+  }
 }
 
-@media only screen and (max-width: 600px) {.menu {width: 100vw; height: 100vh}}
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 100vw;
+    height: 100vh;
+  }
+}

@@ -74,7 +74,8 @@ body {
 }
 
 .filterDiv {
-  position: fixed;
+  position: absolute;
+  top: 0px;
   width: 400px;
   height: 920px;
   background-color: #FFFFFF;
@@ -92,9 +93,14 @@ body {
   right: -400px;
 }
 
-.filterDiv h2, .filterDiv h3, .filterDiv p {
+.filterDiv h2,
+.filterDiv h3,
+.filterDiv p,
+.filterDiv ul,
+.filterDiv li {
   color: #0D1055;
   margin: 14px;
+  list-style: none;
 }
 
 .filterDiv .iconSearch {

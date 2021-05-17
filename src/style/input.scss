@@ -1,0 +1,13 @@
+@import "colors_theme";
+@import "typography";
+@import "style";
+
+
+.back-icon {
+    color: $bg-primary;
+    cursor: pointer;
+}
+
+.add-btn {
+    background-color: $bg-primary;
+}

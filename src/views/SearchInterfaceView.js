@@ -3,6 +3,8 @@ import Search from "../components/Search";
 import TableView from "../components/Tables/TableView";
 import TableTypes from "../DataTypes";
 import Data from "../Data";
+import Filter from '../components/Filter/Filter'
+import { createQuery, useFilter } from '../custom hooks/searchfilter'
 
 
 const declareType = (input) => {
@@ -40,6 +42,7 @@ export default function SearchInterfaceView({ match }) {
   // set state
   let [data, setData] = useState([]);
   let [columnsData, setColumnsData] = useState([]);
+  let [query, setQuery] = useState([]);
 
   // fetch data from backend
   useEffect(() => {
@@ -59,9 +62,22 @@ export default function SearchInterfaceView({ match }) {
       .catch((error) => {
         console.log(error);
       })
-    
   }, []);
 
+ 
+  // define filter and filter data
+  const addToQuery = ( filter ) => {
+    console.log(filter)
+    // add filter to query array
+    let arr = query.concat(filter)
+    setQuery(arr)
+    console.log(query)
+    
+  }
+
+ 
+  
+  // define columns
   let columns = [];
   for (let i = 0; i < columnsData.length; i++) {
     columns.push({
@@ -69,7 +85,7 @@ export default function SearchInterfaceView({ match }) {
       text: columnsData[i].key,
     });
   }
-  console.log(columns)
+
   if (!columns.length) {
     return null;
   } else {
@@ -77,6 +93,7 @@ export default function SearchInterfaceView({ match }) {
       <div>
         <Search type={match.params.tabletype}/>
         <TableView columns={columns} data={data} />
+        <Filter addToQuery={addToQuery}/>
       </div>
     );
   }
