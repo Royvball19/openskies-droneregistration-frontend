@@ -1,26 +1,10 @@
 import React from "react";
 import { ResponsiveBar } from "@nivo/bar";
-import "../../style/poepstyle.css";
+import "../../style/charts.css";
 
-let data = [
-  {
-    created: "2019",
-    operators: 52,
-    operatorColor: "hsl(550, 30%, 50%)",
-    drones: 10,
-    pilots: 33,
-  },
-  {
-    created: "2020",
-    operators: 100,
-    drones: 50,
-    pilots: 43,
-  },
-];
-
-function BarChart() {
+function BarChart({ data }) {
   return (
-    <div className="parent" height="500px">
+    <div className="chart-parent">
       <ResponsiveBar
         data={data}
         keys={["operators", "drones", "pilots"]}
