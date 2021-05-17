@@ -4,20 +4,16 @@ import TableView from "../components/Tables/TableView";
 import TableTypes from "../DataTypes";
 import Data from "../Data";
 
-
 const declareType = (input) => {
   // declare tabletype and get route
   switch (input) {
     case "operators":
       return Data.getAllOperators();
     case "pilots":
-
       return Data.getAllPilots();
     case "aircrafts":
-  
       return Data.getAllAircrafts();
     case "reports":
-   
       return Data.getAllReports();
   }
 };
@@ -50,16 +46,15 @@ export default function SearchInterfaceView({ match }) {
       }, [])
       .catch((error) => {
         console.log(error);
-      })
-      declareColumns(match.params.tabletype)
+      });
+    declareColumns(match.params.tabletype)
       .then((response) => {
         setColumnsData(response.data.fields);
         console.log(response.data);
       }, [])
       .catch((error) => {
         console.log(error);
-      })
-    
+      });
   }, []);
 
   let columns = [];
@@ -67,15 +62,16 @@ export default function SearchInterfaceView({ match }) {
     columns.push({
       dataField: columnsData[i].key,
       text: columnsData[i].key,
+      type: columnsData[i].schema.type,
     });
   }
-  console.log(columns)
+  console.log(columns);
   if (!columns.length) {
     return null;
   } else {
     return (
       <div>
-        <Search type={match.params.tabletype}/>
+        <Search type={match.params.tabletype} />
         <TableView columns={columns} data={data} />
       </div>
     );
