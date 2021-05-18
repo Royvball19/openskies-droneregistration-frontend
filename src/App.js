@@ -7,11 +7,11 @@ import TableView from "./components/Tables/TableView";
 import DataFields from "./DataFields";
 import ArrowButton from "./components/ArrowButton";
 import Menu from "./components/Menu";
-import Search from "./components/Search"
-import Filter from "./components/Filter/Filter"
-import { HashRouter as Router, Route } from 'react-router-dom';
-import SearchInterfaceView from "./views/SearchInterfaceView"
-
+import Search from "./components/Search";
+import Filter from "./components/Filter/Filter";
+import { HashRouter as Router, Route } from "react-router-dom";
+import SearchInterfaceView from "./views/SearchInterfaceView";
+import DetailOperator from "./components/Details/DetailOperator";
 
 function App() {
   return (
@@ -21,7 +21,12 @@ function App() {
         <ArrowButton />
         <Menu />
         <Filter />
-        <Route exact path="/tableview/:tabletype" component={SearchInterfaceView} />
+        <Route
+          exact
+          path="/tableview/:tabletype"
+          component={SearchInterfaceView}
+        />
+        <Route exact path="/details/operator" component={DetailOperator} />
       </div>
     </Router>
   );

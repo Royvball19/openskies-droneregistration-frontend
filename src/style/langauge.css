@@ -87,6 +87,7 @@ button {
 
 .menu-container {
   position: absolute;
+  bottom: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

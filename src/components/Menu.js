@@ -25,7 +25,6 @@ export const Menu = () => {
     document.getElementById("buttonId").style.transitionDelay = "0.55s";
   }
 
-  //Still need to add the links to the pages once we make them
   return (
     <div id="menuDiv" className="menu">
       <div className="closeButtonDiv">

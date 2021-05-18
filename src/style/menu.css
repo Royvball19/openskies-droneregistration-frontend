@@ -112,6 +112,11 @@ body {
   color: #FED737;
 }
 
+.menu .closeButton:hover {
+  color: #FED737;
+  cursor: pointer;
+}
+
 .menu .icon {
   font-size: 36px;
   margin-right: 10px;
@@ -162,19 +167,20 @@ body {
   border-bottom-right-radius: 20%;
 }
 
-.buttonDiv .arrowButton a {
+.buttonDiv .arrowButton .openButton {
   color: white;
   font-size: 42px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  margin-bottom: 4.5px;
 }
 
-.buttonDiv .arrowButton a:hover {
+.buttonDiv .arrowButton .openButton:hover {
   color: #FED737;
 }
 
 .buttonDiv .arrowButton .iconArrow {
-  margin-bottom: 4.5px;
+  margin: 5px;
 }
 
 @media only screen and (max-width: 600px) {

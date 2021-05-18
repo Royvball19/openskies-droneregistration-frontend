@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: url("./img/background.png") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+/*
+ * Operator Details
+ */
+.detailOperatorContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.detailOperatorContainer .headerDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+}
+
+.detailOperatorContainer .headerDiv .titleH {
+  margin-top: 35px;
+  margin-left: 100px;
+  color: #0d1055;
+}
+
+.detailOperatorContainer .headerDiv .exportButton {
+  margin-left: 1400px;
+  background-color: #0d1055;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 70px;
+  height: 35px;
+  margin-top: 35px;
+}
+
+.detailOperatorContainer .allDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px;
+  width: 900px;
+  height: 820px;
+  background-color: #ffffff;
+  opacity: 80%;
+  border-radius: 2%;
+  margin-left: 50px;
+  margin-bottom: 0px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails h2 {
+  color: #0d1055;
+  margin: 14px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails h3 {
+  color: #000000;
+  margin: 14px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails h4 {
+  color: #000000;
+  margin: 18px;
+  text-align: right;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails .changingDetails {
+  margin-left: auto;
+  -webkit-box-align: right;
+      -ms-flex-align: right;
+          align-items: right;
+}
+
+.detailOperatorContainer .allDetails .allSmallDetails h2 {
+  color: #0d1055;
+  margin: 14px;
+}
+
+.detailOperatorContainer .allDetails .allSmallDetails .pilots {
+  width: 600px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  margin-bottom: 34px;
+  opacity: 80%;
+}
+
+.detailOperatorContainer .allDetails .allSmallDetails .aircrafts {
+  width: 600px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  margin-bottom: 34px;
+  opacity: 80%;
+}
+
+.detailOperatorContainer .allDetails .allSmallDetails .reports {
+  width: 600px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px;
+  opacity: 80%;
+}
+
+/*
+ * Hier kunnen de andere detail pages
+ */
+/*# sourceMappingURL=details.css.map */

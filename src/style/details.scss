@@ -1,0 +1,127 @@
+@import "colors_theme";
+@import "typography";
+@import "style";
+
+$border: 4%;
+$margin: 20px;
+
+/*
+ * Operator Details
+ */
+.detailOperatorContainer {
+  width: 100vw;
+  height: 100vh;
+
+  .headerDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+
+    .titleH {
+      margin-top: 35px;
+      margin-left: 100px;
+      color: $bg-primary;
+    }
+
+    .exportButton {
+      margin-left: 1400px;
+      background-color: $bg-primary;
+      border: none;
+      color: $font-primary;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      width: 70px;
+      height: 35px;
+      margin-top: 35px;
+    }
+  }
+
+  .allDetails {
+    display: flex;
+    flex-direction: row;
+
+    .operatorDetails {
+      display: flex;
+      flex-direction: row;
+      margin: $margin;
+      width: 900px;
+      height: 820px;
+      background-color: $font-primary;
+      opacity: 80%;
+      border-radius: 2%;
+      margin-left: 50px;
+      margin-bottom: 0px;
+
+      h2 {
+        color: $bg-primary;
+        margin: 14px;
+      }
+
+      h3 {
+        color: $font-secondary;
+        margin: 14px;
+      }
+
+      h4 {
+        color: $font-secondary;
+        margin: 18px;
+        text-align: right;
+      }
+
+      .changingDetails {
+        margin-left: auto;
+        align-items: right;
+      }
+    }
+
+    .allSmallDetails {
+      h2 {
+        color: $bg-primary;
+        margin: 14px;
+      }
+
+      .pilots {
+        width: 600px;
+        height: 250px;
+        background-color: $font-primary;
+        border-radius: $border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: $margin;
+        margin-bottom: 34px;
+        opacity: 80%;
+      }
+
+      .aircrafts {
+        width: 600px;
+        height: 250px;
+        background-color: $font-primary;
+        border-radius: $border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: $margin;
+        margin-bottom: 34px;
+        opacity: 80%;
+      }
+
+      .reports {
+        width: 600px;
+        height: 250px;
+        background-color: $font-primary;
+        border-radius: $border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: $margin;
+        opacity: 80%;
+      }
+    }
+  }
+}
+/*
+ * Hier kunnen de andere detail pages
+ */
