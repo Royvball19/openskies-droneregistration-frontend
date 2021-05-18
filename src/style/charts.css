@@ -73,8 +73,26 @@ body {
   height: 100vh;
 }
 
+.chart-div {
+  border-radius: 10px;
+  position: relative;
+  margin-top: 50px;
+  z-index: 1;
+  height: 280px;
+  width: 320px;
+  -webkit-user-select: none;
+  /* Safari /
+     -khtml-user-select: none; / Konqueror HTML /
+       -moz-user-select: none; / Old versions of Firefox /
+        -ms-user-select: none; / Internet Explorer/Edge */
+  background-color: rgba(255, 255, 255, 0.4);
+  padding-bottom: 50px;
+}
+
 .chart-parent {
-  margin: 25px;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
   position: relative;
   z-index: -1;
   height: 100%;

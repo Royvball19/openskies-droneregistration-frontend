@@ -2,8 +2,30 @@ import React from "react";
 import { ResponsivePie } from "@nivo/pie";
 import "../../style/charts.css";
 
-function PieChart({ data }) {
-  console.log(data);
+function PieChart(type) {
+  let data = [
+    {
+      id: "operators",
+      label: "operators",
+      value: 360,
+      color: "hsl(55, 70%, 50%)",
+    },
+    {
+      id: "pilots",
+      label: "pilots",
+      value: 403,
+      color: "hsl(300, 70%, 50%)",
+    },
+    {
+      id: "drones",
+      label: "drones",
+      value: 507,
+      color: "hsl(122, 70%, 50%)",
+    },
+  ];
+
+  console.log(type);
+
   return (
     <div className="chart-parent">
       <ResponsivePie

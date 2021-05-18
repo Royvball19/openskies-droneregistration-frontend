@@ -1,30 +1,25 @@
-import React from "react";
-import PieChart from "../Charts/PieChart";
+import React, { useEffect, useState } from "react";
 import BarChart from "../Charts/BarChart";
-import "../../style/charts.css";
-import {
-  RiBarChart2Fill,
-  RiPieChartFill,
-  RiLineChartFill,
-} from "react-icons/ri";
+import PieChart from "../Charts/PieChart";
 
-export default function Charts() {
-  return (
-    <div>
-      <div className="charts-container" id="charts-container">
-        <button className="chart-button">
-          Bar chart
-          <RiBarChart2Fill className="icon chart-icon" />
-        </button>
-        <button className="chart-button">
-          Pie chart
-          <RiPieChartFill className="icon chart-icon" />
-        </button>
-        <button className="chart-button">
-          Line chart
-          <RiLineChartFill className="icon chart-icon" />
-        </button>
+export default function Charts({ charts }) {
+  console.log(charts);
+
+  if (charts[1] === "barchart") {
+    return (
+      <div className="chart-div">
+        <BarChart type={charts[0]} />
       </div>
-    </div>
-  );
+    );
+  } else if (charts[1] === "piechart") {
+    return (
+      <div className="chart-div">
+        <PieChart type={charts[0]} />
+      </div>
+    );
+  } else if (charts[1] === "linechart") {
+    return <div></div>;
+  } else {
+    return null;
+  }
 }
