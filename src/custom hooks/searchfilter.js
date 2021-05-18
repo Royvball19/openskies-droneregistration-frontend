@@ -14,7 +14,7 @@ export const options = {
 };
 
 export const optionsList = [
-  { value: {} , text: "is"},
+  { value: {}, text: "is" },
   { value: { _not: true }, text: "is not" },
   { value: { _text: true }, text: "contains" },
   { value: { _text: true, _not: true }, text: "does not contain" },
@@ -60,7 +60,7 @@ export const createQuery = (arr) => {
 };
 
 // filter the data using the created query
-export const useFilter = (data, query) => {
+export const testFilter = (data, query) => {
   let filterData = searchjs.matchArray(data, query);
   return filterData;
 };

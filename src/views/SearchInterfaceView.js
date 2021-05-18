@@ -3,9 +3,8 @@ import Search from "../components/Search";
 import TableView from "../components/Tables/TableView";
 import TableTypes from "../DataTypes";
 import Data from "../Data";
-import Filter from '../components/Filter/Filter'
-import { createQuery, useFilter } from '../custom hooks/searchfilter'
-
+import Filter from "../components/Filter/Filter";
+import { createQuery, testFilter } from "../custom hooks/searchfilter";
 
 const declareType = (input) => {
   // declare tabletype and get route
@@ -13,13 +12,10 @@ const declareType = (input) => {
     case "operators":
       return Data.getAllOperators();
     case "pilots":
-
       return Data.getAllPilots();
     case "aircrafts":
-  
       return Data.getAllAircrafts();
     case "reports":
-   
       return Data.getAllReports();
   }
 };
@@ -38,6 +34,8 @@ function declareColumns(input) {
   }
 }
 
+
+
 export default function SearchInterfaceView({ match }) {
   // set state
   let [data, setData] = useState([]);
@@ -53,39 +51,39 @@ export default function SearchInterfaceView({ match }) {
       }, [])
       .catch((error) => {
         console.log(error);
-      })
-      declareColumns(match.params.tabletype)
+      });
+    declareColumns(match.params.tabletype)
       .then((response) => {
         setColumnsData(response.data.fields);
         console.log(response.data);
       }, [])
       .catch((error) => {
         console.log(error);
-      })
+      });
   }, []);
 
- 
   // define filter and filter data
-  const AddToQuery = ( filter , operator) => {
-    console.log(filter)
-    console.log(operator)
+  const addToQuery = (filter, operator) => {
+    console.log(query);
+    console.log(filter);
+    console.log(operator);
+    // create single filter object from array of attributes
+    // this way you can remove a filter object from array to remove a filter
     let filterObject = createQuery([filter, operator]);
-    console.log(filterObject)
-    // push adds object twice
-    query.push(filterObject)
+    console.log(filterObject);
+    // add filterobject to array of all filter objects
     
-
-    console.log('----------------')
+    query.push(filterObject)
     console.log(query)
 
-    let filterQuery = createQuery(query)
-    let filteredData = useFilter(data, filterQuery);
+    // create single filter object from array of objects and filter data
+    let filterQuery = createQuery(query);
+    let filteredData = testFilter(data, filterQuery);
     setData(filteredData);
-   
-  }
-
- 
+    console.log("----------------");
+  };
   
+
   // define columns
   let columns = [];
   for (let i = 0; i < columnsData.length; i++) {
@@ -100,9 +98,9 @@ export default function SearchInterfaceView({ match }) {
   } else {
     return (
       <div>
-        <Search type={match.params.tabletype}/>
+        <Search type={match.params.tabletype} />
         <TableView columns={columns} data={data} />
-        <Filter addToQuery={AddToQuery}/>
+        <Filter addToQuery={addToQuery} />
       </div>
     );
   }
