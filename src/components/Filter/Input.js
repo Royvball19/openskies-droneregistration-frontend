@@ -6,6 +6,7 @@ import { createFilter } from '../../custom hooks/searchfilter';
 
 function Input({ goBack, createFilterValue }) {
   const [value, setValue] = useState('');
+  const [selectedOperator, setSelectedOperator] = useState('');
 
   function CompareOptions({ type }) {
     let data;
@@ -17,24 +18,25 @@ function Input({ goBack, createFilterValue }) {
       data = optionsList;
     }
     const content = data.map((item) => (
-      <option value={item.value}>{item.text}</option>
+      <option value={JSON.stringify(item.value)}>{item.text}</option>
     ));
-    return <select>{content}</select>;
+    return <select value={selectedOperator} onChange={onSelectChange}>{content}</select>;
   }
 
-  // const onSubmit = (e, key) => {
-  //   e.preventDefault();
-  //   let filter = createFilter(key, value);
-  //   console.log(filter)
-  // }
+  const onSelectChange = (event) => {
+    setSelectedOperator(JSON.parse(event.target.value));
+  }
+
 
   const onChange = (event) => {
     setValue(event.target.value)
   }
 
   const onSubmit = () => {  
-    createFilterValue(value);
+    // get operator from options
+    createFilterValue(value, selectedOperator);
   }
+
 
   return (
     <div>

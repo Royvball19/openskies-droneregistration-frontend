@@ -66,13 +66,22 @@ export default function SearchInterfaceView({ match }) {
 
  
   // define filter and filter data
-  const addToQuery = ( filter ) => {
+  const AddToQuery = ( filter , operator) => {
     console.log(filter)
-    // add filter to query array
-    let arr = query.concat(filter)
-    setQuery(arr)
-    console.log(query)
+    console.log(operator)
+    let filterObject = createQuery([filter, operator]);
+    console.log(filterObject)
+    // push adds object twice
+    query.push(filterObject)
     
+
+    console.log('----------------')
+    console.log(query)
+
+    let filterQuery = createQuery(query)
+    let filteredData = useFilter(data, filterQuery);
+    setData(filteredData);
+   
   }
 
  
@@ -93,7 +102,7 @@ export default function SearchInterfaceView({ match }) {
       <div>
         <Search type={match.params.tabletype}/>
         <TableView columns={columns} data={data} />
-        <Filter addToQuery={addToQuery}/>
+        <Filter addToQuery={AddToQuery}/>
       </div>
     );
   }

@@ -11,7 +11,7 @@ export const Filter = ({ addToQuery }) => {
 
   const [show, setShow] = useState(true);
   const [filterKey, setFilterKey] = useState('');
-  const [filterValue, setFilterValue] = useState('');
+  //const [filterValue, setFilterValue] = useState('');
 
   function closeFilter() {
     document.getElementById("filter").style.right = "-400px";
@@ -19,17 +19,16 @@ export const Filter = ({ addToQuery }) => {
 
   const createFilterKey = (event) => {
     setFilterKey(event.target.dataset.param);
-    console.log(event.target.dataset.param);
     goBack();
   };
 
   // sets value for filter key and adds it to query list
-  const createFilterValue = (value) => {
+  const createFilterValue = (value, operator) => {
     let filter = createFilter(filterKey, value);
-    addToQuery(filter);
+    addToQuery(filter, operator);
+    
     goBack();
     closeFilter();
-    
   }
 
   const goBack = () => {
