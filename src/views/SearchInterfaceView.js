@@ -35,12 +35,12 @@ function declareColumns(input) {
 }
 
 
-
 export default function SearchInterfaceView({ match }) {
   // set state
   let [data, setData] = useState([]);
   let [columnsData, setColumnsData] = useState([]);
-  let [query, setQuery] = useState([]);
+  let [query, setQuery] = useState([])
+  // let [isLoading, setIsLoading] = useState(true);
 
   // fetch data from backend
   useEffect(() => {
@@ -62,27 +62,45 @@ export default function SearchInterfaceView({ match }) {
       });
   }, []);
 
+  // write useEffect for query to filter data. 
+
+  const deleteFilter = (filter) => {
+    let newQuery = query.filter(item => item !== filter)
+    setQuery(newQuery)
+  }
+  
   // define filter and filter data
   const addToQuery = (filter, operator) => {
+    let filterObject = {};
+    let newQuery = [];
     console.log(query);
     console.log(filter);
     console.log(operator);
     // create single filter object from array of attributes
     // this way you can remove a filter object from array to remove a filter
-    let filterObject = createQuery([filter, operator]);
+    filterObject = createQuery([filter, operator]);
+
     console.log(filterObject);
     // add filterobject to array of all filter objects
+    newQuery = [...query]
+    console.log(newQuery)
+
+    newQuery.push(filterObject);
+
+    console.log(newQuery);
+    setQuery(newQuery)
     
-    query.push(filterObject)
     console.log(query)
 
     // create single filter object from array of objects and filter data
-    let filterQuery = createQuery(query);
+    let filterQuery = createQuery(newQuery);
     let filteredData = testFilter(data, filterQuery);
     setData(filteredData);
+    console.log(filteredData)
     console.log("----------------");
   };
   
+  console.log("dit is een test")
 
   // define columns
   let columns = [];
@@ -98,7 +116,7 @@ export default function SearchInterfaceView({ match }) {
   } else {
     return (
       <div>
-        <Search type={match.params.tabletype} />
+        <Search type={match.params.tabletype} activeFilters={query} deleteFilter={deleteFilter}/>
         <TableView columns={columns} data={data} />
         <Filter addToQuery={addToQuery} />
       </div>

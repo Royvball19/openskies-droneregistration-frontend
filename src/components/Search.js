@@ -5,8 +5,10 @@ import { FiFilter } from "react-icons/fi";
 import { RiLineChartFill } from "react-icons/ri";
 import { BsSearch } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
+import ActiveFilters from "./Filter/ActiveFilters";
 
-function Search({ type }) {
+
+function Search({ type , activeFilters, deleteFilter }) {
   const { t } = useTranslation();
 
   function openFilter() {
@@ -54,6 +56,7 @@ function Search({ type }) {
 
         ></input>
       </div>
+      <ActiveFilters activeFilters={activeFilters} deleteFilter={deleteFilter}/>
     </div>
   );
 }

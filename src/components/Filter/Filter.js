@@ -8,9 +8,8 @@ import Input from "./Input";
 import { createFilter } from "../../custom hooks/searchfilter";
 
 export const Filter = ({ addToQuery }) => {
-
   const [show, setShow] = useState(true);
-  const [filterKey, setFilterKey] = useState('');
+  const [filterKey, setFilterKey] = useState("");
   //const [filterValue, setFilterValue] = useState('');
 
   function closeFilter() {
@@ -26,10 +25,11 @@ export const Filter = ({ addToQuery }) => {
   const createFilterValue = (value, operator) => {
     let filter = createFilter(filterKey, value);
     addToQuery(filter, operator);
-    
+
+    // methods to return filter section visually normal
     goBack();
     closeFilter();
-  }
+  };
 
   const goBack = () => {
     setShow((prevShow) => !prevShow);
@@ -40,7 +40,7 @@ export const Filter = ({ addToQuery }) => {
       {show ? (
         <Variables createFilterKey={createFilterKey} />
       ) : (
-        <Input goBack={goBack} createFilterValue={createFilterValue}/>
+        <Input goBack={goBack} createFilterValue={createFilterValue} />
       )}
     </div>
   );
