@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import "../../style/details.css";
+import { useTranslation } from "react-i18next";
 
-export default function DetailOperator() {
+function DetailOperator() {
+  const { t } = useTranslation();
+
   return (
     <div className="detailOperatorContainer">
       <div className="headerDiv">
@@ -12,25 +15,25 @@ export default function DetailOperator() {
       <div className="allDetails">
         <div className="operatorDetails">
           <div className="staticDetails">
-            <h3>Company name:</h3>
-            <h3>Company number:</h3>
-            <h3>ID:</h3>
-            <h3>Registered at:</h3>
+            <h3>{t("companyName")}:</h3>
+            <h3>{t("companyNumber")}:</h3>
+            <h3>{t("id")}:</h3>
+            <h3>{t("registeredAt")}:</h3>
             <br></br>
-            <h3>Adress:</h3>
-            <h3>Postal code:</h3>
-            <h3>Country:</h3>
+            <h3>{t("adress")}:</h3>
+            <h3>{t("postalCode")}:</h3>
+            <h3>{t("country")}:</h3>
             <br></br>
-            <h3>Email:</h3>
-            <h3>Phone number:</h3>
+            <h3>{t("email")}:</h3>
+            <h3>{t("phoneNumb")}:</h3>
             <br></br>
-            <h3>Insurance number:</h3>
-            <h3>Vat number:</h3>
-            <h3>Expiration:</h3>
-            <h3>Operator type:</h3>
+            <h3>{t("insuranceNumb")}:</h3>
+            <h3>{t("vatNumb")}:</h3>
+            <h3>{t("expiration")}:</h3>
+            <h3>{t("operatorType")}:</h3>
             <br></br>
-            <h3>Operator created at:</h3>
-            <h3>Last updated at:</h3>
+            <h3>{t("operatorCreatedAt")}:</h3>
+            <h3>{t("lastUpdatedAt")}:</h3>
           </div>
           <div className="changingDetails">
             <h4>Starfled Industries</h4>
@@ -69,3 +72,5 @@ export default function DetailOperator() {
     </div>
   );
 }
+
+export default DetailOperator;
