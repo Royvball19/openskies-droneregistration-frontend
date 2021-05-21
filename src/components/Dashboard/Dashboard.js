@@ -1,13 +1,13 @@
 import React from "react";
 import "../../style/dashboard.css";
-import BarChart from "../Charts/BarChart";
+import Charts from "../Charts/Charts";
 
 export default function Dashboard() {
   return (
     <div>
       <div className="dashboard-container">
         <h1 className="dashboard-title">Dashboard</h1>
-        <BarChart />
+        <Charts />
       </div>
     </div>
   );

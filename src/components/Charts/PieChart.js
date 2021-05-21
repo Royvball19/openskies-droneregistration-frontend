@@ -2,30 +2,7 @@ import React from "react";
 import { ResponsivePie } from "@nivo/pie";
 import "../../style/charts.css";
 
-function PieChart(type) {
-  let data = [
-    {
-      id: "operators",
-      label: "operators",
-      value: 360,
-      color: "hsl(55, 70%, 50%)",
-    },
-    {
-      id: "pilots",
-      label: "pilots",
-      value: 403,
-      color: "hsl(300, 70%, 50%)",
-    },
-    {
-      id: "drones",
-      label: "drones",
-      value: 507,
-      color: "hsl(122, 70%, 50%)",
-    },
-  ];
-
-  console.log(type);
-
+function PieChart({ data }) {
   return (
     <div className="chart-parent">
       <ResponsivePie
@@ -60,33 +37,6 @@ function PieChart(type) {
             rotation: -45,
             lineWidth: 6,
             spacing: 10,
-          },
-        ]}
-        fill={[
-          {
-            match: {
-              id: "operators",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "drones",
-            },
-            id: "lines",
-          },
-          {
-            match: {
-              id: "pilots",
-            },
-            id: "lines",
-          },
-
-          {
-            match: {
-              id: "javascript",
-            },
-            id: "lines",
           },
         ]}
         legends={[
