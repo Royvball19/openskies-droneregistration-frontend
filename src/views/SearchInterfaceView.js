@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Search from "../components/Search";
 import TableView from "../components/Tables/TableView";
-import TableTypes from "../DataTypes";
 import Data from "../Data";
 import Filter from "../components/Filter/Filter";
 import { createQuery, testFilter } from "../custom hooks/searchfilter";
@@ -36,8 +35,9 @@ function declareColumns(input) {
 
 
 export default function SearchInterfaceView({ match }) {
-  // set state
+
   let [data, setData] = useState([]);
+  let [filterdData, setFilteredData] = useState([]);
   let [columnsData, setColumnsData] = useState([]);
   let [query, setQuery] = useState([])
   // let [isLoading, setIsLoading] = useState(true);
@@ -46,7 +46,7 @@ export default function SearchInterfaceView({ match }) {
   useEffect(() => {
     declareType(match.params.tabletype)
       .then((response) => {
-        setData(response.data);
+        setData(response.data)
         console.log(response.data);
       }, [])
       .catch((error) => {
@@ -62,8 +62,14 @@ export default function SearchInterfaceView({ match }) {
       });
   }, []);
 
-  // write useEffect for query to filter data. 
+  // side effect to update data when query or data changes
+  useEffect(() => {
+    let filterQuery = createQuery(query);
+    let result = testFilter(data, filterQuery);
+    setFilteredData(result);
+  }, [query, data]);
 
+  // delete filter from query
   const deleteFilter = (filter) => {
     let newQuery = query.filter(item => item !== filter)
     setQuery(newQuery)
@@ -71,36 +77,20 @@ export default function SearchInterfaceView({ match }) {
   
   // define filter and filter data
   const addToQuery = (filter, operator) => {
-    let filterObject = {};
-    let newQuery = [];
-    console.log(query);
-    console.log(filter);
-    console.log(operator);
-    // create single filter object from array of attributes
-    // this way you can remove a filter object from array to remove a filter
-    filterObject = createQuery([filter, operator]);
+    console.log(query)
+    let filterObject = createQuery([filter, operator]);
+    console.log(filterObject)
 
-    console.log(filterObject);
-    // add filterobject to array of all filter objects
-    newQuery = [...query]
-    console.log(newQuery)
-
+    let newQuery = [...query]
     newQuery.push(filterObject);
-
-    console.log(newQuery);
     setQuery(newQuery)
-    
+
+    //query.push(filterObject);
     console.log(query)
 
-    // create single filter object from array of objects and filter data
-    let filterQuery = createQuery(newQuery);
-    let filteredData = testFilter(data, filterQuery);
-    setData(filteredData);
-    console.log(filteredData)
+  
     console.log("----------------");
   };
-  
-  console.log("dit is een test")
 
   // define columns
   let columns = [];
@@ -117,7 +107,7 @@ export default function SearchInterfaceView({ match }) {
     return (
       <div>
         <Search type={match.params.tabletype} activeFilters={query} deleteFilter={deleteFilter}/>
-        <TableView columns={columns} data={data} />
+        <TableView columns={columns} data={filterdData} />
         <Filter addToQuery={addToQuery} />
       </div>
     );
