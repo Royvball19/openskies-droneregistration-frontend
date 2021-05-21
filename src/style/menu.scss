@@ -21,85 +21,96 @@ $margin: 20px;
   left: -400px;
   transition: $transition;
 
+  a {
+    text-decoration: none;
+    color: $font-primary;
+    display: flex;
+    text-align: left;
+    margin: $margin;
+  }
+
+  a:hover {
+    color: $button-font-color;
+  }
+
+  .closeButton:hover {
+    color: $button-font-color;
+    cursor: pointer;
+  }
+
+  .icon {
+    font-size: 36px;
+    margin-right: 10px;
+  }
+
+  .closeButtonDiv {
     a {
-      text-decoration: none;
-      color: $font-primary;
-      display: flex;
-      text-align: left;
-      margin: $margin;
+      font-size: 42px;
+      margin: 10px;
+      margin-left: 340px;
+    }
+  }
+
+  .profileInfo {
+    text-align: center;
+
+    img {
+      width: 200px;
+      height: 200px;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
 
-    a:hover {
-      color: $button-font-color;
-    }
-
-    .icon {
-      font-size: 36px;
-      margin-right: 10px;
-    }
-  
-    .closeButtonDiv { 
-        a {
-            font-size: 42px;
-            margin: 10px;
-            margin-left: 340px;
-        }  
-      }
-
-    .profileInfo {
-      text-align: center;
-
-        img {
-            width: 200px;
-            height: 200px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-
-      .dashboard {
-        a {
-          margin-bottom: 50px;
-        }
-      }
-    }
-
-    .settings {
-      a{
-        margin-top: 150px;
+    .dashboard {
+      a {
+        margin-bottom: 50px;
       }
     }
   }
+
+  .settings {
+    a {
+      margin-top: 150px;
+    }
+  }
+}
 
 /*
  * Arrow Button
  */
- .buttonDiv {
+.buttonDiv {
   .arrowButton {
-      background-color: $bg-primary;
-      border: none;
-      width: 40px;
-      height: 44px;
-      display: flex;
-      position: absolute;
-      align-items: center;
-      margin-top: 30px;
-      border-top-right-radius: 20%;
-      border-bottom-right-radius: 20%;
+    background-color: $bg-primary;
+    border: none;
+    width: 40px;
+    height: 44px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    margin-top: 30px;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
 
-      a {
-          color: white;
-          font-size: 42px;
-          transition: 0.3s;
-      }
+    .openButton {
+      color: white;
+      font-size: 42px;
+      transition: 0.3s;
+      margin-bottom: 4.5px;
+    }
 
-      a:hover {
-        color: $button-font-color;
-      }
+    .openButton:hover {
+      color: $button-font-color;
+    }
 
-      .iconArrow {
-        margin-bottom: 4.5px;
-      }
+    .iconArrow {
+      margin: 5px;
+    }
   }
 }
 
-@media only screen and (max-width: 600px) {.menu {width: 100vw; height: 100vh}}
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 100vw;
+    height: 100vh;
+  }
+}
