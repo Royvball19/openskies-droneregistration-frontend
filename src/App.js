@@ -26,7 +26,7 @@ function App() {
           path="/tableview/:tabletype"
           component={SearchInterfaceView}
         />
-        <Route exact path="/details/operator" component={DetailOperator} />
+        <Route exact path="/details/operator/:id" component={DetailOperator} />
       </div>
     </Router>
   );

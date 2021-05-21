@@ -5,6 +5,7 @@ export const TRANSLATIONS_EN = {
     searchSaveResult: "Save result",
     searchShowAsChart: "Show as chart",
     searchPlaceholder: "Search for ",
+    detailsOperator: "Details Operator",
     companyName: "Company name",
     companyNumber: "Company number",
     id: "ID",
@@ -20,4 +21,7 @@ export const TRANSLATIONS_EN = {
     operatorType: "Operator type",
     operatorCreatedAt: "Operator created at",
     lastUpdatedAt: "Last updated at",
+    pilots: "Pilots",
+    aircrafts: "Aircrafts",
+    reports: "Reports",
 };

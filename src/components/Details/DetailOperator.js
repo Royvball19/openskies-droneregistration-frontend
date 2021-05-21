@@ -2,14 +2,27 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import "../../style/details.css";
 import { useTranslation } from "react-i18next";
+import Data from "../../Data";
 
-function DetailOperator() {
+function DetailOperator({ match }) {
   const { t } = useTranslation();
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    Data.getPrivilegedOperator(match.params.id)
+      .then((response) => {
+        setData(response.data.fields);
+      }, [])
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div className="detailOperatorContainer">
       <div className="headerDiv">
-        <h2 className="titleH">Details Operator</h2>
+        <h2 className="titleH">{t("detailsOperator")}</h2>
         <Button className="exportButton">Export</Button>
       </div>
       <div className="allDetails">
@@ -36,6 +49,7 @@ function DetailOperator() {
             <h3>{t("lastUpdatedAt")}:</h3>
           </div>
           <div className="changingDetails">
+            <h4>{data.companyName}</h4>
             <h4>Starfled Industries</h4>
             <h4>23423432</h4>
             <h4>390-1023-12</h4>
@@ -59,13 +73,13 @@ function DetailOperator() {
         </div>
         <div className="allSmallDetails">
           <div className="pilots">
-            <h2>Pilots</h2>
+            <h2>{t("pilots")}</h2>
           </div>
           <div className="aircrafts">
-            <h2>Aircrafts</h2>
+            <h2>{t("aircrafts")}</h2>
           </div>
           <div className="reports">
-            <h2>Reports</h2>
+            <h2>{t("reports")}</h2>
           </div>
         </div>
       </div>
