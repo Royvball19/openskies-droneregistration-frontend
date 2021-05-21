@@ -10,9 +10,11 @@ function DetailOperator({ match }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    Data.getPrivilegedOperator(match.params.id)
+    console.log(match.params)
+    Data.getPrivilegedOperator( match.params.id)
       .then((response) => {
-        setData(response.data.fields);
+        setData(response.data)
+        console.log(response.data);
       }, [])
       .catch((error) => {
         console.log(error);
@@ -28,29 +30,28 @@ function DetailOperator({ match }) {
       <div className="allDetails">
         <div className="operatorDetails">
           <div className="staticDetails">
-            <h3>{t("companyName")}:</h3>
-            <h3>{t("companyNumber")}:</h3>
-            <h3>{t("id")}:</h3>
-            <h3>{t("registeredAt")}:</h3>
+            <h4>{t("companyName")}:</h4>
+            <h4>{t("companyNumber")}:</h4>
+            <h4>{t("id")}:</h4>
+            <h4>{t("registeredAt")}:</h4>
             <br></br>
-            <h3>{t("adress")}:</h3>
-            <h3>{t("postalCode")}:</h3>
-            <h3>{t("country")}:</h3>
+            <h4>{t("adress")}:</h4>
+            <h4>{t("postalCode")}:</h4>
+            <h4>{t("country")}:</h4>
             <br></br>
-            <h3>{t("email")}:</h3>
-            <h3>{t("phoneNumb")}:</h3>
+            <h4>{t("email")}:</h4>
+            <h4>{t("phoneNumb")}:</h4>
             <br></br>
-            <h3>{t("insuranceNumb")}:</h3>
-            <h3>{t("vatNumb")}:</h3>
-            <h3>{t("expiration")}:</h3>
-            <h3>{t("operatorType")}:</h3>
+            <h4>{t("insuranceNumb")}:</h4>
+            <h4>{t("vatNumb")}:</h4>
+            <h4>{t("expiration")}:</h4>
+            <h4>{t("operatorType")}:</h4>
             <br></br>
-            <h3>{t("operatorCreatedAt")}:</h3>
-            <h3>{t("lastUpdatedAt")}:</h3>
+            <h4>{t("operatorCreatedAt")}:</h4>
+            <h4>{t("lastUpdatedAt")}:</h4>
           </div>
           <div className="changingDetails">
-            <h4>{data.companyName}</h4>
-            <h4>Starfled Industries</h4>
+            <h4>{data.company_name}</h4>
             <h4>23423432</h4>
             <h4>390-1023-12</h4>
             <h4>14-06-2019</h4>
