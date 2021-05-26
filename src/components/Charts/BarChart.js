@@ -3,18 +3,52 @@ import React from "react";
 
 import "../../style/charts.css";
 
-function BarChart({ dataSet, data }) {
+function BarChart({ data }) {
   return (
     <div id="chart-parent" className="chart-parent">
       <ResponsiveBar
         data={data}
-        keys={["operators", "pilots", "aircrafts", "reports"]}
+        keys={["operators", "aircrafts", "pilots", "reports"]}
         indexBy="object"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
         colors={{ scheme: "nivo" }}
+        defs={[
+          {
+            id: "dots",
+            type: "patternDots",
+            background: "inherit",
+            color: "#38bcb2",
+            size: 4,
+            padding: 1,
+            stagger: true,
+          },
+          {
+            id: "lines",
+            type: "patternLines",
+            background: "inherit",
+            color: "#eed312",
+            rotation: -45,
+            lineWidth: 6,
+            spacing: 10,
+          },
+        ]}
+        fill={[
+          {
+            match: {
+              id: "fries",
+            },
+            id: "dots",
+          },
+          {
+            match: {
+              id: "sandwich",
+            },
+            id: "lines",
+          },
+        ]}
         borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
         axisTop={null}
         axisRight={null}
@@ -22,7 +56,7 @@ function BarChart({ dataSet, data }) {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "",
+          legend: "object",
           legendPosition: "middle",
           legendOffset: 32,
         }}
@@ -30,7 +64,7 @@ function BarChart({ dataSet, data }) {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "number",
+          legend: "food",
           legendPosition: "middle",
           legendOffset: -40,
         }}

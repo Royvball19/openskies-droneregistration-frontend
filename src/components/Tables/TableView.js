@@ -9,26 +9,10 @@ export default function TableView({ data, columns }) {
   if (!data.length) {
     return null;
   } else {
-    // const test2 = data[0].created_at;
-
-    // console.log(moment(test2).calendar());
-    console.log(data);
-
-    // let newDate = data.map(
-    //   (datas) =>
-    //     (data = {
-    //       id: datas.id,
-    //       registration_mark: datas.registration_mark,
-    //       maci_number: datas.maci_number,
-    //       mass: datas.mass,
-    //       model: datas.model,
-    //       status: datas.status,
-    //       created_at: moment(datas.created_at).calendar(),
-    //       updated_at: moment(datas.updated_at).calendar(),
-    //     })
-    // );
-
-    // console.log(newDate);
+    for (let i = 0; i < data.length; i++) {
+      data[i].created_at = moment(data[i].created_at).calendar();
+      data[i].updated_at = moment(data[i].updated_at).calendar();
+    }
 
     return (
       <div className="tableview">

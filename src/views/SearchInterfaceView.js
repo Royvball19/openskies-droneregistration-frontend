@@ -55,7 +55,7 @@ export default function SearchInterfaceView({ match }) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [match.params.tabletype]);
 
   let columns = [];
   for (let i = 0; i < columnsData.length; i++) {

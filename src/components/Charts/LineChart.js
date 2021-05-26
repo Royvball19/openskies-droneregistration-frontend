@@ -13,11 +13,11 @@ function LineChart({ data }) {
           y: data[0].value,
         },
         {
-          x: "pilots",
+          x: "aircrafts",
           y: data[1].value,
         },
         {
-          x: "aircrafts",
+          x: "pilots",
           y: data[2].value,
         },
         {

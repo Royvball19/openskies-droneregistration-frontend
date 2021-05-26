@@ -12,6 +12,11 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+.removeButtons {
+  display: none;
+}
+
 .charts {
   display: flex;
 }
+/*# sourceMappingURL=charts.css.map */

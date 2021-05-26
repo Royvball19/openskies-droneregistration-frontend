@@ -4,8 +4,9 @@ import PieChart from "./PieChart";
 import LineChart from "./LineChart";
 import "../../style/charts.css";
 import Data from "../../Data";
+import axios from "axios";
 
-function Charts({}) {
+function Charts() {
   let [operatorData, setOperatorData] = useState({});
   let [aircraftData, setAircraftData] = useState([]);
   let [pilotData, setPilotData] = useState([]);
@@ -13,62 +14,52 @@ function Charts({}) {
   let [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    Data.getAllOperators()
-      .then((response) => {
-        setOperatorData(response.data.length);
-      }, [])
-      .catch((error) => {
-        console.log(error);
+    axios
+      .all([
+        Data.getAllOperators(),
+        Data.getAllAircrafts(),
+        Data.getAllPilots(),
+        Data.getAllReports(),
+      ])
+      .then(
+        axios.spread((...responses) => {
+          setOperatorData(responses[0].data.length);
+          setAircraftData(responses[1].data.length);
+          setPilotData(responses[2].data.length);
+          setReportData(responses[3].data.length);
+          setLoaded(true);
+        })
+      )
+      .catch((errors) => {
+        // react on errors.
       });
-    Data.getAllAircrafts()
-      .then((response) => {
-        setAircraftData(response.data.length);
-      }, [])
-      .catch((error) => {
-        console.log(error);
-      });
-    Data.getAllPilots()
-      .then((response) => {
-        setPilotData(response.data.length);
-      }, [])
-      .catch((error) => {
-        console.log(error);
-      });
-    Data.getAllReports()
-      .then((response) => {
-        setReportData(response.data.length);
-      }, [])
-      .catch((error) => {
-        console.log(error);
-      });
-    setLoaded(true);
-  }, []);
+  }, [isLoaded]);
 
   if (isLoaded) {
     let data = [
       {
         object: "operators",
         id: "operators",
-        value: operatorData,
         operators: operatorData,
-      },
-      {
-        object: "pilots",
-        id: "pilots",
-        value: pilotData,
-        pilots: pilotData,
+        value: operatorData,
       },
       {
         object: "aircrafts",
         id: "aircrafts",
-        value: aircraftData,
         aircrafts: aircraftData,
+        value: aircraftData,
+      },
+      {
+        object: "pilots",
+        id: "pilots",
+        pilots: pilotData,
+        value: pilotData,
       },
       {
         object: "reports",
         id: "reports",
-        value: reportData,
         reports: reportData,
+        value: reportData,
       },
     ];
 
