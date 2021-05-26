@@ -4,6 +4,7 @@ import TableView from "../components/Tables/TableView";
 import Data from "../Data";
 import Filter from "../components/Filter/Filter";
 import { createQuery, testFilter } from "../custom hooks/searchfilter";
+import axios from 'axios';
 
 const declareType = (input) => {
   // declare tabletype and get route
@@ -44,23 +45,14 @@ export default function SearchInterfaceView({ match }) {
 
   // fetch data from backend
   useEffect(() => {
-    declareType(match.params.tabletype)
-      .then((response) => {
-        setData(response.data)
-        console.log(response.data);
-      }, [])
-      .catch((error) => {
-        console.log(error);
-      });
-    declareColumns(match.params.tabletype)
-      .then((response) => {
-        setColumnsData(response.data.fields);
-        console.log(response.data);
-      }, [])
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    axios.all([declareType(match.params.tabletype), declareColumns(match.params.tabletype)]).then(axios.spread((...responses) => {
+      setData(responses[0].data)
+      setColumnsData(responses[1].data.fields)
+      // use/access the results 
+    })).catch(error => {
+      console.log(error);
+    })
+  }, [match.params.tabletype]);
 
   // side effect to update data when query or data changes
   useEffect(() => {

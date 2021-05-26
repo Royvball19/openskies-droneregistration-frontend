@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { optionsList } from "../../custom hooks/searchfilter";
 import { BiArrowBack } from "react-icons/bi";
-import { createFilter } from "../../custom hooks/searchfilter";
 
 function Input({ goBack, createFilterValue }) {
   const [value, setValue] = useState("");
-  const [selectedOperator, setSelectedOperator] = useState("");
+  const [selectedOperator, setSelectedOperator] = useState({});
 
   function CompareOptions({ type }) {
     let data;
@@ -16,12 +15,14 @@ function Input({ goBack, createFilterValue }) {
     } else if (type === "date") {
       data = optionsList;
     }
+   
     const content = data.map((item) => (
       <option value={JSON.stringify(item.value)}>{item.text}</option>
     ));
     return (
       <select
         className="operatorList"
+
         value={selectedOperator}
         onChange={onSelectChange}
       >
@@ -31,7 +32,10 @@ function Input({ goBack, createFilterValue }) {
   }
 
   const onSelectChange = (event) => {
+  
     setSelectedOperator(JSON.parse(event.target.value));
+
+    //setSelectedOperator(event.target.value)
   };
 
   const onChange = (event) => {
@@ -39,7 +43,6 @@ function Input({ goBack, createFilterValue }) {
   };
 
   const onSubmit = () => {
-    // get operator from options
     createFilterValue(value, selectedOperator);
   };
 
