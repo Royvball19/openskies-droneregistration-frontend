@@ -31,20 +31,14 @@ function DetailOperator({ match }) {
         <div className="operatorDetails">
           <div className="staticDetails">
             <h4>{t("companyName")}:</h4>
-            <h4>{t("companyNumber")}:</h4>
             <h4>{t("id")}:</h4>
-            <h4>{t("registeredAt")}:</h4>
             <br></br>
             <h4>{t("adress")}:</h4>
             <h4>{t("postalCode")}:</h4>
+            <h4>{t("city")}</h4>
             <h4>{t("country")}:</h4>
             <br></br>
             <h4>{t("email")}:</h4>
-            <h4>{t("phoneNumb")}:</h4>
-            <br></br>
-            <h4>{t("insuranceNumb")}:</h4>
-            <h4>{t("vatNumb")}:</h4>
-            <h4>{t("expiration")}:</h4>
             <h4>{t("operatorType")}:</h4>
             <br></br>
             <h4>{t("operatorCreatedAt")}:</h4>
@@ -52,24 +46,18 @@ function DetailOperator({ match }) {
           </div>
           <div className="changingDetails">
             <h4>{data.company_name}</h4>
-            <h4>23423432</h4>
-            <h4>390-1023-12</h4>
-            <h4>14-06-2019</h4>
+            <h4>{data.id}</h4>
             <br></br>
-            <h4>Streetname 2</h4>
-            <h4>9823SJ</h4>
-            <h4>Switzerland</h4>
+            <h4>{data.adress_line_1}</h4>
+            <h4>{data.postcode}</h4>
+            <h4>{data.city}</h4>
+            <h4>{data.country}</h4>
             <br></br>
-            <h4>drone@starfled.com</h4>
-            <h4>+31 546 34 90 45</h4>
+            <h4>{data.email}</h4>
+            <h4>{data.operator_type}</h4>
             <br></br>
-            <h4>324-324-323</h4>
-            <h4>234324</h4>
-            <h4>22-05-2022</h4>
-            <h4>AUTH</h4>
-            <br></br>
-            <h4>14-06-2019</h4>
-            <h4>09-06-2021</h4>
+            <h4>{data.created_at}</h4>
+            <h4>{data.updated_at}</h4>
           </div>
         </div>
         <div className="allSmallDetails">
