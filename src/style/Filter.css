@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -32,7 +32,7 @@ p {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -63,7 +63,8 @@ p {
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -77,10 +78,17 @@ body {
   top: 0px;
   width: 300px;
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   border-radius: 10px;
   right: -400px;
 }
@@ -90,7 +98,7 @@ body {
 .filterDiv p,
 .filterDiv ul,
 .filterDiv li {
-  color: #0D1055;
+  color: #0d1055;
   margin: 14px;
   list-style: none;
   cursor: default;
@@ -111,15 +119,22 @@ body {
 }
 
 .filterDiv .allFiltersDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow-x: hidden;
-  align-items: left;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   margin: 14px;
 }
 
 .filterDiv .allFiltersDiv .closeFilterA:hover {
-  color: #FED737;
+  color: #fed737;
 }
 
 .filterDiv .input-container {
@@ -162,37 +177,37 @@ body {
 
 .filterDiv .input-container .operatorList, .filterDiv .input-container .text-input {
   width: 100%;
-  border: 1px solid #C2C2C2;
+  border: 1px solid #c2c2c2;
   border-radius: 3px;
-  color: #C2C2C2;
+  color: #c2c2c2;
   padding: 5px 10px;
   margin: 5px 0px;
 }
 
 .filterDiv .input-container .operatorList::-webkit-input-placeholder, .filterDiv .input-container .text-input::-webkit-input-placeholder {
-  color: #C2C2C2;
+  color: #c2c2c2;
 }
 
 .filterDiv .input-container .operatorList:-ms-input-placeholder, .filterDiv .input-container .text-input:-ms-input-placeholder {
-  color: #C2C2C2;
+  color: #c2c2c2;
 }
 
 .filterDiv .input-container .operatorList::-ms-input-placeholder, .filterDiv .input-container .text-input::-ms-input-placeholder {
-  color: #C2C2C2;
+  color: #c2c2c2;
 }
 
 .filterDiv .input-container .operatorList::placeholder, .filterDiv .input-container .text-input::placeholder {
-  color: #C2C2C2;
+  color: #c2c2c2;
 }
 
 .filterDiv .input-container .back-icon {
-  color: #0D1055;
+  color: #0d1055;
   cursor: pointer;
   font-size: 30px;
 }
 
 .filterDiv .input-container .add-btn {
-  background-color: #0D1055;
+  background-color: #0d1055;
   border-radius: 10px;
   position: absolute;
   bottom: 30px;
@@ -204,3 +219,4 @@ body {
     height: 100vh;
   }
 }
+/*# sourceMappingURL=Filter.css.map */

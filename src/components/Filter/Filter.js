@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "../../style/Filter.css";
+import { BsArrowReturnLeft, BsSearch } from "react-icons/bs";
+import { AiOutlineCalendar } from "react-icons/ai";
+import DataTypes from "../../DataTypes";
 import Variables from "./Variables";
 import Input from "./Input";
 import { createFilter } from "../../custom hooks/searchfilter";
 
-export const Filter = ({ addToQuery , columns }) => {
+export const Filter = ({ addToQuery }) => {
   const [show, setShow] = useState(true);
   const [filterKey, setFilterKey] = useState("");
   //const [filterValue, setFilterValue] = useState('');
@@ -12,7 +15,7 @@ export const Filter = ({ addToQuery , columns }) => {
   function closeFilter() {
     document.getElementById("filter").style.right = "-400px";
   }
-  console.log(columns)
+
   const createFilterKey = (event) => {
     setFilterKey(event.target.dataset.param);
     goBack();

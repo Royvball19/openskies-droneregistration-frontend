@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: url("./img/background.png") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+h4 {
+  color: black;
+}
+
+.aircraftHeader {
+  font-weight: normal;
+  color: #0d1055;
+  margin: 30px 260px;
+}
+
+.aircraftDetailContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aircraftDetailContainer .aircraftDetails {
+  display: -ms-grid;
+  display: grid;
+  width: 80vw;
+  min-height: 30vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 50px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.aircraftDetailContainer .leftContent h4 {
+  padding: 4px 0px;
+}
+
+.aircraftDetailContainer .rightContent {
+  grid-column: end;
+}
+
+.aircraftDetailContainer .rightContent h4 {
+  padding: 4px 0px;
+  font-weight: normal;
+}
+
+.operatorContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
+}
+
+.operatorDetails,
+.reportDetails {
+  width: 80vw;
+  height: 28vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.operatorDetails h2,
+.reportDetails h2 {
+  margin-top: 20px;
+  color: #0d1055;
+  font-weight: normal;
+}
+
+.operatorDetails .content,
+.reportDetails .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+
+.operatorDetails .content .leftSection,
+.reportDetails .content .leftSection {
+  width: 50%;
+  text-align: left;
+}
+
+.operatorDetails .content .leftSection h4,
+.reportDetails .content .leftSection h4 {
+  margin-bottom: 20px;
+}
+
+.operatorDetails .content .rightSection,
+.reportDetails .content .rightSection {
+  width: 50%;
+  text-align: right;
+}
+
+.operatorDetails .content .rightSection h4,
+.reportDetails .content .rightSection h4 {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+/*# sourceMappingURL=aircraftdetails.css.map */
