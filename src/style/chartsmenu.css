@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./img/background.png") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.third-level-menu {
+  position: absolute;
+  top: 0;
+  right: -150px;
+  width: 150px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.third-level-menu > li {
+  height: 30px;
+  background: #0D1055;
+}
+
+.third-level-menu > li:hover {
+  background: #20286B;
+  cursor: pointer;
+}
+
+.second-level-menu {
+  position: absolute;
+  top: 45px;
+  left: 10px;
+  justify-content: center;
+  width: 130px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.second-level-menu > li {
+  position: relative;
+  height: 30px;
+  background: #0D1055;
+}
+
+.second-level-menu > li:hover {
+  background: #20286B;
+  cursor: pointer;
+}
+
+.top-level-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-level-menu > li {
+  position: relative;
+  font-size: 25px;
+  padding: 5px 17px;
+  width: 170px;
+  height: 45px;
+  background: #0D1055;
+  border-radius: 10px;
+}
+
+.top-level-menu > li:hover {
+  background: #20286B;
+  cursor: pointer;
+}
+
+.top-level-menu li:hover > ul {
+  /* On hover, display the next level's menu */
+  display: inline;
+}
+
+/* Menu Link Styles */
+.top-level-menu a {
+  font: bold 14px Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 0 0 10px;
+  /* Make the link cover the entire list item-container */
+  display: block;
+  line-height: 30px;
+}
+
+.top-level-menu a:hover {
+  color: #FED737;
+}

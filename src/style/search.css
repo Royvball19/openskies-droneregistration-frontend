@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
 }
 
 h1 {
@@ -31,8 +31,8 @@ p {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
 }
 
 h1 {
@@ -63,8 +63,7 @@ p {
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -91,24 +90,19 @@ body {
 
 .box-header h1 {
   font-weight: normal;
-  color: #0D1055;
+  color: #0d1055;
 }
 
 .box-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
   margin: 30px 0px;
 }
 
 .box-buttons .button {
   padding: 5px 17px;
   font-family: "Poppins", sans-serif;
-  background-color: #0D1055;
+  background-color: #0d1055;
   font-size: 25px;
   color: #fff;
   height: 45px;
@@ -122,9 +116,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .box-buttons .button .btn-content p {
@@ -136,18 +128,11 @@ body {
   color: #fff;
   border-width: 2px;
   border-radius: 8px;
-  border: solid #C2C2C2 2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  border: solid #c2c2c2 2px;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   padding: 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .box-search .search-field {
@@ -160,24 +145,12 @@ body {
   outline: none;
 }
 
-.box-search .search-field::-webkit-input-placeholder {
-  color: #C2C2C2;
-}
-
-.box-search .search-field:-ms-input-placeholder {
-  color: #C2C2C2;
-}
-
-.box-search .search-field::-ms-input-placeholder {
-  color: #C2C2C2;
-}
-
-.box-search .search-field::placeholder {
-  color: #C2C2C2;
+.search-field::placeholder {
+  color: #c2c2c2;
 }
 
 .icon {
-  color: #FFFFFF;
+  color: #ffffff;
   min-width: 25px;
   min-height: 25px;
   max-width: 30px;
@@ -188,7 +161,7 @@ body {
 .search-icon {
   max-width: 2px;
   max-height: 2px;
-  color: #C2C2C2;
+  color: #c2c2c2;
   margin-right: 15px;
 }
 
@@ -198,8 +171,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   max-width: 100%;
 }
 
@@ -208,8 +181,8 @@ body {
   background-color: white;
   margin: 10px 10px 5px 0px;
   border-radius: 8px;
-  color: #0D1055;
-  border: 1px solid #0D1055;
+  color: #0d1055;
+  border: 1px solid #0d1055;
   display: block;
   max-width: 100%;
 }
@@ -221,7 +194,7 @@ body {
 .active-filter-container .active-filter .delete-filter {
   font-size: 25px;
   margin-left: 5px;
-  color: #0D1055;
+  color: #0d1055;
 }
 
 .active-filter-container .active-filter .delete-filter:hover {
