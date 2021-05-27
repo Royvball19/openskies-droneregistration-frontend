@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import TableTypes from "../../DataTypes";
 import "../../style/tableview.css";
+import moment from "moment";
 import { useHistory } from "react-router";
 import { AiOutlineNodeIndex } from "react-icons/ai";
 
