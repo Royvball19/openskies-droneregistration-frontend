@@ -100,7 +100,7 @@ export default function SearchInterfaceView({ match }) {
       <div>
         <Search type={match.params.tabletype} activeFilters={query} deleteFilter={deleteFilter}/>
         <TableView columns={columns} data={filterdData} />
-        <Filter addToQuery={addToQuery} />
+        <Filter addToQuery={addToQuery} columns={columns}/>
       </div>
     );
   }
