@@ -133,7 +133,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   margin: 20px;
-  width: 900px;
+  width: 1000px;
   height: 820px;
   background-color: #ffffff;
   opacity: 80%;
@@ -158,11 +158,12 @@ body {
   text-align: right;
 }
 
+.detailOperatorContainer .allDetails .operatorDetails .staticDetails {
+  width: 500px;
+}
+
 .detailOperatorContainer .allDetails .operatorDetails .changingDetails {
-  margin-left: auto;
-  -webkit-box-align: right;
-      -ms-flex-align: right;
-          align-items: right;
+  width: 500px;
 }
 
 .detailOperatorContainer .allDetails .allSmallDetails h2 {

@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -32,7 +32,7 @@ p {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -63,7 +63,8 @@ p {
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -85,11 +86,11 @@ body {
 
 .third-level-menu > li {
   height: 30px;
-  background: #0D1055;
+  background: #0d1055;
 }
 
 .third-level-menu > li:hover {
-  background: #20286B;
+  background: #20286b;
   cursor: pointer;
 }
 
@@ -97,7 +98,9 @@ body {
   position: absolute;
   top: 45px;
   left: 10px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 130px;
   list-style: none;
   padding: 0;
@@ -108,11 +111,11 @@ body {
 .second-level-menu > li {
   position: relative;
   height: 30px;
-  background: #0D1055;
+  background: #0d1055;
 }
 
 .second-level-menu > li:hover {
-  background: #20286B;
+  background: #20286b;
   cursor: pointer;
 }
 
@@ -128,12 +131,12 @@ body {
   padding: 5px 17px;
   width: 170px;
   height: 45px;
-  background: #0D1055;
+  background: #0d1055;
   border-radius: 10px;
 }
 
 .top-level-menu > li:hover {
-  background: #20286B;
+  background: #20286b;
   cursor: pointer;
 }
 
@@ -154,5 +157,6 @@ body {
 }
 
 .top-level-menu a:hover {
-  color: #FED737;
+  color: #fed737;
 }
+/*# sourceMappingURL=chartsmenu.css.map */

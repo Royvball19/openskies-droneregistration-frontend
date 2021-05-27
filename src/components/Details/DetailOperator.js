@@ -3,23 +3,45 @@ import { Button } from "react-bootstrap";
 import "../../style/details.css";
 import { useTranslation } from "react-i18next";
 import Data from "../../Data";
+import CompanyLogo from "../../style/img/dummy-logo.png";
+import axios from "axios";
 
 function DetailOperator({ match }) {
   const { t } = useTranslation();
 
   const [data, setData] = useState([]);
+  const [variables, setVariables] = useState([]);
 
   useEffect(() => {
-    console.log(match.params)
-    Data.getPrivilegedOperator( match.params.id)
-      .then((response) => {
-        setData(response.data)
-        console.log(response.data);
-      }, [])
+    axios
+      .all([
+        Data.getPrivilegedOperator(match.params.id),
+        Data.getPrivilegedOperatorOptions(match.params.id),
+      ])
+      .then(
+        axios.spread((...responses) => {
+          setData(responses[0].data);
+          setVariables(responses[1].data.fields);
+          // use/access the results
+          console.log(responses[0].data)
+        })
+      )
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [match.params.id]);
+
+
+  let columns = [];
+  for (let i = 0; i < variables.length; i++) {
+    columns.push({
+      dataField: variables[i].key,
+      text: variables[i].key,
+      type: variables[i].schema.type,
+    });
+  }
+
+  console.log(columns)
 
   return (
     <div className="detailOperatorContainer">
@@ -30,36 +52,22 @@ function DetailOperator({ match }) {
       <div className="allDetails">
         <div className="operatorDetails">
           <div className="staticDetails">
-            <h4>{t("companyName")}:</h4>
-            <h4>{t("id")}:</h4>
-            <br></br>
-            <h4>{t("adress")}:</h4>
-            <h4>{t("postalCode")}:</h4>
-            <h4>{t("city")}</h4>
-            <h4>{t("country")}:</h4>
-            <br></br>
-            <h4>{t("email")}:</h4>
-            <h4>{t("operatorType")}:</h4>
-            <br></br>
-            <h4>{t("operatorCreatedAt")}:</h4>
-            <h4>{t("lastUpdatedAt")}:</h4>
+                {columns.map((column, index) => (
+                    <h4>{column.text}</h4>
+                ))}
           </div>
           <div className="changingDetails">
+                        <h4>{data.id}</h4> 
             <h4>{data.company_name}</h4>
-            <h4>{data.id}</h4>
-            <br></br>
-            <h4>{data.adress_line_1}</h4>
-            <h4>{data.postcode}</h4>
-            <h4>{data.city}</h4>
             <h4>{data.country}</h4>
-            <br></br>
+            <h4>{data.website}</h4>
             <h4>{data.email}</h4>
             <h4>{data.operator_type}</h4>
-            <br></br>
-            <h4>{data.created_at}</h4>
-            <h4>{data.updated_at}</h4>
+            {/* <h4>{data.address.address_line_1} + {data.address.city}</h4> */}
+
           </div>
         </div>
+        
         <div className="allSmallDetails">
           <div className="pilots">
             <h2>{t("pilots")}</h2>
@@ -71,6 +79,10 @@ function DetailOperator({ match }) {
             <h2>{t("reports")}</h2>
           </div>
         </div>
+      </div>
+      <div className="quoteDiv">
+            <h3>"Drones are the future"</h3>
+            <img src={CompanyLogo} alt="" />
       </div>
     </div>
   );

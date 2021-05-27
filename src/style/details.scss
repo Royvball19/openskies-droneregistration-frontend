@@ -46,7 +46,7 @@ $margin: 20px;
       display: flex;
       flex-direction: row;
       margin: $margin;
-      width: 900px;
+      width: 1000px;
       height: 820px;
       background-color: $font-primary;
       opacity: 80%;
@@ -70,10 +70,14 @@ $margin: 20px;
         text-align: right;
       }
 
-      .changingDetails {
-        margin-left: auto;
-        align-items: right;
+      .staticDetails{
+        width: 500px;
       }
+
+      .changingDetails {
+        width: 500px;
+      }
+
     }
 
     .allSmallDetails {

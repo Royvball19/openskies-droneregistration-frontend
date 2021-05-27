@@ -46,6 +46,13 @@ export default {
     );
   },
 
+    // API call for options of privileged details operator
+  async getPrivilegedOperatorOptions(operatorid) {
+    return await axios.options(
+      endpoint + "operators/" + operatorid + "/privileged"
+    );
+  },
+
   // API call for aircrafts within specific operator
   async getAircraftOperator(operatorid) {
     return await axios.get(endpoint + "operators/" + operatorid + "/aircraft");

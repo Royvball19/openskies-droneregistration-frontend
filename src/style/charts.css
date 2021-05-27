@@ -17,6 +17,8 @@
 }
 
 .charts {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 /*# sourceMappingURL=charts.css.map */

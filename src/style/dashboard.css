@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -32,7 +32,7 @@ p {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -63,7 +63,8 @@ p {
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -79,5 +80,6 @@ body {
 .dashboard-container .dashboard-title {
   margin-bottom: 5vh;
   font-weight: 500;
-  color: #0D1055;
+  color: #0d1055;
 }
+/*# sourceMappingURL=dashboard.css.map */
