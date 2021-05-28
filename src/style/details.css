@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #ffffff;
 }
 
@@ -31,7 +31,7 @@ p {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #ffffff;
 }
 
@@ -142,6 +142,11 @@ body {
   margin-top: 40px;
 }
 
+.detailOperatorContainer .allDetails {
+  display: flex;
+  flex-direction: row;
+}
+
 .detailOperatorContainer .allDetails .operatorDetails {
   display: flex;
   justify-content: center;
@@ -181,7 +186,11 @@ body {
   font-weight: 900;
 }
 
-.detailOperatorContainer .allDetails .operatorDetails .staticDetails .column-names {
+.detailOperatorContainer
+  .allDetails
+  .operatorDetails
+  .staticDetails
+  .column-names {
   color: black;
   font-weight: 900;
 }
@@ -192,6 +201,8 @@ body {
 
 .detailOperatorContainer .allDetails .operatorDetails .changingDetails h4 {
   text-align: right;
+  margin-left: auto;
+  align-items: right;
 }
 
 .detailOperatorContainer .allDetails .allSmallDetails h2 {
@@ -240,4 +251,3 @@ body {
 /*
  * Hier kunnen de andere detail pages
  */
-/*# sourceMappingURL=details.css.map */

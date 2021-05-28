@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../style/search.css";
 import { GiSaveArrow } from "react-icons/gi";
 import { FiFilter } from "react-icons/fi";
 import { RiLineChartFill } from "react-icons/ri";
 import { BsSearch } from "react-icons/bs";
+
 import { useTranslation } from "react-i18next";
 import ActiveFilters from "./Filter/ActiveFilters";
 
 
-function Search({ type , activeFilters, deleteFilter }) {
+function Search({ type , activeFilters, deleteFilter, addToQuery }) {
   const { t } = useTranslation();
+  const [input, setInput] = useState("");
 
   function openFilter() {
     document.getElementById("filter").style.right = "0px";
   }
+
+  useEffect(() => {
+   // use effect to add functionality to search input
+  
+    
+  }, [input])
 
   return (
     <div className="container">
@@ -31,18 +39,18 @@ function Search({ type , activeFilters, deleteFilter }) {
             <FiFilter className="icon filter-icon" />
           </div>
         </button>
-        <button className="button">
+        {/* <button className="button">
           <div className="btn-content">
             <p>{t("searchSaveResult")}</p>
             <GiSaveArrow className="icon save-icon" />
           </div>
-        </button>
-        <button className="button">
+        </button> */}
+        {/* <button className="button">
           <div className="btn-content">
             <p>{t("searchShowAsChart")}</p>
             <RiLineChartFill className="icon chart-icon" />
           </div>
-        </button>
+        </button> */}
       </div>
 
       <div className="box-search">
@@ -52,7 +60,7 @@ function Search({ type , activeFilters, deleteFilter }) {
           placeholder={t("searchPlaceholder") + type}
           name="search"
           className="search-field"
-        
+          onChange={(e) => { setInput(e.target.value) }}
 
         ></input>
       </div>

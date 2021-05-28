@@ -52,6 +52,22 @@ export default function SearchInterfaceView({ match }) {
     })).catch(error => {
       console.log(error);
     })
+    axios
+      .all([
+        declareType(match.params.tabletype),
+        declareColumns(match.params.tabletype),
+      ])
+      .then(
+        axios.spread((...responses) => {
+          setData(responses[0].data);
+          setColumnsData(responses[1].data.fields);
+          console.log(responses)
+          // use/access the results
+        })
+      )
+      .catch((error) => {
+        console.log(error);
+      });
   }, [match.params.tabletype]);
 
   // side effect to update data when query or data changes
@@ -101,6 +117,14 @@ export default function SearchInterfaceView({ match }) {
         <Search type={match.params.tabletype} activeFilters={query} deleteFilter={deleteFilter}/>
         <TableView columns={columns} data={filterdData} type={match.params.tabletype} />
         <Filter addToQuery={addToQuery} />
+        <Search
+          type={match.params.tabletype}
+          activeFilters={query}
+          deleteFilter={deleteFilter}
+          addToQuery={addToQuery}
+        />
+        <TableView columns={columns} data={filterdData} />
+        <Filter addToQuery={addToQuery} columns={columns} />
       </div>
     );
   }

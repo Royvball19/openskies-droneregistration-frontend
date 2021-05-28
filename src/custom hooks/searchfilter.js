@@ -21,6 +21,7 @@ export const optionsList = [
   // { value: {}, text: "is empty" },
 ];
 
+
 // math operators with text
 export const mathOperators = {
   from: { operator: "from", text: "from" },

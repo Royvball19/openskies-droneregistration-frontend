@@ -2,8 +2,9 @@ import { i18n } from "../../translations/i18n";
 import React, { useState } from "react";
 import '../../style/langauge.css';
 import Flags from 'country-flag-icons/react/3x2'
-import { GrLanguage } from "react-icons/gr";
+import { BiWorld } from "react-icons/bi";
 import { useDetectClickOutside } from 'react-detect-click-outside';
+import { IconContext } from "react-icons/lib";
 
 
 export default function LanguageMenu() {
@@ -20,6 +21,7 @@ export default function LanguageMenu() {
   };
 
   // show menu on click
+
   const showMenuOnClick = ( e ) => {
     e.preventDefault();
     setShowMenu(true);
@@ -57,11 +59,13 @@ export default function LanguageMenu() {
       </div>
     );
   }
-
+  const style = { color: "white", fontSize: "1.5em" }
   return (
-    <div>
-      <GrLanguage className='world-icon' onClick={showMenuOnClick}/>
+    <div className="world-parent">
+      
+      <BiWorld style={style} className='world-icon' onClick={showMenuOnClick}/>
       { showMenu ? <Menu className="lang-menu"/> : null }
+      
     </div>
   );
 };
