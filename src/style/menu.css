@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #ffffff;
 }
 
@@ -31,7 +31,7 @@ p {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #ffffff;
 }
 
@@ -67,19 +67,19 @@ p {
 }
 
 body {
-  background: url("./img/background.png") no-repeat center center/cover;
+  background: url("./img/background.svg") repeat center center/cover;
   width: 100vw;
   height: 100vh;
 }
 
 .menu {
   position: fixed;
-  z-index: 1;
+  z-index: 20;
   top: 0;
   height: 100vh;
   width: 400px;
   background-color: #0d1055;
-  opacity: 80%;
+  /* opacity: 80%; */
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -99,11 +99,6 @@ body {
 
 .menu a:hover {
   color: #fed737;
-}
-
-.menu .closeButton:hover {
-  color: #fed737;
-  cursor: pointer;
 }
 
 .menu .upper {
@@ -180,4 +175,3 @@ body {
     height: 100vh;
   }
 }
-/*# sourceMappingURL=menu.css.map */

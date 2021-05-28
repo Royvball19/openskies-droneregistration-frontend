@@ -22,7 +22,6 @@ function Variables({ createFilterKey }) {
       }
     };
     const content = types.map((type) => (
-
       <li onClick={createFilterKey} data-param={type.dataField}>
         <span>{icon(type.variable)}</span>
         {type.text}
@@ -43,26 +42,19 @@ function Variables({ createFilterKey }) {
             <GrClose className="iconSearch" />
           </a>
         </div>
-        {/* <div className="pilotDiv">
+        <div className="pilotDiv">
           <h3>Pilot</h3>
-          <p># ID</p>
-          <p>Aa First name</p>
-          <p>Aa Last name</p>
-          <p># Active</p>
-        </div> */}
+          <ListItems types={DataTypes.pilots()} />
+        </div>
         <div className="operatorDiv">
           <h3>Operators</h3>
           {/* <AiOutlineCalendar className="iconCalander" /> Created at */}
-          <ListItems types={operatorsVariables} />
+          <ListItems types={DataTypes.operators()} />
         </div>
-        {/* <div className="aircraftDiv">
+        <div className="aircraftDiv">
           <h3>Aircraft</h3>
-          <p># ID</p>
-          <p># Mass</p>
-          <p># Manufacturer</p>
-          <p># Category</p>
-          <p># Status</p>
-        </div> */}
+          <ListItems types={DataTypes.aircrafts()} />
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #ffffff;
 }
 
@@ -31,7 +31,7 @@ p {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #ffffff;
 }
 
@@ -67,7 +67,7 @@ p {
 }
 
 body {
-  background: url("./img/background.png") no-repeat center center/cover;
+  background: url("./img/background.svg") repeat center center/cover;
   width: 100vw;
   height: 100vh;
 }
@@ -142,11 +142,6 @@ body {
   margin-top: 40px;
 }
 
-.detailOperatorContainer .allDetails {
-  display: flex;
-  flex-direction: row;
-}
-
 .detailOperatorContainer .allDetails .operatorDetails {
   display: flex;
   justify-content: center;
@@ -155,7 +150,6 @@ body {
   width: 1100px;
   height: 510px;
   background-color: #ffffff;
-  opacity: 80%;
   border-radius: 2%;
   margin-left: 50px;
   margin-bottom: 0px;
@@ -186,11 +180,7 @@ body {
   font-weight: 900;
 }
 
-.detailOperatorContainer
-  .allDetails
-  .operatorDetails
-  .staticDetails
-  .column-names {
+.detailOperatorContainer .allDetails .operatorDetails .staticDetails .column-names {
   color: black;
   font-weight: 900;
 }
@@ -201,8 +191,6 @@ body {
 
 .detailOperatorContainer .allDetails .operatorDetails .changingDetails h4 {
   text-align: right;
-  margin-left: auto;
-  align-items: right;
 }
 
 .detailOperatorContainer .allDetails .allSmallDetails h2 {
@@ -220,7 +208,6 @@ body {
   align-items: center;
   margin: 20px;
   margin-bottom: 34px;
-  opacity: 80%;
 }
 
 .detailOperatorContainer .allDetails .allSmallDetails .aircrafts {
@@ -233,7 +220,6 @@ body {
   align-items: center;
   margin: 20px;
   margin-bottom: 34px;
-  opacity: 80%;
 }
 
 .detailOperatorContainer .allDetails .allSmallDetails .reports {
@@ -245,7 +231,6 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 20px;
-  opacity: 80%;
 }
 
 /*

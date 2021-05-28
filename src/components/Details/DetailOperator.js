@@ -38,12 +38,12 @@ function DetailOperator({ match }) {
     <div className="detailOperatorContainer">
       <div className="headerDiv">
         <h2 className="titleH">{t("detailsOperator")}</h2>
-        <button className="button">
+        {/* <button className="button">
           <div className="btn-content">
             <p>{t("searchShowAsChart")}</p>
             <BiExport className="icon chart-icon" />
           </div>
-        </button>
+        </button> */}
       </div>
       <div className="allDetails">
         <div className="operatorDetails">
