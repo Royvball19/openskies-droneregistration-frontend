@@ -2,6 +2,7 @@ import React from "react";
 import { BsArrowReturnLeft, BsSearch } from "react-icons/bs";
 import DataTypes from "../../DataTypes";
 import { AiOutlineCalendar } from "react-icons/ai";
+import { GrClose } from "react-icons/gr";
 
 function Variables({ createFilterKey }) {
   function closeFilter() {
@@ -39,7 +40,8 @@ function Variables({ createFilterKey }) {
           <h2>Filter by</h2>
           <a className="closeFilterA" onClick={closeFilter}>
             {" "}
-            <BsSearch className="iconSearch" />
+            {/* <BsSearch className="iconSearch" /> */}
+            <GrClose className="iconSearch" />
           </a>
         </div>
        <div className="pilotDiv">

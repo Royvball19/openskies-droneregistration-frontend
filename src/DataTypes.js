@@ -22,6 +22,18 @@ export default {
         hidden: false,
         variable: "String",
       },
+      {
+        dataField: "website",
+        text: "Website",
+        hidden: false,
+        variable: "String",
+      },
+      {
+        dataField: "phone_number",
+        text: "Phone number",
+        hidden: false,
+        variable: "String",
+      },
     ];
   },
   pilots() {
@@ -61,14 +73,14 @@ export default {
         variable: "String",
       },
       {
-        dataField: "status",
-        text: "Status",
+        dataField: "maci_number",
+        text: "Maci number",
         hidden: false,
-        variable: "Integer",
+        variable: "String",
       },
       {
-        dataField: "operator.company_name",
-        text: "Operator name",
+        dataField: "manufacturer",
+        text: "Manufacturer",
         hidden: false,
         variable: "String",
       },

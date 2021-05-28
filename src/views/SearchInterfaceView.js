@@ -52,6 +52,7 @@ export default function SearchInterfaceView({ match }) {
         axios.spread((...responses) => {
           setData(responses[0].data);
           setColumnsData(responses[1].data.fields);
+          console.log(responses)
           // use/access the results
         })
       )
@@ -107,6 +108,7 @@ export default function SearchInterfaceView({ match }) {
           type={match.params.tabletype}
           activeFilters={query}
           deleteFilter={deleteFilter}
+          addToQuery={addToQuery}
         />
         <TableView columns={columns} data={filterdData} />
         <Filter addToQuery={addToQuery} columns={columns} />

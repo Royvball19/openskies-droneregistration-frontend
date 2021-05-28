@@ -19,4 +19,11 @@ export const TRANSLATIONS_EN = {
     pilots: "Pilots",
     aircrafts: "Aircrafts",
     reports: "Reports",
+    menuDashboard: "Dashboard",
+    menuOperators: "Search all operators",
+    menuPilots: "Search all pilots",
+    menuAircrafts: "Search all aircrafts",
+    menuSignOut: "Sign out",
+    menuSettings: "Settings",
+    menuLanguage: "Change Language",
 };

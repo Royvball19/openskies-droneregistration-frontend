@@ -24,4 +24,11 @@ export const TRANSLATIONS_NL = {
     pilots: "Piloten",
     aircrafts: "Vliegtuigen",
     reports: "Rapporten",
+    menuDashboard: "Dashboard",
+    menuOperators: "Zoek op bedrijven",
+    menuPilots: "Zoek op piloten",
+    menuAircrafts: "Zoek op drones",
+    menuSignOut: "Log uit",
+    menuSettings: "Instellingen",
+    menuLanguage: "Verander taal",
 };

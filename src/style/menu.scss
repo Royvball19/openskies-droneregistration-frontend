@@ -5,6 +5,7 @@
 $transition: 0.6s;
 $margin: 20px;
 
+
 .menu {
   position: fixed;
   z-index: 1;
@@ -15,9 +16,10 @@ $margin: 20px;
   opacity: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow-x: hidden;
-  /*overflow-y: hidden;*/
+  align-items: left;
+  justify-content: space-between;
+  padding: 10px;
+  
   left: -400px;
   transition: $transition;
 
@@ -27,52 +29,49 @@ $margin: 20px;
     display: flex;
     text-align: left;
     margin: $margin;
-  }
-
-  a:hover {
-    color: $button-font-color;
-  }
-
-  .closeButton:hover {
-    color: $button-font-color;
-    cursor: pointer;
-  }
-
-  .icon {
-    font-size: 36px;
-    margin-right: 10px;
-  }
-
-  .closeButtonDiv {
-    a {
-      font-size: 42px;
-      margin: 10px;
-      margin-left: 340px;
+    &:hover {
+      color: $button-font-color;
     }
   }
 
-  .profileInfo {
-    text-align: center;
 
-    img {
-      width: 200px;
-      height: 200px;
-      margin-top: 30px;
-      margin-bottom: 30px;
-    }
+  .upper {
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 
-    .dashboard {
-      a {
-        margin-bottom: 50px;
+    .profileInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        margin: 0px;
       }
     }
+
+    .closeButton {
+      font-size: 40px;
+      margin-left: 20px;
+      a {
+        width: 20px;
+      }
+    }
+
+    img {
+      align-items: center;
+      width: 30%;
+    }
+
+    
+  }
+  
+  .icon {
+    font-size: 36px;
+    margin-right: 15px;
   }
 
-  .settings {
-    a {
-      margin-top: 150px;
-    }
-  }
 }
 
 /*
@@ -106,6 +105,11 @@ $margin: 20px;
       margin: 5px;
     }
   }
+
+ 
+
+
+
 }
 
 @media only screen and (max-width: 600px) {

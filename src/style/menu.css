@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -32,7 +32,7 @@ p {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -78,69 +78,71 @@ body {
   top: 0;
   height: 100vh;
   width: 400px;
-  background-color: #0D1055;
+  background-color: #0d1055;
   opacity: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  overflow-x: hidden;
-  /*overflow-y: hidden;*/
+  align-items: left;
+  justify-content: space-between;
+  padding: 10px;
   left: -400px;
   transition: 0.6s;
 }
 
 .menu a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   text-align: left;
   margin: 20px;
 }
 
 .menu a:hover {
-  color: #FED737;
+  color: #fed737;
 }
 
-.menu .closeButton:hover {
-  color: #FED737;
-  cursor: pointer;
+.menu .upper {
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu .upper .profileInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu .upper .profileInfo h2 {
+  margin: 0px;
+}
+
+.menu .upper .closeButton {
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.menu .upper .closeButton a {
+  width: 20px;
+}
+
+.menu .upper img {
+  align-items: center;
+  width: 30%;
 }
 
 .menu .icon {
   font-size: 36px;
-  margin-right: 10px;
-}
-
-.menu .closeButtonDiv a {
-  font-size: 42px;
-  margin: 10px;
-  margin-left: 340px;
-}
-
-.menu .profileInfo {
-  text-align: center;
-}
-
-.menu .profileInfo img {
-  width: 200px;
-  height: 200px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.menu .profileInfo .dashboard a {
-  margin-bottom: 50px;
-}
-
-.menu .settings a {
-  margin-top: 150px;
+  margin-right: 15px;
 }
 
 /*
  * Arrow Button
  */
 .buttonDiv .arrowButton {
-  background-color: #0D1055;
+  background-color: #0d1055;
   border: none;
   width: 40px;
   height: 44px;
@@ -160,7 +162,7 @@ body {
 }
 
 .buttonDiv .arrowButton .openButton:hover {
-  color: #FED737;
+  color: #fed737;
 }
 
 .buttonDiv .arrowButton .iconArrow {

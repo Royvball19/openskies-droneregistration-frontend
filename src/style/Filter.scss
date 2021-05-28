@@ -32,7 +32,7 @@ $margin: 14px;
   }
 
   .iconSearch {
-    font-size: 42px;
+    font-size: 35px;
     color: black;
     margin: $margin;
   }
@@ -47,6 +47,11 @@ $margin: 14px;
     overflow-x: hidden;
     align-items: left;
     margin: $margin;
+
+    .Header {
+      display: flex;
+      justify-content: space-between;
+    }
 
     .closeFilterA:hover {
       color: $button-font-color;

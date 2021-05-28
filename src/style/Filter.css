@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -32,7 +32,7 @@ p {
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 h1 {
@@ -77,7 +77,7 @@ body {
   top: 0px;
   width: 300px;
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -90,7 +90,7 @@ body {
 .filterDiv p,
 .filterDiv ul,
 .filterDiv li {
-  color: #0D1055;
+  color: #0d1055;
   margin: 14px;
   list-style: none;
   cursor: default;
@@ -101,7 +101,7 @@ body {
 }
 
 .filterDiv .iconSearch {
-  font-size: 42px;
+  font-size: 35px;
   color: black;
   margin: 14px;
 }
@@ -118,81 +118,55 @@ body {
   margin: 14px;
 }
 
+.filterDiv .allFiltersDiv .Header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .filterDiv .allFiltersDiv .closeFilterA:hover {
-  color: #FED737;
+  color: #fed737;
 }
 
 .filterDiv .input-container {
   padding: 1rem 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .filterDiv .input-container .header-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .filterDiv .input-container .header-container .header-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  align-items: center;
+  flex-direction: row;
 }
 
 .filterDiv .input-container .operatorList, .filterDiv .input-container .text-input {
   width: 100%;
-  border: 1px solid #C2C2C2;
+  border: 1px solid #c2c2c2;
   border-radius: 3px;
-  color: #C2C2C2;
+  color: #c2c2c2;
   padding: 5px 10px;
   margin: 5px 0px;
 }
 
-.filterDiv .input-container .operatorList::-webkit-input-placeholder, .filterDiv .input-container .text-input::-webkit-input-placeholder {
-  color: #C2C2C2;
-}
-
-.filterDiv .input-container .operatorList:-ms-input-placeholder, .filterDiv .input-container .text-input:-ms-input-placeholder {
-  color: #C2C2C2;
-}
-
-.filterDiv .input-container .operatorList::-ms-input-placeholder, .filterDiv .input-container .text-input::-ms-input-placeholder {
-  color: #C2C2C2;
-}
-
 .filterDiv .input-container .operatorList::placeholder, .filterDiv .input-container .text-input::placeholder {
-  color: #C2C2C2;
+  color: #c2c2c2;
 }
 
 .filterDiv .input-container .back-icon {
-  color: #0D1055;
+  color: #0d1055;
   cursor: pointer;
   font-size: 30px;
 }
 
 .filterDiv .input-container .add-btn {
-  background-color: #0D1055;
+  background-color: #0d1055;
   border-radius: 10px;
   position: absolute;
   bottom: 30px;

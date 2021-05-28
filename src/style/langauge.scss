@@ -16,13 +16,14 @@ button {
 
 .menu-container {
   position: absolute;
-  bottom: 80px;
+  left: 80px;
+  bottom: 40px;
   display: flex;
   flex-direction: column;
-  background-color: $bg-primary;
-  opacity: 1;
+  background-color: #0d1055;
   border-radius: 10px;
   padding-right: 20px;
+  border: solid 2px;
 
   button {
     background: none;
@@ -44,8 +45,14 @@ button {
   }
 }
 
-.world-icon {
-  min-width: 40px;
-  min-height: 40px;
-  color: $bg-primary;
+.world-parent {
+  color: white;
+  svg {
+    color: white;
+  }
+  .world-icon {
+    min-width: 80px;
+    min-height: 40px;
+    fill: white;
+  }
 }
