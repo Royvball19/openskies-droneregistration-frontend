@@ -109,10 +109,10 @@ function DetailOperator({ match }) {
             <h2>{t("reports")}</h2>
           </div>
         </div>
-        <div className="quoteDiv">
+        {/* <div className="quoteDiv">
           <h3>"Drones are the future"</h3>
           <img src={CompanyLogo} alt="" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

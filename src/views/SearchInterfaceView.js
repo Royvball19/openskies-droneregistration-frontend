@@ -114,16 +114,13 @@ export default function SearchInterfaceView({ match }) {
   } else {
     return (
       <div>
-        <Search type={match.params.tabletype} activeFilters={query} deleteFilter={deleteFilter}/>
-        <TableView columns={columns} data={filterdData} type={match.params.tabletype} />
-        <Filter addToQuery={addToQuery} />
         <Search
           type={match.params.tabletype}
           activeFilters={query}
           deleteFilter={deleteFilter}
           addToQuery={addToQuery}
         />
-        <TableView columns={columns} data={filterdData} />
+        <TableView columns={columns} data={filterdData}  type={match.params.tabletype}/>
         <Filter addToQuery={addToQuery} columns={columns} />
       </div>
     );

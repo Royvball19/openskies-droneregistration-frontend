@@ -11,23 +11,13 @@ export default function TableView({ data, columns, type }) {
 
 const history = useHistory();
 const tableRowEvents = {
-
   onClick: (e, row, rowIndex) => {
     history.push({
       pathname: "/details/"+ type + "/" + row.id,
       
    });
-  
   }
 }
-
-useEffect(() => {
- 
-  console.log(type)
-
-}, []);
-
-
 
 
   if (columns === null) {
