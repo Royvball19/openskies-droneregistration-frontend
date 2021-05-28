@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #ffffff;
 }
 
@@ -31,7 +31,7 @@ p {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #ffffff;
 }
 
@@ -63,7 +63,8 @@ p {
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -94,8 +95,13 @@ body {
 }
 
 .box-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   margin: 30px 0px;
 }
 
@@ -116,7 +122,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .box-buttons .button .btn-content p {
@@ -129,10 +137,17 @@ body {
   border-width: 2px;
   border-radius: 8px;
   border: solid #c2c2c2 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   padding: 10px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .box-search .search-field {
@@ -145,7 +160,19 @@ body {
   outline: none;
 }
 
-.search-field::placeholder {
+.box-search .search-field::-webkit-input-placeholder {
+  color: #c2c2c2;
+}
+
+.box-search .search-field:-ms-input-placeholder {
+  color: #c2c2c2;
+}
+
+.box-search .search-field::-ms-input-placeholder {
+  color: #c2c2c2;
+}
+
+.box-search .search-field::placeholder {
   color: #c2c2c2;
 }
 
@@ -171,8 +198,8 @@ body {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   max-width: 100%;
 }
 

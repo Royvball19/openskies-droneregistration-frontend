@@ -8,8 +8,7 @@ function Variables({ createFilterKey }) {
     document.getElementById("filter").style.right = "-400px";
   }
 
-  DataTypes.operators();
-  
+  const operatorsVariables = DataTypes.operators();
 
   function ListItems({ types }) {
     const icon = (type) => {
@@ -42,19 +41,26 @@ function Variables({ createFilterKey }) {
             <BsSearch className="iconSearch" />
           </a>
         </div>
-       <div className="pilotDiv">
+        {/* <div className="pilotDiv">
           <h3>Pilot</h3>
-          <ListItems types={DataTypes.pilots()} />
-        </div>
+          <p># ID</p>
+          <p>Aa First name</p>
+          <p>Aa Last name</p>
+          <p># Active</p>
+        </div> */}
         <div className="operatorDiv">
           <h3>Operators</h3>
           {/* <AiOutlineCalendar className="iconCalander" /> Created at */}
-          <ListItems types={DataTypes.operators()} />
+          <ListItems types={operatorsVariables} />
         </div>
-        <div className="aircraftDiv">
+        {/* <div className="aircraftDiv">
           <h3>Aircraft</h3>
-          <ListItems types={DataTypes.aircrafts()} />
-        </div> 
+          <p># ID</p>
+          <p># Mass</p>
+          <p># Manufacturer</p>
+          <p># Category</p>
+          <p># Status</p>
+        </div> */}
       </div>
     </div>
   );

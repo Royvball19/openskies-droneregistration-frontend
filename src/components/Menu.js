@@ -25,6 +25,8 @@ export const Menu = () => {
     document.getElementById("buttonId").style.transitionDelay = "0.55s";
   }
 
+ 
+
   return (
     <div id="menuDiv" className="menu">
       <div className="closeButtonDiv">
@@ -45,6 +47,7 @@ export const Menu = () => {
           <div className="searchOperators">
             <Link
               to={{ pathname: "/tableview/" + "operators" }}
+              state={{ testvalue: "hello" }}
               onClick={closeMenu}
             >
               {" "}
