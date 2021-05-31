@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import FuseTest from "./components/Filter/V2/FuseTest";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FuseTest />
   </React.StrictMode>,
 
   document.getElementById("root")
