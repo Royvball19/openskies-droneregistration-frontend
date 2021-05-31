@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./img/background.svg") repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+}
+
+.box-header {
+  padding-top: 20px;
+  border-width: 2px;
+  width: 100%;
+}
+
+.box-header h1 {
+  font-weight: normal;
+  color: #0d1055;
+}
+
+.box-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 30px 0px;
+}
+
+.box-buttons .button {
+  padding: 5px 17px;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d1055;
+  font-size: 25px;
+  color: #fff;
+  height: 45px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.box-buttons .button .btn-content {
+  display: flex;
+  justify-content: center;
+}
+
+.box-buttons .button .btn-content p {
+  font-size: 20px;
+}
+
+.box-search {
+  background-color: #fff;
+  color: #fff;
+  border-width: 2px;
+  border-radius: 8px;
+  border: solid #c2c2c2 2px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+}
+
+.box-search .search-field {
+  font-size: 25px;
+  width: 100%;
+  border: none;
+}
+
+.box-search .search-field:focus {
+  outline: none;
+}
+
+.box-search .search-field::placeholder {
+  color: #c2c2c2;
+}
+
+.icon {
+  color: #ffffff;
+  min-width: 25px;
+  min-height: 25px;
+  max-width: 30px;
+  max-height: 30px;
+  margin-left: 10px;
+}
+
+.search-icon {
+  max-width: 2px;
+  max-height: 2px;
+  color: #c2c2c2;
+  margin-right: 15px;
+}
+
+.active-filter-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+}
+
+.active-filter-container .active-filter {
+  padding: 5px 10px;
+  background-color: white;
+  margin: 10px 10px 5px 0px;
+  border-radius: 8px;
+  color: #0d1055;
+  border: 1px solid #0d1055;
+  display: block;
+  max-width: 100%;
+}
+
+.active-filter-container .active-filter b {
+  font-weight: 600;
+}
+
+.active-filter-container .active-filter .delete-filter {
+  font-size: 25px;
+  margin-left: 5px;
+  color: #0d1055;
+}
+
+.active-filter-container .active-filter .delete-filter:hover {
+  cursor: pointer;
+}

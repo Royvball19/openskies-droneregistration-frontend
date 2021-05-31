@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./img/background.svg") repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+/*
+ * Operator Details
+ */
+.detailOperatorContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.detailOperatorContainer .button {
+  padding: 5px 17px;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d1055;
+  font-size: 25px;
+  color: #fff;
+  height: 45px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 35px;
+  margin-left: 1042px;
+}
+
+.detailOperatorContainer .button .btn-content {
+  display: flex;
+  justify-content: center;
+}
+
+.detailOperatorContainer .button .btn-content p {
+  font-size: 20px;
+}
+
+.detailOperatorContainer .headerDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+}
+
+.detailOperatorContainer .headerDiv .titleH {
+  margin: 35px;
+  margin-left: 400px;
+  font-size: 40px;
+  font-weight: 300;
+  color: #0d1055;
+}
+
+.detailOperatorContainer .allDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.detailOperatorContainer .allDetails .quoteDiv {
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  left: 600px;
+  bottom: 350px;
+}
+
+.detailOperatorContainer .allDetails .quoteDiv h3 {
+  margin-right: 50px;
+  font-weight: 700;
+  font-size: 37px;
+  color: #0d1055;
+}
+
+.detailOperatorContainer .allDetails .details-container {
+  margin-top: 40px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px;
+  width: 1100px;
+  height: 510px;
+  background-color: #ffffff;
+  border-radius: 2%;
+  margin-left: 50px;
+  margin-bottom: 0px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails h2 {
+  color: #0d1055;
+  margin: 14px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails h3 {
+  color: #000000;
+  margin: 14px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails h4 {
+  color: #000000;
+  margin: 12px;
+  text-align: right;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails .staticDetails {
+  width: 500px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails .staticDetails h4 {
+  text-align: left;
+  font-weight: 900;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails .staticDetails .column-names {
+  color: black;
+  font-weight: 900;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails .changingDetails {
+  width: 500px;
+}
+
+.detailOperatorContainer .allDetails .operatorDetails .changingDetails h4 {
+  text-align: right;
+}
+
+.detailOperatorContainer .allDetails .allSmallDetails h2 {
+  color: #0d1055;
+  margin: 14px;
+}
+
+.detailOperatorContainer .allDetails .allSmallDetails .pilots {
+  width: 500px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  margin-bottom: 34px;
+}
+
+.detailOperatorContainer .allDetails .allSmallDetails .aircrafts {
+  width: 500px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  margin-bottom: 34px;
+}
+
+.detailOperatorContainer .allDetails .allSmallDetails .reports {
+  width: 500px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+/*
+ * Hier kunnen de andere detail pages
+ */

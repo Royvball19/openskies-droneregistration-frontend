@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tableview {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.tableview .react-bootstrap-table {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.tableview .react-bootstrap-table th {
+  border: none;
+}
+
+.tableview .react-bootstrap-table thead {
+  border-top: transparent;
+}
+
+.tableview .react-bootstrap-table tr {
+  border-left: transparent;
+  border-right: transparent;
+}

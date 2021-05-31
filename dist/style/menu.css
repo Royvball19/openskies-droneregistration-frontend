@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./img/background.svg") repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.menu {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  height: 100vh;
+  width: 400px;
+  background-color: #0d1055;
+  opacity: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  padding: 10px;
+  left: -400px;
+  transition: 0.6s;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  text-align: left;
+  margin: 20px;
+}
+
+.menu a:hover {
+  color: #fed737;
+}
+
+.menu .upper {
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu .upper .profileInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu .upper .profileInfo h2 {
+  margin: 0px;
+}
+
+.menu .upper .closeButton {
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.menu .upper .closeButton a {
+  width: 20px;
+}
+
+.menu .upper img {
+  align-items: center;
+  width: 30%;
+}
+
+.menu .icon {
+  font-size: 36px;
+  margin-right: 15px;
+}
+
+/*
+ * Arrow Button
+ */
+.buttonDiv .arrowButton {
+  background-color: #0d1055;
+  border: none;
+  width: 40px;
+  height: 44px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  margin-top: 30px;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+
+.buttonDiv .arrowButton .openButton {
+  color: white;
+  font-size: 42px;
+  transition: 0.3s;
+  margin-bottom: 4.5px;
+}
+
+.buttonDiv .arrowButton .openButton:hover {
+  color: #fed737;
+}
+
+.buttonDiv .arrowButton .iconArrow {
+  margin: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 100vw;
+    height: 100vh;
+  }
+}

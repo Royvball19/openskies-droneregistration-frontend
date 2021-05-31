@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./img/background.svg") repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.filterDiv {
+  position: absolute;
+  top: 0px;
+  width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  border-radius: 10px;
+  right: -400px;
+}
+
+.filterDiv h2,
+.filterDiv h3,
+.filterDiv p,
+.filterDiv ul,
+.filterDiv li {
+  color: #0d1055;
+  margin: 14px;
+  list-style: none;
+  cursor: default;
+}
+
+.filterDiv li {
+  cursor: pointer;
+}
+
+.filterDiv .iconSearch {
+  font-size: 35px;
+  color: black;
+  margin: 14px;
+}
+
+.filterDiv .iconCalander {
+  margin-bottom: 2px;
+}
+
+.filterDiv .allFiltersDiv {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  align-items: left;
+  margin: 14px;
+}
+
+.filterDiv .allFiltersDiv .Header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterDiv .allFiltersDiv .closeFilterA:hover {
+  color: #fed737;
+}
+
+.filterDiv .input-container {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+}
+
+.filterDiv .input-container .header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.filterDiv .input-container .header-container .header-content {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.filterDiv .input-container .operatorList, .filterDiv .input-container .text-input {
+  width: 100%;
+  border: 1px solid #c2c2c2;
+  border-radius: 3px;
+  color: #c2c2c2;
+  padding: 5px 10px;
+  margin: 5px 0px;
+}
+
+.filterDiv .input-container .operatorList::placeholder, .filterDiv .input-container .text-input::placeholder {
+  color: #c2c2c2;
+}
+
+.filterDiv .input-container .back-icon {
+  color: #0d1055;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.filterDiv .input-container .add-btn {
+  background-color: #0d1055;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 100vw;
+    height: 100vh;
+  }
+}
