@@ -8,6 +8,9 @@ function FuseTest() {
   const [filteredData, setFilteredData] = useState([]);
   const [keys, setKeys] = useState([]);
   const [value, setValue] = useState("");
+  const [range, setRange ] = useState(0.5);
+  
+
 
   useEffect(() => {
     Data.getAllOperators()
@@ -21,18 +24,21 @@ function FuseTest() {
   }, []);
 
   const options = {
+    isCaseSensitive: false,
     includeScore: true,
-    threshold: 0.4,
+    threshold: range,
+    ignoreLocation: true,
     //isCaseSensitive: false,
     keys: keys,
   };
 
   const filterData = () => {
     console.log(options)
-    const pattern = "Elec";
+    const pattern = value;
     const fuse = new Fuse(data, options);
     let result = fuse.search(pattern);
     console.log(result);
+    console.log(pattern)
     setFilteredData(result);
   };
   ///////////////////////////////////////////
@@ -43,6 +49,9 @@ function FuseTest() {
     arr.push(event.target.dataset.param);
     setKeys(arr);
   }
+
+
+  
 
   function KeySelect({ types }) {
     const icon = (type) => {
@@ -74,7 +83,11 @@ function FuseTest() {
       <div className="options">
         <h3>Operators</h3>
         <KeySelect types={DataTypes.operators()} />
-        <input type="text" />
+        <input type="text" onChange={event => setValue(event.target.value)}/>
+        <label htmlFor="range">
+        <span>Threshold</span>
+        <input type="range" min="0" max="100" onChange={event => setRange(event.target.value / 100 )} />
+        </label>
         <button onClick={filterData}>Search</button>
       </div>
     </div>
