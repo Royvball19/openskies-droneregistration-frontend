@@ -7,11 +7,10 @@ const  FuseTest = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [keys, setKeys] = useState([]);
-  const [value, setValue] = useState("");
+  const [input, setInput] = useState("");
   const [range, setRange ] = useState(0.5);
+  const [query, setQuery] = useState([]);
   
-
-
   useEffect(() => {
     Data.getAllOperators()
       .then((response) => {
@@ -23,6 +22,7 @@ const  FuseTest = () => {
       });
   }, []);
 
+  
   const options = {
     isCaseSensitive: false,
     includeScore: true,
@@ -32,26 +32,33 @@ const  FuseTest = () => {
     keys: keys,
   };
 
-  const filterData = () => {
-    console.log(options)
-    const pattern = value;
-    const fuse = new Fuse(data, options);
-    let result = fuse.search(pattern);
-    console.log(result);
-    console.log(pattern)
-    setFilteredData(result);
+  const addToQuery = () => {
+    let pattern = input;
+    let option = options;
+    
+    let arr = [...query];
+    arr.push({pattern, option})
+    
+    setQuery(arr)
   };
+
+  // side effect to filter data when query changes
+  useEffect( () => {
+    let arr = data;
+    query.map( (item) => {
+      let fuse = new Fuse ( arr, item.option)
+      return arr = fuse.search(item.pattern)
+    })
+    setFilteredData(arr)
+  }, [query]);
   ///////////////////////////////////////////
 
   const handleKeySelection = (event) => {
-    console.log(event.target.dataset.param);
     const arr = [...keys];
     arr.push(event.target.dataset.param);
     setKeys(arr);
   }
 
-
-  
 
   const KeySelect = ({ types }) => {
     const icon = (type) => {
@@ -83,12 +90,12 @@ const  FuseTest = () => {
       <div className="options">
         <h3>Operators</h3>
         <KeySelect types={DataTypes.operators()} />
-        <input type="text" onChange={event => setValue(event.target.value)}/>
+        <input type="text" onChange={event => setInput(event.target.value)}/>
         <label htmlFor="range">
         <span>Threshold</span>
         <input type="range" min="0" max="100" onChange={event => setRange(event.target.value / 100 )} />
         </label>
-        <button onClick={filterData}>Search</button>
+        <button onClick={addToQuery}>Search</button>
       </div>
     </div>
   );
