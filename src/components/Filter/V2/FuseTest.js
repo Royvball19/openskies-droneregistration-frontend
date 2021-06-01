@@ -3,7 +3,7 @@ import Fuse from "fuse.js";
 import Data from "../../../Data";
 import DataTypes from "../../../DataTypes";
 
-function FuseTest() {
+const  FuseTest = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [keys, setKeys] = useState([]);
@@ -43,7 +43,7 @@ function FuseTest() {
   };
   ///////////////////////////////////////////
 
-  function handleClick(event) {
+  const handleKeySelection = (event) => {
     console.log(event.target.dataset.param);
     const arr = [...keys];
     arr.push(event.target.dataset.param);
@@ -53,7 +53,7 @@ function FuseTest() {
 
   
 
-  function KeySelect({ types }) {
+  const KeySelect = ({ types }) => {
     const icon = (type) => {
       if (type === "Integer") {
         return "# ";
@@ -63,7 +63,7 @@ function FuseTest() {
       }
     };
     const content = types.map((type) => (
-      <li onClick={handleClick} data-param={type.dataField}>
+      <li onClick={handleKeySelection} data-param={type.dataField}>
         <span>{icon(type.variable)}</span>
         {type.text}
       </li>
