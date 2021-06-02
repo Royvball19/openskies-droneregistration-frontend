@@ -35,22 +35,36 @@ const  FuseTest = () => {
   const addToQuery = () => {
     let pattern = input;
     let option = options;
-    
     let arr = [...query];
     arr.push({pattern, option})
-    
     setQuery(arr)
+    setKeys([])
+    console.log(query)
   };
-
+  
   // side effect to filter data when query changes
   useEffect( () => {
     let arr = data;
+    console.log(query)
     query.map( (item) => {
       let fuse = new Fuse ( arr, item.option)
-      return arr = fuse.search(item.pattern)
+      console.log(arr)
+       arr = fuse.search(item.pattern)
+       let result = []
+
+       arr.map((item) => {
+         result.push(item.item)
+       })
+       arr = result
+       console.log(arr)
+       return arr
     })
+    
     setFilteredData(arr)
   }, [query]);
+
+  useEffect(() => { setFilteredData(data)}, [data])
+
   ///////////////////////////////////////////
 
   const handleKeySelection = (event) => {
@@ -58,7 +72,6 @@ const  FuseTest = () => {
     arr.push(event.target.dataset.param);
     setKeys(arr);
   }
-
 
   const KeySelect = ({ types }) => {
     const icon = (type) => {
@@ -85,16 +98,17 @@ const  FuseTest = () => {
     <div>
       <h1>All Operators</h1>
       {filteredData.map((item) => (
-        <div>{item.item.company_name}</div>
+      <div>{item.company_name} {item.website}</div>
       ))}
       <div className="options">
         <h3>Operators</h3>
         <KeySelect types={DataTypes.operators()} />
-        <input type="text" onChange={event => setInput(event.target.value)}/>
+        <input type="text" onChange={event => setInput(event.target.value)} />
         <label htmlFor="range">
         <span>Threshold</span>
         <input type="range" min="0" max="100" onChange={event => setRange(event.target.value / 100 )} />
         </label>
+        {/* <button onClick={handleClick}>Click to reset</button> */}
         <button onClick={addToQuery}>Search</button>
       </div>
     </div>

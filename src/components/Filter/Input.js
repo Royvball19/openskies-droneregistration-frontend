@@ -22,7 +22,6 @@ function Input({ goBack, createFilterValue }) {
     return (
       <select
         className="operatorList"
-
         value={selectedOperator}
         onChange={onSelectChange}
       >
