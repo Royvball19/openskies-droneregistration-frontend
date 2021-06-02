@@ -12,7 +12,7 @@ function Charts() {
   let [aircraftData, setAircraftData] = useState([]);
   let [pilotData, setPilotData] = useState([]);
   let [reportData, setReportData] = useState([]);
-  let [reports, setReports] = useState([]);
+  let [currentValue, setCurrentValue] = useState("reports");
   let [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -25,11 +25,10 @@ function Charts() {
       ])
       .then(
         axios.spread((...responses) => {
-          setOperatorData(responses[0].data.length);
-          setAircraftData(responses[1].data.length);
+          setOperatorData(responses[0].data);
+          setAircraftData(responses[1].data);
           setPilotData(responses[2].data);
-          setReportData(responses[3].data.length);
-          setReports(responses[3].data);
+          setReportData(responses[3].data);
           setLoaded(true);
         })
       )
@@ -39,41 +38,60 @@ function Charts() {
   }, [isLoaded]);
 
   if (isLoaded) {
-    // let data = [
-    //   {
-    //     object: "operators",
-    //     id: "operators",
-    //     operators: operatorData,
-    //     value: operatorData,
-    //   },
-    //   {
-    //     object: "aircrafts",
-    //     id: "aircrafts",
-    //     aircrafts: aircraftData,
-    //     value: aircraftData,
-    //   },
-    //   {
-    //     object: "pilots",
-    //     id: "pilots",
-    //     pilots: pilotData,
-    //     value: pilotData,
-    //   },
-    //   {
-    //     object: "reports",
-    //     id: "reports",
-    //     reports: reportData,
-    //     value: reportData,
-    //   },
-    // ];
+    let data = [
+      {
+        object: "operators",
+        id: "operators",
+        operators: operatorData.length,
+        value: operatorData.length,
+      },
+      {
+        object: "aircrafts",
+        id: "aircrafts",
+        aircrafts: aircraftData.length,
+        value: aircraftData.length,
+      },
+      {
+        object: "pilots",
+        id: "pilots",
+        pilots: pilotData.length,
+        value: pilotData.length,
+      },
+      {
+        object: "reports",
+        id: "reports",
+        reports: reportData.length,
+        value: reportData.length,
+      },
+    ];
 
     let dates = [];
     let formatted;
 
+    let currentInput;
+    let object;
+
+    switch (currentValue) {
+      case "pilots":
+        currentInput = pilotData;
+        object = "pilots";
+        break;
+      case "aircrafts":
+        currentInput = aircraftData;
+        object = "aircrafts";
+        break;
+      case "reports":
+        currentInput = reportData;
+        object = "reports";
+        break;
+      default:
+      // code block
+    }
+
     function retrieveReports() {
-      for (let i = 0; i < pilotData.length; i++) {
-        let str = pilotData[i].created_at;
+      for (let i = 0; i < currentInput.length; i++) {
+        let str = currentInput[i].created_at;
         formatted = str.substr(0, 7);
-        console.log(formatted);
         dates.push(formatted);
       }
     }
@@ -82,9 +100,9 @@ function Charts() {
 
     let currentMonths = [];
 
-    var check = moment(moment(), "YYYY/MM/DD");
-    var year = check.format("Y");
-    var month = check.format("M");
+    let check = moment(moment(), "YYYY/MM/DD");
+    let year = check.format("Y");
+    let month = check.format("M");
     if (month.length > 0) {
       month = "0" + month;
     }
@@ -96,15 +114,31 @@ function Charts() {
     let monthBeforelastMonth = month - 2;
     currentMonths.push(year + "-" + 0 + monthBeforelastMonth);
 
-    console.log(currentMonths);
+    let currentData = [
+      {
+        object: object,
+        currentMonth: currentMonths[0],
+        currentMonthData: dates.filter((item) => item == currentMonths[0])
+          .length,
+        lastMonth: currentMonths[1],
+        lastMonthData: dates.filter((item) => item == currentMonths[1]).length,
+        beforeLastMonth: currentMonths[2],
+        beforeLastMonthData: dates.filter((item) => item == currentMonths[2])
+          .length,
+      },
+    ];
 
-    console.log(dates.filter((item) => item == currentMonths[0]).length);
-
-    // console.log(month - 2);
-
-    // console.log(month);
-
-    return <div className="charts">{/* {<BarChart data={data} />} */}</div>;
+    return (
+      <>
+        <button onClick={() => setCurrentValue("reports")}>Reports</button>
+        <button onClick={() => setCurrentValue("pilots")}>Pilots</button>
+        <button onClick={() => setCurrentValue("aircrafts")}>Aircrafts</button>
+        <div className="charts">
+          <BarChart data={data} />
+          <LineChart data={currentData} />
+        </div>
+      </>
+    );
   } else {
     return null;
   }
