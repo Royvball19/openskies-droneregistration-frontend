@@ -1,7 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./img/background.svg") repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+}
+
 .addButtons {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.change-button {
+  padding: 5px 17px;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d1055;
+  font-size: 25px;
+  color: #fff;
+  height: 45px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.change-button .btn-content {
+  display: flex;
+  justify-content: center;
+}
+
+.change-button .btn-content p {
+  font-size: 20px;
 }
 
 .chart-parent {
@@ -12,6 +108,11 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+.chart-parent * {
+  color: #20286b;
+  font-weight: 200;
+}
+
 .removeButtons {
   display: none;
 }
@@ -19,3 +120,23 @@
 .charts {
   display: flex;
 }
+
+.chart-buttons {
+  position: absolute;
+  display: flex;
+  left: 575px;
+  top: 145px;
+}
+
+.chart-buttons button {
+  color: #20286b;
+  font-weight: 400;
+}
+
+.averageChartContainer {
+  width: 500px;
+  height: 100px;
+  background-color: #2FA6CC;
+  text-align: center;
+}
+/*# sourceMappingURL=charts.css.map */

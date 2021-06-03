@@ -67,7 +67,7 @@ p {
 }
 
 body {
-  background: url("./img/background.png") repeat center center/cover;
+  background: url("./img/background.svg") repeat center center/cover;
   width: 100vw;
   height: 100vh;
 }
@@ -193,3 +193,4 @@ body {
 .active-filter-container .active-filter .delete-filter:hover {
   cursor: pointer;
 }
+/*# sourceMappingURL=search.css.map */

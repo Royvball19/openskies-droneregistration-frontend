@@ -79,7 +79,7 @@ body {
   height: 100vh;
   width: 400px;
   background-color: #0d1055;
-  /* opacity: 80%; */
+  opacity: 80%;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -175,3 +175,4 @@ body {
     height: 100vh;
   }
 }
+/*# sourceMappingURL=menu.css.map */

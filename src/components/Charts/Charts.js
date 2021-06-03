@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import BarChart from "./BarChart";
 import PieChart from "./PieChart";
 import LineChart from "./LineChart";
+import AverageChart from "./AverageChart";
 import "../../style/charts.css";
 import Data from "../../Data";
 import axios from "axios";
 import moment from "moment";
+import { RiLineChartFill } from "react-icons/ri";
 
 function Charts() {
   let [operatorData, setOperatorData] = useState({});
@@ -13,6 +15,8 @@ function Charts() {
   let [pilotData, setPilotData] = useState([]);
   let [reportData, setReportData] = useState([]);
   let [currentValue, setCurrentValue] = useState("reports");
+  let [chartsStatus, setChartsStatus] = useState(false);
+  let [selectedMonths, setSelectedMonths] = useState([]);
   let [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -35,7 +39,7 @@ function Charts() {
       .catch((errors) => {
         // react on errors.
       });
-  }, [isLoaded]);
+  }, [isLoaded, chartsStatus]);
 
   if (isLoaded) {
     let data = [
@@ -88,31 +92,31 @@ function Charts() {
       // code block
     }
 
-    function retrieveReports() {
-      for (let i = 0; i < currentInput.length; i++) {
-        let str = currentInput[i].created_at;
-        formatted = str.substr(0, 7);
-        dates.push(formatted);
-      }
+    for (let i = 0; i < currentInput.length; i++) {
+      let str = currentInput[i].created_at;
+      formatted = str.substr(0, 7);
+      dates.push(formatted);
     }
 
-    retrieveReports();
-
     let currentMonths = [];
-
-    let check = moment(moment(), "YYYY/MM/DD");
+    const check = moment(moment(), "YYYY/MM/DD");
     let year = check.format("Y");
     let month = check.format("M");
+
     if (month.length > 0) {
       month = "0" + month;
     }
-    let currentDate = year + "-" + month;
-    currentMonths.push(currentDate);
+    if (month === "01") {
+      year = year - 1;
+    }
 
+    const separator = "-";
+    let currentDate = year + separator + month;
+    currentMonths.push(currentDate);
     let lastMonth = month - 1;
-    currentMonths.push(year + "-" + 0 + lastMonth);
+    currentMonths.push(year + separator + 0 + lastMonth);
     let monthBeforelastMonth = month - 2;
-    currentMonths.push(year + "-" + 0 + monthBeforelastMonth);
+    currentMonths.push(year + separator + 0 + monthBeforelastMonth);
 
     let currentData = [
       {
@@ -128,17 +132,46 @@ function Charts() {
       },
     ];
 
-    return (
-      <>
-        <button onClick={() => setCurrentValue("reports")}>Reports</button>
-        <button onClick={() => setCurrentValue("pilots")}>Pilots</button>
-        <button onClick={() => setCurrentValue("aircrafts")}>Aircrafts</button>
-        <div className="charts">
-          <BarChart data={data} />
-          <LineChart data={currentData} />
-        </div>
-      </>
-    );
+    const showCharts = () => {
+      console.log("test");
+      if (chartsStatus) {
+        setChartsStatus(false);
+        console.log("false");
+      } else if (!chartsStatus) {
+        setChartsStatus(true);
+        console.log("true");
+      }
+    };
+
+    if (chartsStatus) {
+      return (
+        <>
+          <button class="change-button" onClick={showCharts}>
+            Charts <RiLineChartFill className="icon chart-icon" />
+          </button>
+          <div className="charts">
+            <BarChart data={data} />
+            <LineChart data={currentData} />
+            <AverageChart data={data} />
+          </div>
+          <div className="chart-buttons">
+            <button onClick={() => setCurrentValue("reports")}>Reports</button>
+            <button onClick={() => setCurrentValue("pilots")}>Pilots</button>
+            <button onClick={() => setCurrentValue("aircrafts")}>
+              Aircrafts
+            </button>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <button class="change-button" onClick={showCharts}>
+            Charts <RiLineChartFill className="icon chart-icon" />
+          </button>
+        </>
+      );
+    }
   } else {
     return null;
   }
