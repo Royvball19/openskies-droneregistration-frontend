@@ -35,20 +35,6 @@ function BarChart({ data }) {
             spacing: 10,
           },
         ]}
-        fill={[
-          {
-            match: {
-              id: "fries",
-            },
-            id: "dots",
-          },
-          {
-            match: {
-              id: "sandwich",
-            },
-            id: "lines",
-          },
-        ]}
         borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
         axisTop={null}
         axisRight={null}
@@ -56,7 +42,7 @@ function BarChart({ data }) {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "object",
+          legend: "Registered in database",
           legendPosition: "middle",
           legendOffset: 32,
         }}
@@ -64,7 +50,7 @@ function BarChart({ data }) {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "food",
+          legend: "number",
           legendPosition: "middle",
           legendOffset: -40,
         }}

@@ -6,6 +6,7 @@ import "../../style/tableview.css";
 import { useHistory } from 'react-router'
 import { AiOutlineNodeIndex } from "react-icons/ai";
 import { Route, NavLink, Redirect } from 'react-router-dom';
+import moment from 'moment';
 
 export default function TableView({ data, columns, type }) {
 
@@ -18,7 +19,6 @@ const tableRowEvents = {
    });
   }
 }
-
 
   if (columns === null) {
     return null;

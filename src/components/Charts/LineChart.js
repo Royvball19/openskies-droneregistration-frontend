@@ -1,28 +1,25 @@
 import { ResponsiveLine } from "@nivo/line";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../style/charts.css";
 
 function LineChart({ data }) {
+  useEffect(() => {}, [data]);
+
   let lineData = [
     {
-      id: "database",
-      color: "hsl(186, 70%, 50%)",
+      id: "new " + data[0].object,
       data: [
         {
-          x: "operators",
-          y: data[0].value,
+          x: data[0].beforeLastMonth,
+          y: data[0].beforeLastMonthData,
         },
         {
-          x: "aircrafts",
-          y: data[1].value,
+          x: data[0].lastMonth,
+          y: data[0].lastMonthData,
         },
         {
-          x: "pilots",
-          y: data[2].value,
-        },
-        {
-          x: "reports",
-          y: data[3].value,
+          x: data[0].currentMonth,
+          y: data[0].currentMonthData,
         },
       ],
     },
@@ -49,7 +46,7 @@ function LineChart({ data }) {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "transportation",
+          legend: data[0].object,
           legendOffset: 36,
           legendPosition: "middle",
         }}
@@ -82,12 +79,12 @@ function LineChart({ data }) {
             itemOpacity: 0.75,
             symbolSize: 12,
             symbolShape: "circle",
-            symbolBorderColor: "rgba(0, 0, 0, .5)",
+            symbolBorderColor: "rgba(255, 255, 255, .5)",
             effects: [
               {
                 on: "hover",
                 style: {
-                  itemBackground: "rgba(0, 0, 0, .03)",
+                  itemBackground: "rgba(255, 255, 255, .03)",
                   itemOpacity: 1,
                 },
               },
