@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Search from "../components/Search";
+import Search from "../components/Search"
 import TableView from "../components/Tables/TableView";
 import Data from "../Data";
 import Filter from "../components/Filter/Filter";
-import { createQuery, testFilter } from "../custom hooks/searchfilter";
 import axios from 'axios';
+import Fuse from "fuse.js";
 
 const declareType = (input) => {
   // declare tabletype and get route
@@ -34,71 +34,132 @@ function declareColumns(input) {
   }
 }
 
-
 export default function SearchInterfaceView({ match }) {
 
-  let [data, setData] = useState([]);
-  let [filterdData, setFilteredData] = useState([]);
-  let [columnsData, setColumnsData] = useState([]);
-  let [query, setQuery] = useState([])
-  // let [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [filterdData, setFilteredData] = useState([]);
+  const [columnsData, setColumnsData] = useState([]);
+  const [query, setQuery] = useState([])
+  const [keys, setKeys] = useState([]);
+  const [input, setInput] = useState("");
+  const [range, setRange ] = useState(0.5);
+  const [searchBalkInput, setSearchBalkInput] = useState("");
 
   // fetch data from backend
   useEffect(() => {
-    axios.all([declareType(match.params.tabletype), declareColumns(match.params.tabletype)]).then(axios.spread((...responses) => {
+    axios.all([declareType(match.params.tabletype),
+      declareColumns(match.params.tabletype)])
+      .then(axios.spread((...responses) => {
       setData(responses[0].data)
       setColumnsData(responses[1].data.fields)
       // use/access the results 
     })).catch(error => {
       console.log(error);
     })
-    axios
-      .all([
-        declareType(match.params.tabletype),
-        declareColumns(match.params.tabletype),
-      ])
-      .then(
-        axios.spread((...responses) => {
-          setData(responses[0].data);
-          setColumnsData(responses[1].data.fields);
-          console.log(responses)
-          // use/access the results
-        })
-      )
-      .catch((error) => {
-        console.log(error);
-      });
   }, [match.params.tabletype]);
 
-  // side effect to update data when query or data changes
-  useEffect(() => {
-    let filterQuery = createQuery(query);
-    let result = testFilter(data, filterQuery);
-    setFilteredData(result);
-  }, [query, data]);
+   // update filtered data when query changes
+  useEffect( () => {
+    let arr = data;
+    query.map( (item) => {
+      let fuse = new Fuse ( arr, item.option)
+       arr = fuse.search(item.pattern)
+       let result = []
+       arr.map((item) => {
+         result.push(item.item)
+       })
+       arr = result
+       return arr
+    })
+    setFilteredData(arr)
+  }, [query]);
+
+  // set data to filtered data to show data on startup
+  useEffect( () => {
+    setFilteredData(data)
+   }, [data])
+
+   // config for filter
+  const options = {
+    isCaseSensitive: false,
+    includeScore: true,
+    threshold: range,
+    ignoreLocation: true,
+    //isCaseSensitive: false,
+    keys: keys,
+    };
 
   // delete filter from query
   const deleteFilter = (filter) => {
     let newQuery = query.filter(item => item !== filter)
     setQuery(newQuery)
   }
-  
-  // define filter and filter data
-  const addToQuery = (filter, operator) => {
-    console.log(query)
-    let filterObject = createQuery([filter, operator]);
-    console.log(filterObject)
 
-    let newQuery = [...query]
-    newQuery.push(filterObject);
-    setQuery(newQuery)
+  // reset keys 
+  const resetKeys = () => {
+      setKeys([]);
+  }
 
-    //query.push(filterObject);
-    console.log(query)
-
-  
-    console.log("----------------");
+  // add filter object to query
+  const addToQuery = () => {
+    let pattern = input;
+    let option = options;
+    let arr = [...query];
+    arr.push({pattern, option})
+    setQuery(arr)
+    resetKeys();
   };
+
+  // handle input from filter menu
+  const handleInput = (event) => {
+    setInput(event.target.value)
+  }
+
+  // handle range slider from filter menu
+  const handleRange = (event) => {
+    setRange(event.target.value / 5 )
+  }
+
+  // set key on click from filter menu
+  const handleKeySelection = (event) => {
+    const arr = [...keys];
+    arr.push(event.target.dataset.param);
+    setKeys(arr);
+  }
+
+  // handle text input from search bar
+  const handleSearchBalkInput = (event) => {
+    setSearchBalkInput(event.target.value)
+  }
+
+  // special Effect to filter when search balk is used
+  useEffect( () => {
+    const allKeys = () => {
+      const arr = columnsData;
+      const newArr = []
+      arr.map( (item) => {
+        newArr.push(item.key);
+      })
+      return newArr
+    }
+    const broadSearch = {
+      isCaseSensitive: false,
+      includeScore: true,
+      threshold: 0.4, // lower threshold to make search bar more strict (range 0 to 1)
+      ignoreLocation: true,
+      keys: allKeys(),
+      };
+    let arr = data;
+    let fuse = new Fuse ( arr, broadSearch)
+    arr = fuse.search(searchBalkInput)
+    let result = []
+    arr.map((item) => {
+      result.push(item.item)
+    })
+    arr = result
+    setFilteredData(arr)
+    
+  }, [searchBalkInput])
 
   // define columns
   let columns = [];
@@ -115,13 +176,18 @@ export default function SearchInterfaceView({ match }) {
     return (
       <div>
         <Search
-          type={match.params.tabletype}
           activeFilters={query}
           deleteFilter={deleteFilter}
-          addToQuery={addToQuery}
+          handleSearchBalkInput={handleSearchBalkInput}
+          type={match.params.tabletype}
         />
         <TableView columns={columns} data={filterdData}  type={match.params.tabletype}/>
-        <Filter addToQuery={addToQuery} columns={columns} />
+        <Filter data={data} columns={columns} addToQuery={addToQuery}
+        handleInput={handleInput} handleRange={handleRange}
+        handleKeySelection={handleKeySelection}
+        keys={keys} resetKeys={resetKeys}
+        columnsData={columnsData}
+        />
       </div>
     );
   }

@@ -12,9 +12,11 @@ $margin: 14px;
   background-color: $font-primary;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   border-radius: 10px;
   right: -400px;
+
+  
 
   h2,
   h3,
@@ -24,41 +26,38 @@ $margin: 14px;
     color: $bg-primary;
     margin: $margin;
     list-style: none;
-    cursor: default;
-  }
-
-  li {
     cursor: pointer;
   }
 
-  .iconSearch {
-    font-size: 35px;
-    color: black;
-    margin: $margin;
+  .keys {
+    .keys-wrapper {
+      max-height: 200px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
   }
 
-  .iconCalander {
-    margin-bottom: 2px;
-  }
 
-  .allFiltersDiv {
+
+  .Header {
     display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    align-items: left;
-    margin: $margin;
-
-    .Header {
-      display: flex;
-      justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+    .back-icon{
+      color: $bg-primary;
+      cursor: pointer;
+      font-size: 30px;
+      margin-right: 10px;
     }
-
-    .closeFilterA:hover {
-      color: $button-font-color;
+    .iconSearch {
+      margin-left: 10px;
+      color: $bg-primary;
+      cursor: pointer;
+      font-size: 25px;
     }
   }
 
-  .input-container{
+  .input-container {
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
@@ -75,34 +74,63 @@ $margin: 14px;
         flex-direction: row;
       }
     }
-    
-    .operatorList, .text-input {
-      width: 100%;
-      border: 1px solid $grey-color-text;
-      border-radius: 3px;
-      color: $grey-color-text;
-      padding: 5px 10px;
-      margin: 5px 0px;
+  }
+
+  .add-btn {
+    background-color: $bg-primary;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 30px;
+    margin: auto;
+  }
+
+  .options {
+    color: $bg-primary;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+
+    .text-input {
+      padding: 5px;
+      border: solid 1px $grey-color-text;
+      border-radius: 5px;
       &::placeholder {
         color: $grey-color-text;
       }
-    }
-  
-    .back-icon {
-      color: $bg-primary;
-      cursor: pointer;
-      font-size: 30px;
-    }
-  
-    .add-btn {
-      background-color: $bg-primary;
-      border-radius: 10px;
-      position: absolute;
-      bottom: 30px;
+      &:focus {
+        outline-color: $bg-primary;
+      }
     }
 
+    .threshold {
+      display: flex;
+      margin-top: 30px;
+      align-items: center;
+
+      input {
+        margin: 0px 8px;
+        -webkit-appearance: none;
+        opacity: 0.7;
+        outline: none;
+        background: #d3d3d3;
+        width: 100%;
+        height: 10px;
+        -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+        transition: opacity 0.2s;
+        border-radius: 5px;
+
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none; /* Override default look */
+          appearance: none;
+          width: 20px; /* Set a specific slider handle width */
+          height: 20px; /* Slider handle height */
+          background: $bg-primary;
+          cursor: pointer; /* Cursor on hover */
+          border-radius: 10px;
+        }
+      }
+    }
   }
-
 }
 
 @media only screen and (max-width: 600px) {
