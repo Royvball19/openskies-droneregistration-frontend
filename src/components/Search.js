@@ -4,12 +4,11 @@ import { GiSaveArrow } from "react-icons/gi";
 import { FiFilter } from "react-icons/fi";
 import { RiLineChartFill } from "react-icons/ri";
 import { BsSearch } from "react-icons/bs";
-
 import { useTranslation } from "react-i18next";
 import ActiveFilters from "./Filter/ActiveFilters";
 
 
-function Search({ type , activeFilters, deleteFilter, addToQuery }) {
+function Search({ type , activeFilters, deleteFilter, addToQuery, handleSearchBalkInput }) {
   const { t } = useTranslation();
   const [input, setInput] = useState("");
 
@@ -20,7 +19,6 @@ function Search({ type , activeFilters, deleteFilter, addToQuery }) {
   useEffect(() => {
    // use effect to add functionality to search input
   
-    
   }, [input])
 
   return (
@@ -60,7 +58,7 @@ function Search({ type , activeFilters, deleteFilter, addToQuery }) {
           placeholder={t("searchPlaceholder") + type}
           name="search"
           className="search-field"
-          onChange={(e) => { setInput(e.target.value) }}
+          onChange={handleSearchBalkInput}
 
         ></input>
       </div>

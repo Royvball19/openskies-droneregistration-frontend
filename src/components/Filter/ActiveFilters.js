@@ -7,7 +7,8 @@ function ActiveFilters({ activeFilters, deleteFilter }) {
     content = activeFilters.map((filter) => {
       return (
         <li className="active-filter" key={activeFilters.indexOf(filter)}>
-          {Object.keys(filter)[0]} : &nbsp; <b>{Object.values(filter)[0]}</b>
+          {filter.option.keys}
+           : &nbsp; <b>{filter.pattern}</b>
           <GrFormClose
             className="delete-filter"
             onClick={() => deleteFilter(filter)}
