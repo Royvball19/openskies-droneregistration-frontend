@@ -149,7 +149,7 @@ body {
   margin: 20px;
   width: 1100px;
   height: 510px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 2%;
   margin-left: 50px;
   margin-bottom: 0px;
@@ -201,7 +201,7 @@ body {
 .detailOperatorContainer .allDetails .allSmallDetails .pilots {
   width: 500px;
   height: 250px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 4%;
   display: flex;
   flex-direction: column;
@@ -213,7 +213,7 @@ body {
 .detailOperatorContainer .allDetails .allSmallDetails .aircrafts {
   width: 500px;
   height: 250px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 4%;
   display: flex;
   flex-direction: column;
@@ -225,7 +225,7 @@ body {
 .detailOperatorContainer .allDetails .allSmallDetails .reports {
   width: 500px;
   height: 250px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 4%;
   display: flex;
   flex-direction: column;
@@ -236,4 +236,3 @@ body {
 /*
  * Hier kunnen de andere detail pages
  */
-/*# sourceMappingURL=details.css.map */
