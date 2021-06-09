@@ -32,8 +32,6 @@ export default function AircraftDetails({match}) {
     
   }
 
-  console.log(data.mass)
-
   return (
     <>
     <h1 className="aircraftHeader">Aircraft Details</h1>

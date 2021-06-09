@@ -63,7 +63,8 @@ p {
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -78,9 +79,16 @@ body {
   width: 300px;
   height: 100vh;
   background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 10px;
   right: -400px;
 }
@@ -103,9 +111,15 @@ body {
 }
 
 .filterDiv .Header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .filterDiv .Header .back-icon {
@@ -124,21 +138,40 @@ body {
 
 .filterDiv .input-container {
   padding: 1rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .filterDiv .input-container .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .filterDiv .input-container .header-container .header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .filterDiv .add-btn {
@@ -151,8 +184,13 @@ body {
 
 .filterDiv .options {
   color: #0d1055;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 50px;
 }
 
@@ -160,6 +198,18 @@ body {
   padding: 5px;
   border: solid 1px #c2c2c2;
   border-radius: 5px;
+}
+
+.filterDiv .options .text-input::-webkit-input-placeholder {
+  color: #c2c2c2;
+}
+
+.filterDiv .options .text-input:-ms-input-placeholder {
+  color: #c2c2c2;
+}
+
+.filterDiv .options .text-input::-ms-input-placeholder {
+  color: #c2c2c2;
 }
 
 .filterDiv .options .text-input::placeholder {
@@ -171,9 +221,13 @@ body {
 }
 
 .filterDiv .options .threshold {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 30px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .filterDiv .options .threshold input {
@@ -184,12 +238,15 @@ body {
   background: #d3d3d3;
   width: 100%;
   height: 10px;
+  -webkit-transition: 0.2s;
   /* 0.2 seconds transition on hover */
+  -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
   border-radius: 5px;
 }
 
 .filterDiv .options .threshold input::-webkit-slider-thumb {
+  -webkit-appearance: none;
   /* Override default look */
   appearance: none;
   width: 20px;

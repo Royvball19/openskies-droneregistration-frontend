@@ -77,13 +77,13 @@ h4 {
   color: black;
 }
 
-.aircraftHeader {
+.pilotHeader {
   font-weight: normal;
   color: #0d1055;
   margin: 30px 260px;
 }
 
-.aircraftDetailContainer {
+.pilotDetailContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,7 +92,7 @@ h4 {
           justify-content: center;
 }
 
-.aircraftDetailContainer .aircraftDetails {
+.pilotDetailContainer .pilotDetails {
   display: -ms-grid;
   display: grid;
   width: 80vw;
@@ -104,15 +104,15 @@ h4 {
       grid-template-columns: 1fr 1fr 1fr;
 }
 
-.aircraftDetailContainer .leftContent h4 {
+.pilotDetailContainer .leftContent h4 {
   padding: 4px 0px;
 }
 
-.aircraftDetailContainer .rightContent {
+.pilotDetailContainer .rightContent {
   grid-column: end;
 }
 
-.aircraftDetailContainer .rightContent h4 {
+.pilotDetailContainer .rightContent h4 {
   padding: 4px 0px;
   font-weight: normal;
 }
@@ -173,4 +173,4 @@ h4 {
   font-weight: normal;
   margin-bottom: 20px;
 }
-/*# sourceMappingURL=aircraftdetails.css.map */
+/*# sourceMappingURL=pilotdetails.css.map */
