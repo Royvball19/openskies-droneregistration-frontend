@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ResponsivePie } from "@nivo/pie";
 
-function AverageChart({ data }) {
-  useEffect(() => {}, [data]);
+function AverageChart({ operatorData, reportData }) {
+  useEffect(() => {}, [operatorData, reportData]);
 
   let averageReports = [
     {
       id: "reports per operator",
       label: "average reports per operator",
-      value: data[3].reports / data[0].operators,
+      value: reportData.length / operatorData.length,
       color: "hsl(92, 70%, 50%)",
     },
   ];

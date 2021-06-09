@@ -1,32 +1,85 @@
 import { ResponsiveLine } from "@nivo/line";
 import React, { useEffect, useState } from "react";
+import moment from "moment";
 import "../../style/charts.css";
 
-function LineChart({ data }) {
-  useEffect(() => {}, [data]);
+function LineChart({ operatorData, aircraftData, pilotData, reportData }) {
+  let [currentValue, setCurrentValue] = useState("reports");
+  useEffect(() => {}, [operatorData, aircraftData, pilotData, reportData]);
 
+  let currentInput;
+  let object;
+
+  // Choose input type
+  switch (currentValue) {
+    case "pilots":
+      currentInput = pilotData;
+      object = "pilots";
+      break;
+    case "aircrafts":
+      currentInput = aircraftData;
+      object = "aircrafts";
+      break;
+    case "reports":
+      currentInput = reportData;
+      object = "reports";
+      break;
+    default:
+  }
+
+  let dates = [];
+  // Check how many there are in the array
+  for (let i = 0; i < currentInput.length; i++) {
+    let str = currentInput[i].created_at;
+    let formatted = str.substr(0, 7);
+    dates.push(formatted);
+  }
+
+  // Retrieve current month
+  let currentMonths = [];
+  const check = moment(moment(), "YYYY/MM/DD");
+  let year = check.format("Y");
+  let month = check.format("M");
+
+  if (month.length > 0) {
+    month = "0" + month;
+  }
+  if (month === "01") {
+    year = year - 1;
+  }
+
+  // Define months
+  const separator = "-";
+  let currentDate = year + separator + month;
+  currentMonths.push(currentDate);
+  let lastMonth = month - 1;
+  currentMonths.push(year + separator + 0 + lastMonth);
+  let monthBeforelastMonth = month - 2;
+  currentMonths.push(year + separator + 0 + monthBeforelastMonth);
+
+  // Set data for chart
   let lineData = [
     {
-      id: "new " + data[0].object,
+      id: "new " + object,
       data: [
         {
-          x: data[0].beforeLastMonth,
-          y: data[0].beforeLastMonthData,
+          x: currentMonths[0],
+          y: dates.filter((item) => item == currentMonths[0]).length,
         },
         {
-          x: data[0].lastMonth,
-          y: data[0].lastMonthData,
+          x: currentMonths[1],
+          y: dates.filter((item) => item == currentMonths[1]).length,
         },
         {
-          x: data[0].currentMonth,
-          y: data[0].currentMonthData,
+          x: currentMonths[2],
+          y: dates.filter((item) => item == currentMonths[2]).length,
         },
       ],
     },
   ];
 
   return (
-    <div className="chart-parent">
+    <div class="chart-parent monthly-chart">
       <ResponsiveLine
         data={lineData}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
@@ -46,7 +99,7 @@ function LineChart({ data }) {
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: data[0].object,
+          legend: object,
           legendOffset: 36,
           legendPosition: "middle",
         }}
@@ -92,6 +145,11 @@ function LineChart({ data }) {
           },
         ]}
       />
+      <div className="chart-buttons">
+        <button onClick={() => setCurrentValue("reports")}>Reports</button>
+        <button onClick={() => setCurrentValue("pilots")}>Pilots</button>
+        <button onClick={() => setCurrentValue("aircrafts")}>Aircrafts</button>
+      </div>
     </div>
   );
 }

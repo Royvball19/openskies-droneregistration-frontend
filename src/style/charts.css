@@ -103,8 +103,9 @@ body {
 .chart-parent {
   margin: 15px;
   border-radius: 5%;
-  height: 350px;
+  height: 400px;
   width: 565px;
+  padding-bottom: 60px;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -122,10 +123,11 @@ body {
 }
 
 .chart-buttons {
-  position: absolute;
+  position: relative;
   display: flex;
-  left: 830px;
-  top: 145px;
+  justify-content: center;
+  min-height: 50px;
+  box-sizing: border-box;
 }
 
 .chart-buttons button {
@@ -139,3 +141,4 @@ body {
   background-color: #2FA6CC;
   text-align: center;
 }
+/*# sourceMappingURL=charts.css.map */
