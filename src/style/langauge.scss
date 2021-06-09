@@ -19,11 +19,12 @@ button {
   left: 80px;
   bottom: 40px;
   display: flex;
+  padding-left: 10px;
   flex-direction: column;
   background-color: #0d1055;
   border-radius: 10px;
-  padding-right: 20px;
   border: solid 2px;
+  width: 175px;
 
   button {
     background: none;
@@ -33,6 +34,7 @@ button {
     border: none;
     cursor: pointer;
     text-align: left;
+    width: 150px;
 
     &:hover {
       opacity: 0.8;

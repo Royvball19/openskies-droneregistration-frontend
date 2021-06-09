@@ -1,9 +1,37 @@
 import { ResponsiveBar } from "@nivo/bar";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "../../style/charts.css";
 
-function BarChart({ data }) {
+function BarChart({ operatorData, aircraftData, pilotData, reportData }) {
+  useEffect(() => {}, [operatorData, aircraftData, pilotData, reportData]);
+
+  let data = [
+    {
+      object: "operators",
+      id: "operators",
+      operators: operatorData.length,
+      value: operatorData.length,
+    },
+    {
+      object: "aircrafts",
+      id: "aircrafts",
+      aircrafts: aircraftData.length,
+      value: aircraftData.length,
+    },
+    {
+      object: "pilots",
+      id: "pilots",
+      pilots: pilotData.length,
+      value: pilotData.length,
+    },
+    {
+      object: "reports",
+      id: "reports",
+      reports: reportData.length,
+      value: reportData.length,
+    },
+  ];
   return (
     <div id="chart-parent" className="chart-parent">
       <ResponsiveBar
