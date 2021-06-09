@@ -7,7 +7,7 @@ import { HashRouter as Router, Route } from "react-router-dom";
 import SearchInterfaceView from "./views/SearchInterfaceView";
 import DetailOperator from "./components/Details/DetailOperator";
 import AircraftDetails from "./components/Details/AircraftDetails"
-
+import PilotDetails from "./components/Details/PilotDetails"
 function App() {
   return (
     <Router>
@@ -22,6 +22,7 @@ function App() {
         />
         <Route exact path="/details/operators/:id" component={DetailOperator} />
         <Route exact path="/details/aircrafts/:id" component={AircraftDetails} />
+        <Route exact path="/details/pilots/:id" component={PilotDetails} />
       </div>
     </Router>
   );
