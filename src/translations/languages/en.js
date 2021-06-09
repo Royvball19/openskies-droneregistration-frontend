@@ -26,4 +26,7 @@ export const TRANSLATIONS_EN = {
     menuSignOut: "Sign out",
     menuSettings: "Settings",
     menuLanguage: "Change Language",
+    toastText: "Something went wrong while fetching the data. Please try again.",
+    toastHead: "Error message",
+    toastTime: "now..",
 };

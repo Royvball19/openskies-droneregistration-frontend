@@ -16,13 +16,13 @@ export const Filter = ({ addToQuery, handleInput,
     operator: [],
     pilot: [],
   })
+  const [ errorMessage ] = useState('');
 
   // fetching data from the backend API
   useEffect( () => {
     axios.all([Data.getAircraftOptions(),
       Data.getOperatorOptions(), Data.getPilotOptions()])
       .then(axios.spread((...responses) => {
-        console.log(responses)
       setOptions({
         aircraft: responses[0].data.fields,
         operator: responses[1].data.fields,
@@ -30,7 +30,7 @@ export const Filter = ({ addToQuery, handleInput,
       })
       // use/access the results 
     })).catch(error => {
-      console.log(error);
+      
     })
   }, [])
 

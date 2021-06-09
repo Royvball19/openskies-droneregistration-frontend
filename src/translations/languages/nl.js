@@ -31,4 +31,7 @@ export const TRANSLATIONS_NL = {
     menuSignOut: "Log uit",
     menuSettings: "Instellingen",
     menuLanguage: "Verander taal",
+    toastText: "Something went wrong while fetching the data. Please try again.",
+    toastHead: "Error message",
+    toastTime: "now..",
 };

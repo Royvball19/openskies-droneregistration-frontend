@@ -5,6 +5,8 @@ import Data from "../Data";
 import Filter from "../components/Filter/Filter";
 import axios from 'axios';
 import Fuse from "fuse.js";
+import AlertToast from "../components/AlertToast";
+
 
 const declareType = (input) => {
   // declare tabletype and get route
@@ -44,6 +46,12 @@ export default function SearchInterfaceView({ match }) {
   const [input, setInput] = useState("");
   const [range, setRange ] = useState(0.5);
   const [searchBalkInput, setSearchBalkInput] = useState("");
+  const [ message, setMessage ] = useState("");
+  const [ showToast, setShowToast ] = useState(false);
+  const [ isLoaded, setLoaded ] = useState(false);
+
+  // show toast on error
+  const toggleShowToast = () => setShowToast(!showToast);
 
   // fetch data from backend
   useEffect(() => {
@@ -52,9 +60,11 @@ export default function SearchInterfaceView({ match }) {
       .then(axios.spread((...responses) => {
       setData(responses[0].data)
       setColumnsData(responses[1].data.fields)
+      setLoaded(true);
       // use/access the results 
     })).catch(error => {
-      console.log(error);
+      setMessage(String(error))
+      setShowToast(true)
     })
   }, [match.params.tabletype]);
 
@@ -129,11 +139,15 @@ export default function SearchInterfaceView({ match }) {
 
   // handle text input from search bar
   const handleSearchBalkInput = (event) => {
+    console.log(event.target.value)
     setSearchBalkInput(event.target.value)
   }
 
   // special Effect to filter when search balk is used
   useEffect( () => {
+    if(searchBalkInput === ""){
+      setFilteredData(data)
+    } else {
     const allKeys = () => {
       const arr = columnsData;
       const newArr = []
@@ -158,7 +172,7 @@ export default function SearchInterfaceView({ match }) {
     })
     arr = result
     setFilteredData(arr)
-    
+  }
   }, [searchBalkInput])
 
   // define columns
@@ -170,11 +184,10 @@ export default function SearchInterfaceView({ match }) {
     });
   }
 
-  if (!columns.length) {
-    return null;
-  } else {
     return (
       <div>
+        {isLoaded ? (
+        <>
         <Search
           activeFilters={query}
           deleteFilter={deleteFilter}
@@ -187,8 +200,16 @@ export default function SearchInterfaceView({ match }) {
         handleKeySelection={handleKeySelection}
         keys={keys} resetKeys={resetKeys}
         columnsData={columnsData}
-        />
+        /> 
+        </> ): null }
+        <div className="toast-container"
+        style={{
+          position: 'relative',
+          minWidth: '100vw',
+          minHeight: '100vh',
+        }}>
+          <AlertToast message={message} showToast={showToast} toggleShowToast={toggleShowToast}/>
+        </div>
       </div>
     );
-  }
 }

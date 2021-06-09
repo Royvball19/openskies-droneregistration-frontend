@@ -36,46 +36,31 @@ function DetailOperator({ match }) {
 
   return (
     <div className="detailOperatorContainer">
-      <div className="headerDiv">
-        <h2 className="titleH">{t("detailsOperator")}</h2>
-        {/* <button className="button">
-          <div className="btn-content">
-            <p>{t("searchShowAsChart")}</p>
-            <BiExport className="icon chart-icon" />
-          </div>
-        </button> */}
-      </div>
-      <div className="allDetails">
-        <div className="operatorDetails">
+        <div className="headerDiv">
+          <h2 className="titleH">{t("detailsOperator")}</h2>
+        </div>
+    <div className="container"> 
+      <div className="allDetails row">
+        <div className="operatorDetails col">
           <div className="staticDetails">
             <div className="details-container">
               <h4>Company name:</h4>
               <h4>ID:</h4>
-              {/* <h4>{t("companyName")}:</h4>
-              <h4>{t("id")}:</h4> */}
             </div>
 
             <div className="details-container">
               <h4>Address:</h4>
               <h4>City:</h4>
               <h4>Country:</h4>
-              {/* <h4>{t("adress")}:</h4>
-              <h4>{t("city")}:</h4>
-              <h4>{t("country")}:</h4> */}
             </div>
             <div className="details-container">
               <h4>Email:</h4>
               <h4>Website:</h4>
               <h4>Operator type:</h4>
-              {/* <h4>{t("email")}:</h4>
-              <h4>{t("website")}:</h4>
-              <h4>{t("operatorType")}:</h4> */}
             </div>
             <div className="details-container">
               <h4>Created at:</h4>
               <h4>Updated at:</h4>
-              {/* <h4>{t("operatorCreatedAt")}:</h4>
-              <h4>{t("lastUpdatedAt")}:</h4> */}
             </div>
           </div>
           <div className="changingDetails">
@@ -93,27 +78,26 @@ function DetailOperator({ match }) {
               <h4>{data.website}</h4>
               <h4>{data.operator_type}</h4>
             </div>
-            <h4>{moment(data.created_at).calendar()}</h4>
-            <h4>{moment(data.updated_at).calendar()}</h4>
+            <div className="details-container">
+              <h4>{moment(data.created_at).calendar()}</h4>
+              <h4>{moment(data.updated_at).calendar()}</h4>
+            </div>
           </div>
         </div>
 
-        <div className="allSmallDetails">
-          <div className="pilots">
+        <div className="allSmallDetails col-4">
+          <div className="linked pilots">
             <h2>{t("pilots")}</h2>
           </div>
-          <div className="aircrafts">
+          <div className="linked aircrafts">
             <h2>{t("aircrafts")}</h2>
           </div>
-          <div className="reports">
+          <div className="linked reports">
             <h2>{t("reports")}</h2>
           </div>
         </div>
-        {/* <div className="quoteDiv">
-          <h3>"Drones are the future"</h3>
-          <img src={CompanyLogo} alt="" />
-        </div> */}
       </div>
+      </div>  
     </div>
   );
 }

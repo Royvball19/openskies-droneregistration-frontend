@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Dashboard from './components/Dashboard/Dashboard';
 import "./style/style.css";
 import ArrowButton from "./components/ArrowButton";
@@ -6,12 +6,16 @@ import Menu from "./components/Menu";
 import { HashRouter as Router, Route } from "react-router-dom";
 import SearchInterfaceView from "./views/SearchInterfaceView";
 import DetailOperator from "./components/Details/DetailOperator";
-import AircraftDetails from "./components/Details/AircraftDetails"
+import AircraftDetails from "./components/Details/AircraftDetails";
+
 
 function App() {
+
   return (
     <Router>
-      <div className="App">
+      <div className="App" style={{
+          position: 'relative',
+        }}>
         <Route exact path="/" component={Dashboard} />
         <ArrowButton />
         <Menu />

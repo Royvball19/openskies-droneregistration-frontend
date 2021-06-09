@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style/menu.css";
 import { IoIosCloseCircle, IoMdHome } from "react-icons/io";
 import { HiOfficeBuilding } from "react-icons/hi";
@@ -13,12 +13,7 @@ import LanguageMenu from "./LanguageChanger/LanguageMenu";
 import { useTranslation } from "react-i18next";
 
 export const Menu = () => {
-  const history = useHistory();
   const { t } = useTranslation();
-
-  function resetHistory() {
-    history.go(0);
-  }
 
   //function to close the menu from the left side
   function closeMenu() {
@@ -29,11 +24,6 @@ export const Menu = () => {
 
   return (
     <div id="menuDiv" className="menu">
-      {/* <div className="closeButtonDiv">
-        <a className="closeButton" onClick={closeMenu}>
-          <IoIosCloseCircle />
-        </a>
-      </div> */}
       <div className="upper">
         <div className="profileInfo">
           <h2>Richard Branson</h2>
@@ -59,7 +49,6 @@ export const Menu = () => {
                 to={{ pathname: "/tableview/" + "operators" }}
                 onClick={closeMenu}
               >
-                {" "}
                 <HiOfficeBuilding className="iconOperators icon" />
                 <h3>{t("menuOperators")}</h3>
               </Link>
