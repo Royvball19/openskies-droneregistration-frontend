@@ -53,7 +53,7 @@ export const Filter = ({
   }, []);
 
   const closeFilter = () => {
-    document.getElementById("filter").style.right = "-400px";
+    document.getElementById("filter").style.display = "none";
     setShowKeys(true);
     resetKeys();
   };

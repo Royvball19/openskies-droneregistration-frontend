@@ -1,12 +1,12 @@
-.cardBody {
+.weathercard {
   position: relative;
   text-align: center;
   width: 350px;
-  height: 400px;
+  height: 460px;
   background-color: #2fa6cc;
   color: white;
   border-radius: 20px;
-  margin: 50px;
+  margin: 10px;
   z-index: 100;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .subTitle {
-  font-size: 18px;
+  font-size: 15px;
   padding-top: 20px;
 }
 
@@ -27,11 +27,17 @@
 
 p {
   font-weight: bold;
+  margin: 0;
 }
 
 .weatherVar {
   padding-bottom: 20px;
   font-weight: 400;
+  font-size: 10px;
+}
+
+.weatherVarCurrent {
+  font-size: 12px;
 }
 
 .weatherAlert {

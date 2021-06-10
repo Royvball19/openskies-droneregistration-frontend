@@ -7,19 +7,23 @@ import { BsSearch } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 import ActiveFilters from "./Filter/ActiveFilters";
 
-
-function Search({ type , activeFilters, deleteFilter, addToQuery, handleSearchBalkInput }) {
+function Search({
+  type,
+  activeFilters,
+  deleteFilter,
+  addToQuery,
+  handleSearchBalkInput,
+}) {
   const { t } = useTranslation();
   const [input, setInput] = useState("");
 
   function openFilter() {
-    document.getElementById("filter").style.right = "0px";
+    document.getElementById("filter").style.display = "flex";
   }
 
   useEffect(() => {
-   // use effect to add functionality to search input
-  
-  }, [input])
+    // use effect to add functionality to search input
+  }, [input]);
 
   return (
     <div className="container">
@@ -59,10 +63,12 @@ function Search({ type , activeFilters, deleteFilter, addToQuery, handleSearchBa
           name="search"
           className="search-field"
           onChange={handleSearchBalkInput}
-
         ></input>
       </div>
-      <ActiveFilters activeFilters={activeFilters} deleteFilter={deleteFilter}/>
+      <ActiveFilters
+        activeFilters={activeFilters}
+        deleteFilter={deleteFilter}
+      />
     </div>
   );
 }

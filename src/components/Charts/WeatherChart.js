@@ -55,13 +55,13 @@ function WeatherChart() {
           <Card.Subtitle className="subTitle">{currentDate}</Card.Subtitle>{" "}
           <div className="weatherData">
             <p className="weatherVar">Temperature</p>
-            <p>{data.main.temp} ºC</p>
+            <p className="weatherVarCurrent">{data.main.temp}</p>
             <p className="weatherVar">Humidity</p>
-            <p>{data.main.humidity}%</p>
+            <p className="weatherVarCurrent">{data.main.humidity}%</p>
             <p className="weatherVar">Windspeed</p>
-            <p>{data.wind.speed} KPH</p>
+            <p className="weatherVarCurrent">{data.wind.speed} KPH</p>
             <p className="weatherVar">Wind gust</p>
-            <p>{data.wind.gust} KPH</p>
+            <p className="weatherVarCurrent">{data.wind.gust} KPH</p>
           </div>
           <Alert
             variant="dark"

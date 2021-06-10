@@ -6,10 +6,9 @@ import Menu from "./components/Menu";
 import { HashRouter as Router, Route } from "react-router-dom";
 import SearchInterfaceView from "./views/SearchInterfaceView";
 import DetailOperator from "./components/Details/DetailOperator";
-import AircraftDetails from "./components/Details/AircraftDetails"
-import PilotDetails from "./components/Details/PilotDetails"
-import ReportDetails from "./components/Details/ReportDetails"
-
+import AircraftDetails from "./components/Details/AircraftDetails";
+import PilotDetails from "./components/Details/PilotDetails";
+import ReportDetails from "./components/Details/ReportDetails";
 
 function App() {
   return (
@@ -20,9 +19,9 @@ function App() {
           position: "relative",
         }}
       >
-        <Route exact path="/" component={Dashboard} />
-        <ArrowButton />
+        <ArrowButton /> 
         <Menu />
+        <Route exact path="/" component={Dashboard} />
         <Route
           exact
           path="/tableview/:tabletype"
@@ -35,8 +34,7 @@ function App() {
           component={AircraftDetails}
         />
         <Route exact path="/details/pilots/:id" component={PilotDetails} />
-        <Route exact path="/details/reports/:id"
-        component={ReportDetails}/>
+        <Route exact path="/details/reports/:id" component={ReportDetails} />
       </div>
     </Router>
   );

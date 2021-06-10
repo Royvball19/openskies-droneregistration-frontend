@@ -20,18 +20,15 @@
 
   button {
     color: black;
-    
-    span {
 
+    span {
       .sr-only {
         display: hide;
       }
     }
-    
   }
-  
+
   .toast-header {
     color: red;
-    
   }
 }
