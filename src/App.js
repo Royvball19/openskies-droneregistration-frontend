@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dashboard from './components/Dashboard/Dashboard';
+import Dashboard from "./components/Dashboard/Dashboard";
 import "./style/style.css";
 import ArrowButton from "./components/ArrowButton";
 import Menu from "./components/Menu";
@@ -12,12 +12,14 @@ import ReportDetails from "./components/Details/ReportDetails"
 
 
 function App() {
-
   return (
     <Router>
-      <div className="App" style={{
-          position: 'relative',
-        }}>
+      <div
+        className="App"
+        style={{
+          position: "relative",
+        }}
+      >
         <Route exact path="/" component={Dashboard} />
         <ArrowButton />
         <Menu />
@@ -27,7 +29,11 @@ function App() {
           component={SearchInterfaceView}
         />
         <Route exact path="/details/operators/:id" component={DetailOperator} />
-        <Route exact path="/details/aircrafts/:id" component={AircraftDetails} />
+        <Route
+          exact
+          path="/details/aircrafts/:id"
+          component={AircraftDetails}
+        />
         <Route exact path="/details/pilots/:id" component={PilotDetails} />
         <Route exact path="/details/reports/:id"
         component={ReportDetails}/>

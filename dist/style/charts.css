@@ -72,62 +72,72 @@ body {
   height: 100vh;
 }
 
-button {
-  display: block;
-  padding: 10px;
-  background: none;
-  outline: none;
-  font: inherit;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.menu-container {
+.addButtons {
   position: absolute;
-  left: 80px;
-  bottom: 40px;
-  display: flex;
-  padding-left: 10px;
-  flex-direction: column;
-  background-color: #0d1055;
-  border-radius: 10px;
-  border: solid 2px;
-  width: 175px;
+  top: 0;
+  right: 0;
 }
 
-.menu-container button {
-  background: none;
-  outline: none;
-  font: inherit;
-  color: #ffffff;
+.change-button {
+  padding: 5px 17px;
+  font-family: "Poppins", sans-serif;
+  background-color: #0d1055;
+  font-size: 25px;
+  color: #fff;
+  height: 45px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  text-align: left;
-  width: 150px;
+  margin-left: 20px;
 }
 
-.menu-container button:hover {
-  opacity: 0.8;
+.change-button .btn-content {
+  display: flex;
+  justify-content: center;
 }
 
-.menu-container button .flag {
-  max-width: 20px;
-  margin-right: 10px;
+.change-button .btn-content p {
+  font-size: 20px;
 }
 
-.world-parent {
-  color: white;
+.chart-parent {
+  margin: 15px;
+  border-radius: 5%;
+  height: 400px;
+  width: 565px;
+  padding-bottom: 60px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-.world-parent svg {
-  color: white;
+.chart-parent * {
+  color: #20286b;
+  font-weight: 200;
 }
 
-.world-parent .world-icon {
-  min-width: 40px;
-  min-height: 40px;
-  margin-right: 10px;
-  fill: white;
+.removeButtons {
+  display: none;
+}
+
+.charts {
+  display: flex;
+}
+
+.chart-buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 50px;
+  box-sizing: border-box;
+}
+
+.chart-buttons button {
+  color: #20286b;
+  font-weight: 400;
+}
+
+.averageChartContainer {
+  width: 500px;
+  height: 100px;
+  background-color: #2FA6CC;
+  text-align: center;
 }

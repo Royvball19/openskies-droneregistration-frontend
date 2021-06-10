@@ -3,6 +3,7 @@ import BarChart from "./BarChart";
 import PieChart from "./PieChart";
 import LineChart from "./LineChart";
 import AverageChart from "./AverageChart";
+import WeatherChart from "./WeatherChart";
 import "../../style/charts.css";
 import Data from "../../Data";
 import axios from "axios";
@@ -68,6 +69,7 @@ function Charts() {
           />
           <AverageChart operatorData={operatorData} reportData={reportData} />
         </div>
+        <WeatherChart />
       </>
     );
   } else {
