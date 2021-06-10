@@ -7,6 +7,8 @@ import CompanyLogo from "../../style/img/dummy-logo.png";
 import axios from "axios";
 import moment from "moment";
 import { BiExport } from "react-icons/bi";
+import BackButton from "../../components/BackButton";
+
 function DetailOperator({ match }) {
   const { t } = useTranslation();
 
@@ -36,6 +38,7 @@ function DetailOperator({ match }) {
 
   return (
     <div className="detailOperatorContainer">
+      <BackButton />
       <div className="headerDiv">
         <h2 className="titleH">{t("detailsOperator")}</h2>
       </div>

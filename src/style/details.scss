@@ -82,7 +82,6 @@ $margin: 20px;
       }
 
       .staticDetails {
-        
         h4 {
           text-align: left;
           font-weight: 900;
@@ -107,19 +106,45 @@ $margin: 20px;
         margin: 14px;
       }
 
-
       .linked {
         background-color: rgba($color: $font-primary, $alpha: 0.4);
         border-radius: 5px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin:0 0 34px 30px;
+        margin: 0 0 34px 30px;
         min-width: 200px;
         min-height: 30%;
       }
-
     }
   }
 }
 
+/*
+ * Back button
+ */
+.backButtonDiv {
+  .backButton {
+    background-color: $bg-primary;
+    border: none;
+    width: 40px;
+    height: 44px;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+
+    .goBack {
+      color: white;
+      font-size: 40px;
+      margin-bottom: 6px;
+      margin-right: 8px;
+    }
+    .goBack:hover {
+      color: $button-font-color;
+    }
+  }
+}

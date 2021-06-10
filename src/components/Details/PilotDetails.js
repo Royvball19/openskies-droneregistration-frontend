@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../style/pilotdetails.css";
 import { useTranslation } from "react-i18next";
 import Data from "../../Data";
+import BackButton from "../../components/BackButton";
 
 export default function AircraftDetails({ match }) {
   const { t } = useTranslation();
@@ -56,6 +57,7 @@ export default function AircraftDetails({ match }) {
   if (privileged) {
     return (
       <>
+        <BackButton />
         <h1 className="pilotHeader">{t("pilotDetails")}</h1>
         <button onClick={showPrivData}>Switch data</button>
         <div className="container-fluid pilotDetailContainer">

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../style/aircraftdetails.css";
 import { useTranslation } from "react-i18next";
 import Data from "../../Data";
+import BackButton from "../../components/BackButton";
 
 export default function AircraftDetails({ match }) {
   const { t } = useTranslation();
@@ -31,6 +32,7 @@ export default function AircraftDetails({ match }) {
 
   return (
     <>
+      <BackButton />
       <h1 className="aircraftHeader">{t("aircraftDetails")}</h1>
       <div className="container-fluid aircraftDetailContainer">
         <div className="row">
