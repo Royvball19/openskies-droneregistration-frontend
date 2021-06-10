@@ -2,6 +2,7 @@ import { ResponsiveLine } from "@nivo/line";
 import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "../../style/charts.css";
+import { useTranslation } from "react-i18next";
 
 function LineChart({ operatorData, aircraftData, pilotData, reportData }) {
   let [currentValue, setCurrentValue] = useState("reports");
@@ -9,6 +10,8 @@ function LineChart({ operatorData, aircraftData, pilotData, reportData }) {
 
   let currentInput;
   let object;
+
+  const { t } = useTranslation();
 
   // Choose input type
   switch (currentValue) {
@@ -146,9 +149,13 @@ function LineChart({ operatorData, aircraftData, pilotData, reportData }) {
         ]}
       />
       <div className="chart-buttons">
-        <button onClick={() => setCurrentValue("reports")}>Reports</button>
-        <button onClick={() => setCurrentValue("pilots")}>Pilots</button>
-        <button onClick={() => setCurrentValue("aircrafts")}>Aircrafts</button>
+        <button onClick={() => setCurrentValue("reports")}>
+          {t("reports")}
+        </button>
+        <button onClick={() => setCurrentValue("pilots")}>{t("pilots")}</button>
+        <button onClick={() => setCurrentValue("aircrafts")}>
+          {t("aircraft")}
+        </button>
       </div>
     </div>
   );

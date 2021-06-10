@@ -8,6 +8,7 @@ import "../../style/charts.css";
 import Data from "../../Data";
 import axios from "axios";
 import { RiLineChartFill } from "react-icons/ri";
+import { useTranslation } from "react-i18next";
 
 function Charts() {
   let [operatorData, setOperatorData] = useState({});
@@ -17,6 +18,8 @@ function Charts() {
   let [chartsStatus, setChartsStatus] = useState(false);
   let [selectedMonths, setSelectedMonths] = useState([]);
   let [isLoaded, setLoaded] = useState(false);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     axios
@@ -52,7 +55,7 @@ function Charts() {
     return (
       <>
         <button class="change-button" onClick={showCharts}>
-          Charts <RiLineChartFill className="icon chart-icon" />
+          {t("charts")} <RiLineChartFill className="icon chart-icon" />
         </button>
         <div className="charts">
           <BarChart
@@ -76,7 +79,7 @@ function Charts() {
     return (
       <>
         <button class="change-button" onClick={showCharts}>
-          Charts <RiLineChartFill className="icon chart-icon" />
+          {t("charts")} <RiLineChartFill className="icon chart-icon" />
         </button>
       </>
     );
