@@ -178,10 +178,19 @@ export default function SearchInterfaceView({ match }) {
   // define columns
   let columns = [];
   for (let i = 0; i < columnsData.length; i++) {
-    columns.push({
-      dataField: columnsData[i].key,
-      text: columnsData[i].key,
-    });
+    console.log(columnsData)
+    if(columnsData[i].key === "id" || columnsData[i].key === "registration_mark"){
+      columns.push({
+        dataField: columnsData[i].key,
+        text: columnsData[i].key,
+        hidden: true
+      });
+    }else {
+      columns.push({
+        dataField: columnsData[i].key,
+        text: columnsData[i].key,
+      });
+    }
   }
 
     return (

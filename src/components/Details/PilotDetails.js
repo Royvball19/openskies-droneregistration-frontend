@@ -48,14 +48,14 @@ export default function AircraftDetails({match}) {
 
   let isActive = data.is_active;
 
-  if(isActive === true) {
+  if(isActive) {
       isActive = "Yes"
   } else {
       isActive = "No"
   }
 
   // if privileged is true
-  if (privileged === true) {
+  if (privileged) {
   return (
     <>
     <h1 className="pilotHeader">Pilot Details</h1>
@@ -107,9 +107,9 @@ export default function AircraftDetails({match}) {
                 <h4>Updated at</h4>
               </div>
               <div className="rightContent">
+                <h4>{data.id}</h4>
                 <h4>{data.created_at}</h4>
                 <h4>{data.updated_at}</h4>
-                <h4>{data.id}</h4>
               </div>
             </div>                                         
           </div>
