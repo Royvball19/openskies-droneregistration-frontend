@@ -72,62 +72,31 @@ body {
   height: 100vh;
 }
 
-button {
-  display: block;
-  padding: 10px;
-  background: none;
-  outline: none;
-  font: inherit;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.menu-container {
+.toast {
   position: absolute;
-  left: 80px;
-  bottom: 40px;
-  display: flex;
-  padding-left: 10px;
-  flex-direction: column;
-  background-color: #0d1055;
-  border-radius: 10px;
-  border: solid 2px;
-  width: 175px;
+  bottom: 2%;
+  right: 1%;
+  color: black;
+  margin-top: 400px;
 }
 
-.menu-container button {
-  background: none;
-  outline: none;
-  font: inherit;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  width: 150px;
-}
-
-.menu-container button:hover {
-  opacity: 0.8;
-}
-
-.menu-container button .flag {
-  max-width: 20px;
+.toast strong {
   margin-right: 10px;
 }
 
-.world-parent {
-  color: white;
+.toast p {
+  color: black;
+  font-size: 15px;
 }
 
-.world-parent svg {
-  color: white;
+.toast button {
+  color: black;
 }
 
-.world-parent .world-icon {
-  min-width: 40px;
-  min-height: 40px;
-  margin-right: 10px;
-  fill: white;
+.toast button span .sr-only {
+  display: hide;
+}
+
+.toast .toast-header {
+  color: red;
 }

@@ -80,7 +80,7 @@ body {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   border-radius: 10px;
   right: -400px;
 }
@@ -93,38 +93,33 @@ body {
   color: #0d1055;
   margin: 14px;
   list-style: none;
-  cursor: default;
-}
-
-.filterDiv li {
   cursor: pointer;
 }
 
-.filterDiv .iconSearch {
-  font-size: 35px;
-  color: black;
-  margin: 14px;
-}
-
-.filterDiv .iconCalander {
-  margin-bottom: 2px;
-}
-
-.filterDiv .allFiltersDiv {
-  display: flex;
-  flex-direction: column;
+.filterDiv .keys .keys-wrapper {
+  max-height: 200px;
+  overflow-y: scroll;
   overflow-x: hidden;
-  align-items: left;
-  margin: 14px;
 }
 
-.filterDiv .allFiltersDiv .Header {
+.filterDiv .Header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.filterDiv .allFiltersDiv .closeFilterA:hover {
-  color: #fed737;
+.filterDiv .Header .back-icon {
+  color: #0d1055;
+  cursor: pointer;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.filterDiv .Header .iconSearch {
+  margin-left: 10px;
+  color: #0d1055;
+  cursor: pointer;
+  font-size: 25px;
 }
 
 .filterDiv .input-container {
@@ -146,30 +141,65 @@ body {
   flex-direction: row;
 }
 
-.filterDiv .input-container .operatorList, .filterDiv .input-container .text-input {
-  width: 100%;
-  border: 1px solid #c2c2c2;
-  border-radius: 3px;
-  color: #c2c2c2;
-  padding: 5px 10px;
-  margin: 5px 0px;
-}
-
-.filterDiv .input-container .operatorList::placeholder, .filterDiv .input-container .text-input::placeholder {
-  color: #c2c2c2;
-}
-
-.filterDiv .input-container .back-icon {
-  color: #0d1055;
-  cursor: pointer;
-  font-size: 30px;
-}
-
-.filterDiv .input-container .add-btn {
+.filterDiv .add-btn {
   background-color: #0d1055;
   border-radius: 10px;
   position: absolute;
   bottom: 30px;
+  margin: auto;
+}
+
+.filterDiv .options {
+  color: #0d1055;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.filterDiv .options .text-input {
+  padding: 5px;
+  border: solid 1px #c2c2c2;
+  border-radius: 5px;
+}
+
+.filterDiv .options .text-input::placeholder {
+  color: #c2c2c2;
+}
+
+.filterDiv .options .text-input:focus {
+  outline-color: #0d1055;
+}
+
+.filterDiv .options .threshold {
+  display: flex;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.filterDiv .options .threshold input {
+  margin: 0px 8px;
+  -webkit-appearance: none;
+  opacity: 0.7;
+  outline: none;
+  background: #d3d3d3;
+  width: 100%;
+  height: 10px;
+  /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  border-radius: 5px;
+}
+
+.filterDiv .options .threshold input::-webkit-slider-thumb {
+  /* Override default look */
+  appearance: none;
+  width: 20px;
+  /* Set a specific slider handle width */
+  height: 20px;
+  /* Slider handle height */
+  background: #0d1055;
+  cursor: pointer;
+  /* Cursor on hover */
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -20,6 +20,10 @@
   border: none;
 }
 
+.tableview .react-bootstrap-table th:hover {
+  cursor: default;
+}
+
 .tableview .react-bootstrap-table thead {
   border-top: transparent;
 }
@@ -27,4 +31,8 @@
 .tableview .react-bootstrap-table tr {
   border-left: transparent;
   border-right: transparent;
+}
+
+.tableview .react-bootstrap-table tr:hover {
+  cursor: pointer;
 }
