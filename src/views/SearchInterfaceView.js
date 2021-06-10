@@ -209,6 +209,7 @@ export default function SearchInterfaceView({ match }) {
         handleKeySelection={handleKeySelection}
         keys={keys} resetKeys={resetKeys}
         columnsData={columnsData}
+        type={match.params.tabletype}
         /> 
         </> ): null }
         <div className="toast-container"

@@ -1,0 +1,36 @@
+@import "colors_theme";
+@import "typography";
+@import "style";
+
+
+.reports {
+  margin: 50px auto;
+
+  h1 {
+    color: $bg-primary;
+    margin-bottom: 20px;
+  }
+
+  .details-container {
+    display: grid;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
+    border-radius: 20px;
+    padding: 20px 40px;
+
+
+    .left-key {
+      float: left;
+      font-weight: bold;
+      min-width: 50px;
+
+    }
+
+    .right-value {
+      float: right;
+      max-width: 400px;
+    }
+  }
+
+
+}

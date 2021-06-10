@@ -7,7 +7,7 @@ import Data from "../../Data"
 
 export const Filter = ({ addToQuery, handleInput, 
                          handleRange, handleKeySelection, 
-                         keys, resetKeys, columnsData  }) => {
+                         keys, resetKeys, type  }) => {
                            
   const [showKeys, setShowKeys] = useState(true);
   const [showBack, setShowBack] = useState(false);
@@ -15,22 +15,24 @@ export const Filter = ({ addToQuery, handleInput,
     aircraft: [],
     operator: [],
     pilot: [],
+    reports: []
   })
   const [ errorMessage ] = useState('');
 
   // fetching data from the backend API
   useEffect( () => {
     axios.all([Data.getAircraftOptions(),
-      Data.getOperatorOptions(), Data.getPilotOptions()])
+      Data.getOperatorOptions(), Data.getPilotOptions(), Data.getReportOptions()])
       .then(axios.spread((...responses) => {
       setOptions({
+        // all options are fetched because we wanted to implement nested filters. i.e. search on the operator related to a drone
         aircraft: responses[0].data.fields,
         operator: responses[1].data.fields,
         pilot: responses[2].data.fields,  
+        reports: responses[3].data.fields,
       })
-      // use/access the results 
     })).catch(error => {
-      
+      console.log(error)
     })
   }, [])
 
@@ -56,6 +58,19 @@ export const Filter = ({ addToQuery, handleInput,
     setShowBack(false);  
     setShowKeys(true);
     resetKeys();  
+  }
+
+  const determineOptions = (type) => {
+    switch(type) {
+      case "operators":
+        return options.operator
+      case "aircrafts":
+        return options.aircraft
+      case "reports":
+        return options.reports
+      case "pilots":
+        return options.pilot  
+    }
   }
 
   const KeySelect = ({ option }) => {
@@ -96,20 +111,12 @@ export const Filter = ({ addToQuery, handleInput,
       { showKeys ? ( 
         <div>
         <div className="keys">
-          <h3>Operators</h3>
+          <h3>{type}</h3>
           <div className="keys-wrapper">
-          <KeySelect option={options.operator} />
+            <KeySelect option={determineOptions(type)} />
           </div>
-          <h3>Pilots</h3>
-          <div className="keys-wrapper">
-          <KeySelect option={options.pilot} />
-          </div>
-          <h3>Aircrafts</h3>
-          <div className="keys-wrapper">
-          <KeySelect option={options.aircraft} />
           </div>
         </div>
-      </div>
       ) : (
         <div> 
            <div className="options">

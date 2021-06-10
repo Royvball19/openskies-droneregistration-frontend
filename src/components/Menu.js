@@ -72,6 +72,15 @@ export const Menu = () => {
                 <h3>{t("menuPilots")}</h3>{" "}
               </Link>
             </div>
+            <div className="searchReports">
+              <Link
+                to={{ pathname: "/tableview/" + "reports" }}
+                onClick={closeMenu}
+              >
+                <BsFillPersonFill className="iconPilots icon" />
+                <h3>{t("menuPilots")}</h3>{" "}
+              </Link>
+            </div>
           </div>
       </div>
 

@@ -110,6 +110,10 @@ export default {
     return await axios.get(endpoint + "reports");
   },
 
+  async getSingleReport(reportid) {
+    return await axios.get(endpoint + "reports/" + reportid);
+  },
+
   async getAircraftOptions() {
     return await axios.options(endpoint + "aircrafts");
   },

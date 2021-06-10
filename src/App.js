@@ -8,6 +8,9 @@ import SearchInterfaceView from "./views/SearchInterfaceView";
 import DetailOperator from "./components/Details/DetailOperator";
 import AircraftDetails from "./components/Details/AircraftDetails"
 import PilotDetails from "./components/Details/PilotDetails"
+import ReportDetails from "./components/Details/ReportDetails"
+
+
 function App() {
 
   return (
@@ -26,6 +29,8 @@ function App() {
         <Route exact path="/details/operators/:id" component={DetailOperator} />
         <Route exact path="/details/aircrafts/:id" component={AircraftDetails} />
         <Route exact path="/details/pilots/:id" component={PilotDetails} />
+        <Route exact path="/details/reports/:id"
+        component={ReportDetails}/>
       </div>
     </Router>
   );
