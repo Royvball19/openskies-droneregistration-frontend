@@ -35,6 +35,7 @@ export const TRANSLATIONS_NL = {
   menuOperators: "Zoek op bedrijven",
   menuPilots: "Zoek op piloten",
   menuAircrafts: "Zoek op drones",
+  menuReports: "Zoek op rapporten",
   menuSignOut: "Log uit",
   menuSettings: "Instellingen",
   menuLanguage: "Verander taal",

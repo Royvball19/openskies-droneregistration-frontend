@@ -96,6 +96,11 @@ body {
   cursor: pointer;
 }
 
+.filterDiv h2 {
+  font-size: 20px;
+  min-width: 100px;
+}
+
 .filterDiv .keys .keys-wrapper {
   max-height: 200px;
   overflow-y: scroll;

@@ -6,6 +6,7 @@ import { GiDeliveryDrone } from "react-icons/gi";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { VscSignOut } from "react-icons/vsc";
+import { HiOutlineDocumentReport } from "react-icons/hi";
 import CompanyLogo from "../style/img/dummy-logo.png";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
@@ -77,8 +78,8 @@ export const Menu = () => {
                 to={{ pathname: "/tableview/" + "reports" }}
                 onClick={closeMenu}
               >
-                <BsFillPersonFill className="iconPilots icon" />
-                <h3>{t("menuPilots")}</h3>{" "}
+                <HiOutlineDocumentReport className="iconPilots icon" />
+                <h3>{t("menuReports")}</h3>{" "}
               </Link>
             </div>
           </div>

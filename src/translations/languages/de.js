@@ -36,6 +36,7 @@ export const TRANSLATIONS_DE = {
   menuOperators: "Alle Betreiber durchsuchen",
   menuPilots: "Alle Piloten durchsuchens",
   menuAircrafts: "Alle Flugzeuge durchsuchen",
+  menuReports: "?",
   menuSignOut: "Ausloggen",
   menuSettings: "Einstellungen",
   menuLanguage: "Sprache ändern",

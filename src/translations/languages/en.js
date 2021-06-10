@@ -36,6 +36,7 @@ export const TRANSLATIONS_EN = {
   menuOperators: "Search all operators",
   menuPilots: "Search all pilots",
   menuAircrafts: "Search all aircrafts",
+  menuReports: "Search all reports",
   menuSignOut: "Sign out",
   menuSettings: "Settings",
   menuLanguage: "Change Language",
