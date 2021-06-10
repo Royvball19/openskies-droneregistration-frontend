@@ -72,72 +72,30 @@ body {
   height: 100vh;
 }
 
-.addButtons {
-  position: absolute;
-  top: 0;
-  right: 0;
+.reports {
+  margin: 50px auto;
 }
 
-.change-button {
-  padding: 5px 17px;
-  font-family: "Poppins", sans-serif;
-  background-color: #0d1055;
-  font-size: 25px;
-  color: #fff;
-  height: 45px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  margin-left: 20px;
+.reports h1 {
+  color: #0d1055;
+  margin-bottom: 20px;
 }
 
-.change-button .btn-content {
-  display: flex;
-  justify-content: center;
-}
-
-.change-button .btn-content p {
-  font-size: 20px;
-}
-
-.chart-parent {
-  margin: 15px;
-  border-radius: 5%;
-  height: 400px;
-  width: 565px;
-  padding-bottom: 60px;
+.reports .details-container {
+  display: grid;
   background-color: rgba(255, 255, 255, 0.4);
+  color: black;
+  border-radius: 20px;
+  padding: 20px 40px;
 }
 
-.chart-parent * {
-  color: #20286b;
-  font-weight: 200;
+.reports .details-container .left-key {
+  float: left;
+  font-weight: bold;
+  min-width: 50px;
 }
 
-.removeButtons {
-  display: none;
-}
-
-.charts {
-  display: flex;
-}
-
-.chart-buttons {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  min-height: 50px;
-  box-sizing: border-box;
-}
-
-.chart-buttons button {
-  color: #20286b;
-  font-weight: 400;
-}
-
-.averageChartContainer {
-  width: 500px;
-  height: 100px;
-  background-color: #2FA6CC;
-  text-align: center;
+.reports .details-container .right-value {
+  float: right;
+  max-width: 400px;
 }

@@ -63,8 +63,7 @@ p {
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -98,9 +97,7 @@ body {
   position: absolute;
   top: 45px;
   left: 10px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 130px;
   list-style: none;
   padding: 0;
@@ -159,4 +156,3 @@ body {
 .top-level-menu a:hover {
   color: #fed737;
 }
-/*# sourceMappingURL=chartsmenu.css.map */

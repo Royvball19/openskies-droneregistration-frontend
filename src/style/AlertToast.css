@@ -63,8 +63,7 @@ p {
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -101,4 +100,3 @@ body {
 .toast .toast-header {
   color: red;
 }
-/*# sourceMappingURL=alerttoast.css.map */
