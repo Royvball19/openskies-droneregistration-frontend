@@ -24,17 +24,24 @@ export default function AircraftDetails({match}) {
       });
   }, []);
 
-  let regi_mark = data.registration_mark
+
+  let regi_mark;
+  let status;
 
   if (data.registration_mark === null) {
     regi_mark = "No Registration"
-  } else {
-    
   }
 
+  
+  if(data.status === 0) {
+    status = "Not active"
+  }else if(data.status === 1) {
+    status = "Active"
+  }
+  
   return (
     <>
-    <h1 className="aircraftHeader">Aircraft Details</h1>
+    <h1 className="Header">Aircraft Details</h1>
     <div className="container-fluid aircraftDetailContainer">
       <div className="row">
 
@@ -53,16 +60,15 @@ export default function AircraftDetails({match}) {
             <h4>{data.mass}</h4>
             <h4>{data.maci_number}</h4>
             <h4>{data.model}</h4>
-            <h4>{data.status}</h4>
+            <h4>{status}</h4>
           </div>
         </div>                                         
       </div>
     </div>
-
+    <h1 className="Header">Operators</h1>
     <div class="container-fluid operatorContainer">
       <div class="row">
         <div class="col-12 operatorDetails">
-          <h2>Operator</h2>
           <div class="content">
             <div class="leftSection">
                 <h4>Company name</h4>

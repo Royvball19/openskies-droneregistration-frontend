@@ -63,7 +63,8 @@ p {
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -88,9 +89,14 @@ button {
   position: absolute;
   left: 80px;
   bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-left: 10px;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #0d1055;
   border-radius: 10px;
   border: solid 2px;
