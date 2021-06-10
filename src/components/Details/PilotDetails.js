@@ -3,6 +3,7 @@ import "../../style/pilotdetails.css";
 import { useTranslation } from "react-i18next";
 import Data from "../../Data";
 import BackButton from "../../components/BackButton";
+import moment from "moment";
 
 export default function AircraftDetails({ match }) {
   const { t } = useTranslation();
@@ -82,8 +83,8 @@ export default function AircraftDetails({ match }) {
                 <h4>{address.city}</h4>
                 <h4>{address.country}</h4>
                 <h4>{address.postcode}</h4>
-                <h4>{data.created_at}</h4>
-                <h4>{data.updated_at}</h4>
+                <h4>{moment(data.created_at).calendar()}</h4>
+                <h4>{moment(data.updated_at).calendar()}</h4>
                 <h4>{person.email}</h4>
                 <h4>{isActive}</h4>
               </div>
@@ -108,8 +109,8 @@ export default function AircraftDetails({ match }) {
               </div>
               <div className="rightContent">
                 <h4>{data.id}</h4>
-                <h4>{data.created_at}</h4>
-                <h4>{data.updated_at}</h4>
+                <h4>{moment(data.created_at).calendar()}</h4>
+                <h4>{moment(data.updated_at).calendar()}</h4>
               </div>
             </div>
           </div>

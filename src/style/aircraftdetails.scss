@@ -6,6 +6,20 @@ h4 {
   color: black;
 }
 
+.headerDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  margin-left: 8%;
+
+  .titleH {
+    margin: 35px;
+    font-size: 40px;
+    font-weight: 300;
+    color: $bg-primary;
+  }
+}
+
 .Header {
   font-weight: normal;
   color: $bg-primary;
@@ -13,80 +27,74 @@ h4 {
 }
 
 .aircraftDetailContainer {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .aircraftDetailContainer .aircraftDetails {
-    display: grid;
-    width: 80vw;
-    min-height: 30vh;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
-    padding: 50px;
-    grid-template-columns: 1fr 1fr 1fr;
-    
-  }
-  
-  
-  .aircraftDetailContainer .leftContent h4 {
-    padding: 4px 0px;
-  }
-  
-  .aircraftDetailContainer .rightContent {
-  
-    grid-column: end;
-  }
-  
-  .aircraftDetailContainer .rightContent h4 {
-    padding: 4px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.aircraftDetailContainer .aircraftDetails {
+  display: grid;
+  width: 80vw;
+  min-height: 30vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.aircraftDetailContainer .leftContent h4 {
+  padding: 4px 0px;
+}
+
+.aircraftDetailContainer .rightContent {
+  grid-column: end;
+}
+
+.aircraftDetailContainer .rightContent h4 {
+  padding: 4px 0px;
+  font-weight: normal;
+}
+
+.operatorContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.operatorDetails,
+.reportDetails {
+  width: 80vw;
+  min-height: 28vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  text-align: center;
+
+  .subtitle-details {
+    margin-top: 20px;
+    color: $bg-primary;
     font-weight: normal;
   }
 
-  .operatorContainer {
+  .content {
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
+    padding: 20px;
 
-  .operatorDetails,
-  .reportDetails {
-    width: 80vw;
-    min-height: 28vh;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
-    text-align: center;
-  
-    h2 {
-      margin-top: 20px;
-      color: $bg-primary;
-      font-weight: normal;
-      
-    }
-  
-    .content {
-      display: flex;
-      padding: 20px;
-  
-      .leftSection {
-        width: 50%;
-        text-align: left;
-        
-        h4 {
-          margin-bottom: 20px;
-        }
+    .leftSection {
+      width: 50%;
+      text-align: left;
+
+      h4 {
+        margin-bottom: 20px;
       }
-  
-      .rightSection {
-        width: 50%;
-        text-align: right;
+    }
 
-        h4 {
-          font-weight: normal;
-          margin-bottom: 20px;
-        }
+    .rightSection {
+      width: 50%;
+      text-align: right;
+
+      h4 {
+        font-weight: normal;
+        margin-bottom: 20px;
       }
     }
   }
-  
-  
+}

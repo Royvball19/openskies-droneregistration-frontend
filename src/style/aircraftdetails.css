@@ -76,6 +76,20 @@ h4 {
   color: black;
 }
 
+.headerDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  margin-left: 8%;
+}
+
+.headerDiv .titleH {
+  margin: 35px;
+  font-size: 40px;
+  font-weight: 300;
+  color: #0d1055;
+}
+
 .Header {
   font-weight: normal;
   color: #0d1055;
@@ -125,8 +139,8 @@ h4 {
   text-align: center;
 }
 
-.operatorDetails h2,
-.reportDetails h2 {
+.operatorDetails .subtitle-details,
+.reportDetails .subtitle-details {
   margin-top: 20px;
   color: #0d1055;
   font-weight: normal;
