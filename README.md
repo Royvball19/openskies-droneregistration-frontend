@@ -1,23 +1,29 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Drone registry frontend
 
-## Available Scripts
+This project was created with React.js. The following packages are required to run the application: 
 
-In the project directory, you can run:
+ - Boostrap (Style framework)
+ - Axios (Http request handler)
+ - Nivo (Charts package)
+ - Fuse.js (Search framework)
+ - Moment (Date formatter)
+ - i18next (Language framework)
 
-### `yarn start`
+## How to get started
+
+To install all required packages run:
+
+### `yarn install` or `npm install`
+
+After you installed all the required packages run the app with:
+
+### `yarn start` or `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you want to make a build of the react app run the following command:
 
 ### `yarn build`
 
@@ -27,44 +33,79 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
 ## Learn More
+Here you can find more information about our application and how to work with it.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Known issues
+This is a list of all the known bugs:
+ - Responsiveness
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Future features
+This is a list of future features:
+ - Filter that can compare numbers (equals, greater then, less then, etc)
+ - Fiter that can compare dates
+ - Make Operator, Pilot, Aircraft detail pages flexible like reports details
+ - Alert toast global on error handling like in searchinterfaceview
+ - Feature to export information and charts from the registry (Print export as pdf etc)
+ - Flags on certain amount of reports to show where alot of issues are generated
+ - Save searched items to dashboard as widget
+ - Tracked items (favorite items)
+ - Soon to expire languages 
 
-### Code Splitting
+### Connect frontend to existing backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To connect your existing backend to our frontend you need to provide all fields from the objects of the database. You need to make some changes in the data.js file so the endpoints match your backend. Our application is made so it loads in data based on the provided fields from the backend.
 
-### Analyzing the Bundle Size
+Required fields to work with the frontend:
+ - key
+ - type
+ - title
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+The fields should look something like this:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    "fields": [
+        {
+            "required": false,
+            "key": "id",
+            "schema": {
+                "title": "id",
+                "type": "string",
+                "default": "e581157a-216d-4782-a7a8-792bf998fc92"
+            },
+            "ui": {
+                "ui:readonly": true
+            }
+        },
+        {
+            "required": false,
+            "key": "created_at",
+            "schema": {
+                "title": "created at",
+                "type": "string"
+            },
+            "ui": {
+                "ui:widget": "date-time",
+                "ui:readonly": true
+            }
+        },
+        {
+            "required": false,
+            "key": "updated_at",
+            "schema": {
+                "title": "updated at",
+                "type": "string"
+            },
+            "ui": {
+                "ui:widget": "date-time",
+                "ui:readonly": true
+            }
+        }
+    ],
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Join our community
 
-### Deployment
+We have setup a slack server where you can join and talk with the community. Do you have any questions or remarks? Please join our slack community.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can find the slack server on this link: https://join.slack.com/t/aircraft-registry/shared_invite/zt-rgizb7td-fx2eM_nlp38fLyzhpiODkA

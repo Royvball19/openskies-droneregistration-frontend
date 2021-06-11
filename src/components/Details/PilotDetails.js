@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../style/pilotdetails.css";
 import { useTranslation } from "react-i18next";
-import Data from "../../Data";
+import Data from "../../service/Data";
 import BackButton from "../../components/BackButton";
 import moment from "moment";
 
@@ -15,7 +15,6 @@ export default function AircraftDetails({ match }) {
   const [operator, setOperator] = useState([]);
 
   useEffect(() => {
-    console.log(match.params);
     if (privileged === true) {
       Data.getPrivilegedPilot(match.params.id)
         .then((response) => {
@@ -23,19 +22,15 @@ export default function AircraftDetails({ match }) {
           setPerson(response.data.person);
           setAddress(response.data.address);
           setOperator(response.data.operator);
-          console.log(response.data);
         }, [])
         .catch((error) => {
-          console.log(error);
         });
     } else {
       Data.getSinglePilot(match.params.id)
         .then((response) => {
           setData(response.data);
-          console.log(response.data);
         }, [])
         .catch((error) => {
-          console.log(error);
         });
     }
   }, []);
@@ -43,7 +38,6 @@ export default function AircraftDetails({ match }) {
   // function to switch privileged state to true or false
   const showPrivData = () => {
     setPrivileged(!privileged);
-    console.log("test");
   };
 
   let isActive = data.is_active;
@@ -60,7 +54,7 @@ export default function AircraftDetails({ match }) {
       <>
         <BackButton />
         <h1 className="pilotHeader">{t("pilotDetails")}</h1>
-        <button onClick={showPrivData}>Switch data</button>
+        {/* <button onClick={showPrivData}>Switch data</button> */}
         <div className="container-fluid pilotDetailContainer">
           <div className="row">
             <div className="col-12 pilotDetails">

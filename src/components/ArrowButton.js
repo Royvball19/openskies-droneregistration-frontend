@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 //Arrow button css made in menu.scss//
 import "../style/menu.css";
 import { MdKeyboardArrowRight } from "react-icons/md";

@@ -1,5 +1,5 @@
 import { ResponsiveBar } from "@nivo/bar";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import "../../style/charts.css";
 

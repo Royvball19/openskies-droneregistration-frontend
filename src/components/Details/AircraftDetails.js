@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../style/aircraftdetails.css";
 import { useTranslation } from "react-i18next";
-import Data from "../../Data";
+import Data from "../../service/Data";
 import BackButton from "../../components/BackButton";
 import moment from "moment";
 
@@ -12,15 +12,12 @@ export default function AircraftDetails({ match }) {
   const [operator, setOperator] = useState([]);
 
   useEffect(() => {
-    console.log(match.params);
     Data.getSingleAircraft(match.params.id)
       .then((response) => {
         setData(response.data);
         setOperator(response.data.operator);
-        console.log(response.data);
       }, [])
       .catch((error) => {
-        console.log(error);
       });
   }, []);
 

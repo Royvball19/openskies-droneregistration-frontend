@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import BarChart from "./BarChart";
-import PieChart from "./PieChart";
 import LineChart from "./LineChart";
 import AverageChart from "./AverageChart";
 import WeatherChart from "./WeatherChart";
 import "../../style/charts.css";
-import Data from "../../Data";
+import Data from "../../service/Data";
 import axios from "axios";
 import { RiLineChartFill } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
@@ -16,7 +15,6 @@ function Charts() {
   let [pilotData, setPilotData] = useState([]);
   let [reportData, setReportData] = useState([]);
   let [chartsStatus, setChartsStatus] = useState(false);
-  let [selectedMonths, setSelectedMonths] = useState([]);
   let [isLoaded, setLoaded] = useState(false);
 
   const { t } = useTranslation();

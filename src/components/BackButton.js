@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style/details.css";
 import { IoMdUndo } from "react-icons/io";
 import { useHistory } from "react-router-dom";

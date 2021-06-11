@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import "../../style/details.css";
 import { useTranslation } from "react-i18next";
-import Data from "../../Data";
+import Data from "../../service/Data";
 import CompanyLogo from "../../style/img/dummy-logo.png";
 import axios from "axios";
 import moment from "moment";
@@ -27,12 +27,9 @@ function DetailOperator({ match }) {
           setData(responses[0].data);
           setVariables(responses[1].data.fields);
           setAddressData(responses[0].data.address);
-          // use/access the results
-          console.log(responses[0].data);
         })
       )
       .catch((error) => {
-        console.log(error);
       });
   }, [match.params.id]);
 

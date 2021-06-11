@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Search from "../components/Search";
+import Search from "../components/Filter/Search";
 import TableView from "../components/Tables/TableView";
-import Data from "../Data";
+import Data from "../service/Data";
 import Filter from "../components/Filter/Filter";
 import axios from "axios";
 import Fuse from "fuse.js";
@@ -21,7 +21,7 @@ const declareType = (input) => {
   }
 };
 
-function declareColumns(input) {
+const declareColumns = (input) => {
   // declare tabletype and get route
   switch (input) {
     case "operators":
@@ -143,7 +143,6 @@ export default function SearchInterfaceView({ match }) {
 
   // handle text input from search bar
   const handleSearchBalkInput = (event) => {
-    console.log(event.target.value);
     setSearchBalkInput(event.target.value);
   };
 
@@ -182,7 +181,6 @@ export default function SearchInterfaceView({ match }) {
   // define columns
   let columns = [];
   for (let i = 0; i < columnsData.length; i++) {
-    console.log(columnsData);
     if (
       columnsData[i].key === "id" ||
       columnsData[i].key === "registration_mark"

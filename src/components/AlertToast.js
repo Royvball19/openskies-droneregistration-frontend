@@ -8,8 +8,6 @@ export default function AlertToast({ message, showToast, toggleShowToast }) {
   const { t } = useTranslation();
   const [ show, setShow ] = useState(true)
 
-  //const toggleShow = () => setShow(!show);
-  console.log("hoi")
   return (
     <div aria-live="polite" aria-atomic="true" className="AlertToast">
       <Toast

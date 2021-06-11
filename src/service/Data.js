@@ -1,33 +1,6 @@
-
 import axios from "axios";
-import { useState, useEffect } from "react";
 
 const endpoint = "http://127.0.0.1:8000/api/v1/";
-
-export const useApiRequest = (url) => {
-  const [data, setData] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = () => {
-      axios
-        .get(url)
-        .then((response) => {
-          setIsLoaded(true);
-          setData(response.data);
-        })
-        .catch((error) => {
-          setError(error);
-        });
-    };
-    fetchData();
-  }, [url]);
-
-  return { error, isLoaded, data };
-};
-
-export const operators = endpoint + "operators";
 
 export default {
   // API call for all operators
@@ -43,6 +16,13 @@ export default {
   // API call for privileged details operator
   async getPrivilegedOperator(operatorid) {
     return await axios.get(
+      endpoint + "operators/" + operatorid + "/privileged"
+    );
+  },
+
+    // API call for options of privileged details operator
+  async getPrivilegedOperatorOptions(operatorid) {
+    return await axios.options(
       endpoint + "operators/" + operatorid + "/privileged"
     );
   },
@@ -102,6 +82,10 @@ export default {
   // API call for all reports
   async getAllReports() {
     return await axios.get(endpoint + "reports");
+  },
+
+  async getSingleReport(reportid) {
+    return await axios.get(endpoint + "reports/" + reportid);
   },
 
   async getAircraftOptions() {

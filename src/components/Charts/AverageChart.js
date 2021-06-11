@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ResponsivePie } from "@nivo/pie";
 
 function AverageChart({ operatorData, reportData }) {

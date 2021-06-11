@@ -9,7 +9,6 @@ import { VscSignOut } from "react-icons/vsc";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 import CompanyLogo from "../style/img/dummy-logo.png";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router";
 import LanguageMenu from "./LanguageChanger/LanguageMenu";
 import { useTranslation } from "react-i18next";
 

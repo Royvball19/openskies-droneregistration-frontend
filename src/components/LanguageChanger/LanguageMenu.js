@@ -4,7 +4,6 @@ import "../../style/langauge.css";
 import Flags from "country-flag-icons/react/3x2";
 import { BiWorld } from "react-icons/bi";
 import { useDetectClickOutside } from "react-detect-click-outside";
-import { IconContext } from "react-icons/lib";
 
 export default function LanguageMenu() {
   // set state and default language

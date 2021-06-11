@@ -3,7 +3,7 @@ import "../../style/Filter.css";
 import { GrClose } from "react-icons/gr";
 import { BiArrowBack } from "react-icons/bi";
 import axios from "axios";
-import Data from "../../Data";
+import Data from "../../service/Data";
 import { useTranslation } from "react-i18next";
 
 export const Filter = ({
