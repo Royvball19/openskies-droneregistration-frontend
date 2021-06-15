@@ -11,7 +11,7 @@ function WeatherChart() {
   const [isLoaded, setLoaded] = useState(false);
   var moment = require("moment");
 
-  let currentDate = moment().format("MMM Do YY");
+  let currentDate = moment().format("MMM D YY");
 
   useEffect(() => {
     const fetchData = async () => {
